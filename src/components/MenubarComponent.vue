@@ -1,7 +1,7 @@
 <template>
     <Menubar :model="items">
       <template #start>
-          <img alt="logo" src="../assets/logo.png" height="40" width="200" padding="10" class="mr-2" />
+          <img alt="logo" src="../assets/logo.png" height="20" width="100" padding="10" class="mr-2" />
       </template>
       <template #end>
         <InputText placeholder="Search" type="text" />
