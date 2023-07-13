@@ -2,7 +2,6 @@
 // import Router from 'vue-router';
 // import Home from './components/Home.vue';
 
-
 // Vue.use(Router);
 // // undefined property 'use' of undefined object 'Vue'
 // // fix: npm install vue-router and if that doesn't work, npm install @vue/cli-service
@@ -26,10 +25,10 @@
 //   ]
 // });
 
-import { createRouter, createWebHistory } from "vue-router";
-import App from "./App.vue";
+import { createRouter, createWebHistory } from 'vue-router';
+import App from './App.vue';
 
 export const router = createRouter({
   history: createWebHistory(),
-  routes: [{ path: "/", component: App }]
+  routes: [{ path: '/', component: App }],
 });
