@@ -4,19 +4,23 @@ import './assets/tailwind.css';
 import './styles/custom.css';
 import PrimeVue from 'primevue/config';
 
-// import { router } from "./router";
-// import { app } from 'electron';
+import { router } from "./router";
 
+// primevue
 import 'primeflex/primeflex.css';
 import 'primevue/resources/themes/lara-light-blue/theme.css';
 import 'primevue/resources/primevue.min.css'; /* Deprecated */
 import 'primeicons/primeicons.css';
 
-import Dropdown from 'primevue/dropdown';
+import Menubar from 'primevue/menubar';
+
+
 
 const app = createApp(App);
+
+
 app.use(PrimeVue);
+app.use(router);
 
-
-app.component('Dropdown', Dropdown);
+app.component('Menubar', Menubar);
 app.mount('#app');

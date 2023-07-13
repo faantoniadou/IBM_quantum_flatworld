@@ -2,24 +2,24 @@
 
 <template>
   <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <DropdownComponent/>
+  <MenubarComponent/>
 </template>
 
 <script>
 import HelloWorld from './components/Home.vue'
-import DropdownComponent from './components/DropdownComponent.vue'
+import MenubarComponent from './components/MenubarComponent.vue'
+
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    DropdownComponent
+    MenubarComponent
   }
 }
 </script>
 
 
 <style lang="scss">
-
-
+  @import "./styles/custom.css"
 </style>
