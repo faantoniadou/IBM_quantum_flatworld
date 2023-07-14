@@ -10,15 +10,17 @@
     </div>
   </div>
   <div class="button-container">
+      <p style="padding: 20px; text-align: center;">
+        <router-link :to="'/learning'">
+        <Button label="Learning" :loading="loading" :to="'/learning'" class="p-button-lg" style="font-size: 32px; width: 600px; height: 120px;" outlined/>
+      </router-link>
+      </p>
     <div class="container-lg" style="padding: 10px; width: 100%;">
       <p style="padding: 20px; text-align: center;">
-        <Button label="Learning" :loading="loading" @click="load" class="p-button-lg" style="font-size: 32px; width: 600px; height: 120px;" outlined/>
+        <Button label="Teaching" :loading="loading" @click="load" class="p-button-lg" style="font-size: 32px; width: 600px; height: 120px;" disabled outlined/>
       </p>
       <p style="padding: 20px; text-align: center;">
-        <Button label="Teaching" :loading="loading" @click="load" class="p-button-lg" style="font-size: 32px; width: 600px; height: 120px;" outlined/>
-      </p>
-      <p style="padding: 20px; text-align: center;">
-        <Button label="Demo" :loading="loading" @click="load" class="p-button-lg" style="font-size: 32px; width: 600px; height: 120px;" outlined/>
+        <Button label="Demo" :loading="loading" @click="load" class="p-button-lg" style="font-size: 32px; width: 600px; height: 120px;" disabled outlined/>
       </p>
     </div>
   </div>
@@ -29,7 +31,6 @@
 <script>
 import MenubarComponent from './components/MenubarComponent.vue'
 
-
 export default {
   name: 'App',
   components: {
@@ -37,6 +38,7 @@ export default {
   }
 }
 </script>
+
 
 
 <style lang="scss">

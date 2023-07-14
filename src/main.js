@@ -4,11 +4,11 @@ import './assets/tailwind.css';
 import './styles/custom.css';
 import PrimeVue from 'primevue/config';
 
-import { router } from './router';
+import { router } from './router/index.js';
+// import routes from './router/index.js';
+
 
 // primevue
-// import 'primeflex/primeflex.css';
-// import 'primevue/resources/primevue.min.css'; /* Deprecated */
 import 'primeicons/primeicons.css';
 import './styles/_theme.scss';
 
@@ -26,3 +26,4 @@ app.component('Button', Button);
 app.component('Card', Card);
 
 app.mount('#app');
+
