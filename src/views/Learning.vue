@@ -1,24 +1,27 @@
 <template>
   <div class="container">
     <div class="Learning">
-      <div class="card" style="display: flex; justify-content: center; width: 650px; height: 100px;">
+      <div class="card" style="display: flex; justify-content: center; width: 750px; height: 100px;">
         <Card style="width: 14em; padding: 0px; font-size: 32px; margin-top: 10px;">
           <template #header>
             Course Catalogue
           </template>
         </Card>
+        <div>
       </div>
+
     </div>
+      <CourseCard style="display: flex; justify-content: center; width: 650px; height: 100px;"
+          v-for="course in courses"
+          :key="course.id"
+          :title="course.title"
+          :description="course.description"
+        />  
+    </div>
+
   </div>
 
-  <div>
-    <CourseCard
-      v-for="course in courses"
-      :key="course.id"
-      :title="course.title"
-      :description="course.description"
-    />  
-  </div>
+  
 
   <BackButton/>
 
@@ -38,7 +41,7 @@ export default {
       courses: [
         {
           id: 1,
-          title: "Introduction to Computer Science",
+          title: "Introduction to Quantum Computing",
           description: "Learn the basics of computer science, including programming languages, algorithms, data structures, and more.",
           image: "https://example.com/images/computer-science.jpg"
         }

@@ -1,4 +1,5 @@
 <template>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces"/>
     <MenubarComponent/>
     <router-view>

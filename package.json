@@ -29,12 +29,14 @@
     "primevue": "^3.30.0",
     "vite": "^4.0.0",
     "vue": "^3.2.45",
+    "vue-material-design-icons": "^5.2.0",
     "vue-router": "^4.1.6",
     "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@mdi/font": "^7.2.96",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-unit-jest": "~5.0.0",
