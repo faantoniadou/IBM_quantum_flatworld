@@ -3,14 +3,17 @@ import App from './App.vue';
 import './assets/tailwind.css';
 import './styles/custom.css';
 import PrimeVue from 'primevue/config';
+import './styles/_theme.scss';
 
-import { router } from './router/index.js';
+import { router } from './router';
 // import routes from './router/index.js';
+import 'primevue/resources/themes/saga-blue/theme.css';
+import 'primevue/resources/primevue.min.css';
+import 'primeicons/primeicons.css';
+
 
 
 // primevue
-import 'primeicons/primeicons.css';
-import './styles/_theme.scss';
 
 import Menubar from 'primevue/menubar';
 import Button from 'primevue/button';

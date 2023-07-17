@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
 
+@import 'primevue/resources/themes/saga-blue/theme.css';
+@import 'primevue/resources/primevue.min.css';
+@import 'primeicons/primeicons.css';
+
+
+
 :root {
   --surface-a:#2b1151;
   --surface-b:#31135e;
@@ -78,6 +84,7 @@
 
 .pi {
   font-size: 1rem;
+  font-family: "primeicons" !important;
 }
 
 .p-icon {

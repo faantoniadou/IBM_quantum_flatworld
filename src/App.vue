@@ -1,10 +1,9 @@
 <template>
-  <div class="container">
+  <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces"/>
     <MenubarComponent/>
     <router-view>
-      
+
     </router-view>
-  </div>
 </template>
 
 
@@ -15,7 +14,7 @@ import MenubarComponent from './components/MenubarComponent.vue'
 export default {
   name: 'App',
   components: {
-    MenubarComponent,
+    MenubarComponent
   }
 }
 </script>
@@ -23,10 +22,5 @@ export default {
 
 
 <style lang="scss">
-@import "./styles/custom.css";
-@import "~primevue/resources/primevue.min.css";
-@import "~primevue/resources/themes/lara-dark-purple/theme.css";
-@import "./styles/_theme.scss";
-
 
 </style>

@@ -2,12 +2,14 @@
 <template>
   <div class="container">
     <div class="Learning">
-      <h1>Learning Page</h1>
     </div>
   </div>
+  <BackButton/>
 </template>
 
 <script>
+import BackButton from '../components/BackButton.vue'
+
 export default {
   name: 'Learning',
   data() {
@@ -21,5 +23,8 @@ export default {
       // do something here, then set loading back to false when finished
     },
   },
+  components: {
+    BackButton,
+  }
 }
 </script>
