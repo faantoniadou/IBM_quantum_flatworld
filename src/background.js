@@ -13,8 +13,17 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
+    // make window full screen
+    // fullscreen: true,
     width: 1400,
     height: 900,
+    fullscreenable: true,
+    resizable: true,
+    movable: true,
+    closable: true,
+    minimizable: true,
+    maximizable: true,
+    // titleBarStyle: 'hidden',
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info

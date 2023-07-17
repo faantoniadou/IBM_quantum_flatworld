@@ -1,7 +1,9 @@
 <!-- This is the learning page  -->
 <template>
-  <div class="Learning">
-    <h1>Learning Page</h1>
+  <div class="container">
+    <div class="Learning">
+      <h1>Learning Page</h1>
+    </div>
   </div>
 </template>
 
