@@ -7,21 +7,12 @@
             Course Catalogue
           </template>
         </Card>
-        <div>
       </div>
-
     </div>
-      <CourseCard style="display: flex; justify-content: center; width: 650px; height: 100px;"
-          v-for="course in courses"
-          :key="course.id"
-          :title="course.title"
-          :description="course.description"
-        />  
-    </div>
-
   </div>
-
-  
+  <div class="container course-container" style="justify-content: flex-start; display: flex; padding: 30px;">
+    <CourseCard v-for="course in courses" :key="course.id" :title="course.title" :description="course.description" :image="course.image" />
+  </div>
 
   <BackButton/>
 
@@ -29,20 +20,38 @@
 
 
 <script>
+// import { ref } from "vue";
 import BackButton from '../components/BackButton.vue'
 import CourseCard from '../components/CourseCard.vue'
 
-
 export default {
   name: 'Learning',
-  data() {
+  setup() {
     return {
       loading: false,
       courses: [
         {
           id: 1,
           title: "Introduction to Quantum Computing",
-          description: "Learn the basics of computer science, including programming languages, algorithms, data structures, and more.",
+          description: "Learn the basics of computer science, including programming languages, algorithms, data structures, and more.s",
+          image: "https://example.com/images/computer-science.jpg"
+        },
+        {
+          id: 2,
+          title: "The Quantum Computer",
+          description: "Learn the basics of computer science, including programming languages, algorithms, data structures, and more.s",
+          image: "https://example.com/images/computer-science.jpg"
+        },
+        {
+          id: 3,
+          title: "Quantum Algorithms",
+          description: "Learn the basics of computer science, including programming languages, algorithms, data structures, and more.s",
+          image: "https://example.com/images/computer-science.jpg"
+        },
+        {
+          id: 4,
+          title: "Quantum Cryptography",
+          description: "Learn the basics of computer science, including programming languages, algorithms, data structures, and more.s",
           image: "https://example.com/images/computer-science.jpg"
         }
       ]
@@ -51,12 +60,29 @@ export default {
   methods: {
     load() {
       this.loading = true;
-      // do something here, then set loading back to false when finished
     },
   },
   components: {
     BackButton,
-    CourseCard
+    CourseCard,
   }
 }
 </script>
+
+<style scoped>
+
+.course-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Adjust this */
+}
+
+
+/* Each course card will take up roughly 1/3 of the container's width, minus a little for spacing */
+.CourseCard {
+  flex: 0 0 calc(33.333% - 20px); /* The "20px" is for spacing between the cards */
+  margin: 10px; /* Adds a little space around each card */
+}
+
+
+</style>

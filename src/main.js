@@ -19,6 +19,7 @@ import Menubar from 'primevue/menubar';
 import Button from 'primevue/button';
 import Card from 'primevue/card';
 import RadioButton from 'primevue/radiobutton';
+import Carousel from 'primevue/carousel';
 
 
 const app = createApp(App);
@@ -27,6 +28,7 @@ app.use(PrimeVue);
 app.use(router);
 
 app.component('Menubar', Menubar);
+app.component('Carousel', Carousel);
 app.component('Button', Button);
 app.component('Card', Card);
 app.component('RadioButton', RadioButton);

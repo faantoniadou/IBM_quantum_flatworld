@@ -1,20 +1,22 @@
 <template>
-  <div class="card flex align-items-center justify-content-center">
-    <Card :pt="{ body: { class: 'bg-primary border-round-lg' } }" style="width: 25em;">
-      <template #title>
-        <div style="display: flex; align-items: center;">
-          <Button icon="material-icons" rounded style="margin-right: 1em; width: 60px; height: 40px;"><i class="material-icons">school</i></Button>
-          <span>{{ title }}</span>
+  <Card :pt="{ body: { class: 'bg-primary border-round-lg' } }" class="card" style="100px">
+    <template #title>
+        <div class="container">
+          <Button icon="material-icons" class="course-icon" style="width: 44px; margin-right: 10px;" rounded>
+            <i class="material-icons course-icon-image">school</i>
+          </Button>
+          <!-- align the title to the right -->
+          <span class="mr-2">{{ title }}</span>
         </div>
       </template>
-      <template #content>
-        <p>
-          {{ description }}
-        </p>
-      </template>
-    </Card>
-  </div>
+    <template #content>
+      <p>
+        {{ description }}
+      </p>
+    </template>
+  </Card>
 </template>
+
 
 
 
@@ -48,6 +50,21 @@ export default {
 </script>
 
 <style scoped>
+
+.card {
+  width: calc(33.33% - 1em); /* Adjust the width to fit 3 cards in a row */
+  height: 100%;
+  margin: 0.5em;
+}
+
+.course-icon {
+  width: 59px;
+  height: 40px;
+}
+
+
+/* ... rest of your styles ... */
+
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
