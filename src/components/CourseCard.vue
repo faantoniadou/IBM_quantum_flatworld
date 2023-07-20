@@ -97,18 +97,11 @@ export default {
   padding: 2rem;
   /* change the transparency */
   opacity: 0.7;
+  /* make the height fill the container */
+  height: 100%;
 }
 
-.material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
-}
 
-.icon-title-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
 
 .mr-2 {
   margin-right: 0.5rem; /* Adjust as needed */

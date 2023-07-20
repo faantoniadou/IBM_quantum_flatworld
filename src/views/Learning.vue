@@ -36,25 +36,25 @@ export default {
         {
           id: 1,
           title: "Introduction to Quantum Computing",
-          description: "Learn the basics of computer science, including programming languages, algorithms, data structures, and more.s",
+          description: "Learn the basics of quantum computing, including qubits, superposition, quantum teleportation, and more.",
           image: "https://example.com/images/computer-science.jpg"
         },
         {
           id: 2,
           title: "The Quantum Computer",
-          description: "Learn the basics of computer science, including programming languages, algorithms, data structures, and more.s",
+          description: "Explore the inner workings of a quantum computer, including the quantum gates and circuits that make it work.",
           image: "https://example.com/images/computer-science.jpg"
         },
         {
           id: 3,
           title: "Quantum Algorithms",
-          description: "Learn the basics of computer science, including programming languages, algorithms, data structures, and more.s",
+          description: "Find out how quantum computers can be used to solve complex problems, including Shor's algorithm and Grover's algorithm.",
           image: "https://example.com/images/computer-science.jpg"
         },
         {
           id: 4,
           title: "Quantum Cryptography",
-          description: "Learn the basics of computer science, including programming languages, algorithms, data structures, and more.s",
+          description: "Learn how quantum computers can be used to create unbreakable encryption schemes.",
           image: "https://example.com/images/computer-science.jpg"
         }
       ]
