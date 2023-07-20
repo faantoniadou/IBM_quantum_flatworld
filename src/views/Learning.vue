@@ -10,7 +10,7 @@
       </div>
     </div>
   </div>
-  <div class="course-container">
+  <div class="course-container" style="margin-left: 100px;">
     <CourseCard v-for="course in courses" :key="course.id" :title="course.title" :description="course.description" :image="course.image" />
   </div>
 
