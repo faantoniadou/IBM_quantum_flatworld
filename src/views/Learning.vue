@@ -10,9 +10,12 @@
       </div>
     </div>
   </div>
-  <div class="container course-container" style="justify-content: flex-start; display: flex; padding: 30px;">
+  <div class="course-container">
     <CourseCard v-for="course in courses" :key="course.id" :title="course.title" :description="course.description" :image="course.image" />
   </div>
+
+
+
 
   <BackButton/>
 
@@ -74,14 +77,21 @@ export default {
 .course-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Adjust this */
+  justify-content: space-between;
 }
 
 
-/* Each course card will take up roughly 1/3 of the container's width, minus a little for spacing */
 .CourseCard {
-  flex: 0 0 calc(33.333% - 20px); /* The "20px" is for spacing between the cards */
-  margin: 10px; /* Adds a little space around each card */
+  max-width: 500px; /* or whatever max width you prefer */
+  width: 100%;
+  margin: 0.5em 0; /* Adjust as needed */
+}
+
+/* Media query for larger screens: 2 cards per row */
+@media (min-width: 600px) { /* Adjust the breakpoint as needed */
+  .CourseCard {
+    width: calc(50% - 1em); /* The "1em" is for spacing between the cards */
+  }
 }
 
 

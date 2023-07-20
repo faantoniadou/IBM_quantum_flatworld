@@ -1,12 +1,12 @@
 <template>
-  <Card :pt="{ body: { class: 'bg-primary border-round-lg' } }" class="card" style="100px">
+  <Card :pt="{ body: { class: 'bg-primary border-round-lg' } }" class="card">
     <template #title>
-        <div class="container">
+        <div class="container" style="justify-content: space-between;">
           <Button icon="material-icons" class="course-icon" style="width: 44px; margin-right: 10px;" rounded>
             <i class="material-icons course-icon-image">school</i>
           </Button>
           <!-- align the title to the right -->
-          <span class="mr-2">{{ title }}</span>
+          <span class="course-title">{{ title }}</span>
         </div>
       </template>
     <template #content>
@@ -16,6 +16,7 @@
     </template>
   </Card>
 </template>
+
 
 
 
@@ -52,18 +53,33 @@ export default {
 <style scoped>
 
 .card {
-  width: calc(33.33% - 1em); /* Adjust the width to fit 3 cards in a row */
+  width: calc(100% - 2em); /* Adjust the width to fit 3 cards in a row */
   height: 100%;
   margin: 0.5em;
 }
 
-.course-icon {
-  width: 59px;
-  height: 40px;
+/* Media query for larger screens: 2 cards per row and 1 card for smaller screens */
+
+@media (min-width: 576px) { 
+  .card {
+    width: calc(50% - 2em); 
+  }
+}
+
+@media (min-width: 1092px) { 
+  .card {
+    width: calc(33.333% - 2em); 
+  }
 }
 
 
-/* ... rest of your styles ... */
+.course-icon {
+  width: 59px;
+}
+
+.course-title {
+  text-align: right;
+}
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -91,6 +107,7 @@ export default {
 .icon-title-container {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .mr-2 {
