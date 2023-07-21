@@ -3874,9 +3874,11 @@
   color: rgba(255, 255, 255, 0.87);
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0), 0 1px 1px 0 rgba(0, 0, 0, 0), 0 1px 3px 0 rgba(0, 0, 0, 0);
   border-radius: 6px;
+  display: flex;
 }
 .p-card .p-card-body {
   padding: 1.25rem;
+  height: 100%;
 }
 .p-card .p-card-title {
   font-size: 1.5rem;
@@ -3893,6 +3895,8 @@
 }
 .p-card .p-card-footer {
   padding: 1.25rem 0 0 0;
+  align-self: flex-end;
+  bottom: 10px; /* Position it 10px from the bottom of the card */
 }
 
 .p-fieldset {
