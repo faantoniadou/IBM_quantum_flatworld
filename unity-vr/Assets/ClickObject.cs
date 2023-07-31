@@ -8,13 +8,8 @@ public class ClickObject : MonoBehaviour
 {
     public GameObject cube;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    private Vector3 lastMousePosition; // To store the last position of the mouse
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -22,23 +17,31 @@ public class ClickObject : MonoBehaviour
             if (cube == GetClickedObject(out RaycastHit hit))
             {
                 print("clicked/touched!");
+                lastMousePosition = Input.mousePosition; // Store the initial mouse position
             }
         }
-        if (Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButton(0) && !isPointerOverUIObject())
+
+            lastMousePosition = Input.mousePosition;
+
+        else if (Input.GetMouseButtonUp(0))
         {
-            print("Mouse is off!");
+            //print("Mouse is off!");
         }
     }
 
-    GameObject GetClickedObject(out RaycastHit hit)
+
+GameObject GetClickedObject(out RaycastHit hit)
     {
         GameObject target = null;
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
         {
+            Debug.Log("Raycast hit: " + hit.collider.name);
             if (!isPointerOverUIObject()) { target = hit.collider.gameObject; }
         }
         return target;
+
     }
     private bool isPointerOverUIObject()
     {
