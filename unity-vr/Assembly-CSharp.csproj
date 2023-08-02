@@ -58,9 +58,26 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/ObjectLabeler.cs" />
-    <Compile Include="Assets/RotateObject.cs" />
-    <Compile Include="Assets/ClickObject.cs" />
+    <Compile Include="Assets/Unity UI Samples/Scripts/PanelManager.cs" />
+    <Compile Include="Assets/Unity UI Samples/Scripts/ChangeColor.cs" />
+    <Compile Include="Assets/Unity UI Samples/Scripts/ShowSliderValue.cs" />
+    <Compile Include="Assets/Scripts/ClickObject.cs" />
+    <Compile Include="Assets/Unity UI Samples/Scripts/ResizePanel.cs" />
+    <Compile Include="Assets/Scripts/ObjectLabeler.cs" />
+    <Compile Include="Assets/Scripts/CloseLabel.cs" />
+    <Compile Include="Assets/Unity UI Samples/Scripts/TiltWindow.cs" />
+    <Compile Include="Assets/Unity UI Samples/Scripts/ApplicationManager.cs" />
+    <Compile Include="Assets/Unity UI Samples/Scripts/DragMe.cs" />
+    <Compile Include="Assets/Unity UI Samples/Scripts/DropMe.cs" />
+    <Compile Include="Assets/Unity UI Samples/Scripts/ActiveStateToggler.cs" />
+    <Compile Include="Assets/Unity UI Samples/Scripts/DragPanel.cs" />
+    <Compile Include="Assets/Unity UI Samples/Scripts/ScrollDetailTexture.cs" />
+    <Compile Include="Assets/Scripts/RotateObject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets/Unity UI Samples/Textures and Sprites/SF UI/Background/LICENSE.txt" />
+    <None Include="Assets/Unity UI Samples/Materials/UI-Default-No-Alpha.shader" />
+    <None Include="Assets/Unity UI Samples/Fonts/Jupiter/LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -755,6 +772,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="DevionGames.Utilities.csproj">
+      <Project>{9EE59CA6-D04D-DD4A-010A-46357A422011}</Project>
+      <Name>DevionGames.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="DevionGames.UIWidgets.csproj">
+      <Project>{767C3FA3-F2C4-45F9-2ADC-883B10387687}</Project>
+      <Name>DevionGames.UIWidgets</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
