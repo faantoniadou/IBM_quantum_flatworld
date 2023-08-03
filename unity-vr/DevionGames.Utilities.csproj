@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9EE59CA6-D04D-DD4A-010A-46357A422011}</ProjectGuid>
+    <ProjectGuid>{660B05C9-7501-A84C-AA17-D003D38A824F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>DevionGames.Utilities</AssemblyName>
@@ -63,8 +63,8 @@
     <Compile Include="Assets/Devion Games/Utilities/Scripts/Runtime/PropertyBinding.cs" />
     <Compile Include="Assets/Devion Games/Utilities/Scripts/Runtime/SetCursorLockState.cs" />
     <Compile Include="Assets/Devion Games/Utilities/Scripts/Runtime/CoroutineQueue.cs" />
-    <Compile Include="Assets/Devion Games/Utilities/Scripts/Runtime/Attributes/IconAttribute.cs" />
     <Compile Include="Assets/Devion Games/Utilities/Scripts/Runtime/MoveForward.cs" />
+    <Compile Include="Assets/Devion Games/Utilities/Scripts/Runtime/Attributes/IconAttribute.cs" />
     <Compile Include="Assets/Devion Games/Utilities/Scripts/Runtime/Attributes/ExcludeFromCreation.cs" />
     <Compile Include="Assets/Devion Games/Utilities/Scripts/Runtime/Json/JsonSerializer.cs" />
     <Compile Include="Assets/Devion Games/Utilities/Scripts/Runtime/SelectableObject.cs" />

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D0F74257-F6B2-DCEA-FC51-AA11C694D4B0}</ProjectGuid>
+    <ProjectGuid>{A5D8E099-31ED-BB8B-367C-C7DCF76C0620}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,22 +62,56 @@
     <Compile Include="Assets/Unity UI Samples/Scripts/ChangeColor.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/ShowSliderValue.cs" />
     <Compile Include="Assets/Scripts/ClickObject.cs" />
+    <Compile Include="Assets/Scripts/ObjectHoverEffect.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/ResizePanel.cs" />
     <Compile Include="Assets/Scripts/ObjectLabeler.cs" />
     <Compile Include="Assets/Scripts/CloseLabel.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/TiltWindow.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/ApplicationManager.cs" />
+    <Compile Include="Assets/Ultimate 10 Plus Shaders/Scripts/U10PS_MouseRotation.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/DragMe.cs" />
+    <Compile Include="Assets/Ultimate 10 Plus Shaders/Scripts/U10PS_ExampleReview.cs" />
+    <Compile Include="Assets/Ultimate 10 Plus Shaders/Scripts/U10PS_SnowOverTime.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/DropMe.cs" />
+    <Compile Include="Assets/Ultimate 10 Plus Shaders/Scripts/U10PS_DissolveOverTime.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/ActiveStateToggler.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/DragPanel.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/ScrollDetailTexture.cs" />
+    <Compile Include="Assets/Ultimate 10 Plus Shaders/Shaders/Plexus/Plexus.cs" />
+    <Compile Include="Assets/Scripts/ViewObject.cs" />
     <Compile Include="Assets/Scripts/RotateObject.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Edge Detection.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Grass Sway.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Blur.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Plexus/Plexus.compute" />
+    <None Include="Assets/Materials/Ocean.shader" />
     <None Include="Assets/Unity UI Samples/Textures and Sprites/SF UI/Background/LICENSE.txt" />
+    <None Include="Assets/Materials/Outline.shader" />
+    <None Include="Assets/Materials/Dissolve.shader" />
     <None Include="Assets/Unity UI Samples/Materials/UI-Default-No-Alpha.shader" />
+    <None Include="Assets/Materials/Edge Detection.shader" />
+    <None Include="Assets/Materials/Blur.shader" />
+    <None Include="Assets/Materials/Force Field.shader" />
+    <None Include="Assets/Materials/Simple Sine Wave.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Depth Mask Edge Detection.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Ocean.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Dissolve.shader" />
+    <None Include="Assets/Materials/Snow.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Plasma.shader" />
+    <None Include="Assets/Materials/Force Field 1.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Outline.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Plexus/Plexus Line.shader" />
+    <None Include="Assets/Materials/Grass Sway.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Snow.shader" />
     <None Include="Assets/Unity UI Samples/Fonts/Jupiter/LICENSE.txt" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Lava3D.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Force Field.shader" />
+    <None Include="Assets/Materials/Depth Mask Edge Detection.shader" />
+    <None Include="Assets/Materials/Plasma.shader" />
+    <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Simple Sine Wave.shader" />
+    <None Include="Assets/Materials/Lava3D.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -773,11 +807,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="DevionGames.Utilities.csproj">
-      <Project>{9EE59CA6-D04D-DD4A-010A-46357A422011}</Project>
+      <Project>{660B05C9-7501-A84C-AA17-D003D38A824F}</Project>
       <Name>DevionGames.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="DevionGames.UIWidgets.csproj">
-      <Project>{767C3FA3-F2C4-45F9-2ADC-883B10387687}</Project>
+      <Project>{0B31B737-626F-FB23-94D4-EBB31A8D83D8}</Project>
       <Name>DevionGames.UIWidgets</Name>
     </ProjectReference>
   </ItemGroup>

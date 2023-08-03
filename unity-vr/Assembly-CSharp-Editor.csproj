@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{80351938-A37C-F03F-AD7D-072AA384A0CF}</ProjectGuid>
+    <ProjectGuid>{88F947B4-21C6-5084-1F7F-F9F566FE376F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -58,8 +58,8 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Devion Games/Module Manager/Editor/UpdateNotificationWindow.cs" />
     <Compile Include="Assets/Devion Games/Utilities/Scripts/Editor/Collection Editor/ObjectCollectionEditor.cs" />
+    <Compile Include="Assets/Devion Games/Module Manager/Editor/UpdateNotificationWindow.cs" />
     <Compile Include="Assets/Devion Games/Utilities/Scripts/Editor/Asset/AssetWindow.cs" />
     <Compile Include="Assets/Devion Games/Utilities/Scripts/Editor/Internal/BuiltInResourcesWindow.cs" />
     <Compile Include="Assets/Devion Games/UI Widgets/Scripts/Editor/UIContainerInspector.cs" />
@@ -844,15 +844,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{D0F74257-F6B2-DCEA-FC51-AA11C694D4B0}</Project>
+      <Project>{A5D8E099-31ED-BB8B-367C-C7DCF76C0620}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="DevionGames.Utilities.csproj">
-      <Project>{9EE59CA6-D04D-DD4A-010A-46357A422011}</Project>
+      <Project>{660B05C9-7501-A84C-AA17-D003D38A824F}</Project>
       <Name>DevionGames.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="DevionGames.UIWidgets.csproj">
-      <Project>{767C3FA3-F2C4-45F9-2ADC-883B10387687}</Project>
+      <Project>{0B31B737-626F-FB23-94D4-EBB31A8D83D8}</Project>
       <Name>DevionGames.UIWidgets</Name>
     </ProjectReference>
   </ItemGroup>

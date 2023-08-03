@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{767C3FA3-F2C4-45F9-2ADC-883B10387687}</ProjectGuid>
+    <ProjectGuid>{0B31B737-626F-FB23-94D4-EBB31A8D83D8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>DevionGames.UIWidgets</AssemblyName>
@@ -766,7 +766,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="DevionGames.Utilities.csproj">
-      <Project>{9EE59CA6-D04D-DD4A-010A-46357A422011}</Project>
+      <Project>{660B05C9-7501-A84C-AA17-D003D38A824F}</Project>
       <Name>DevionGames.Utilities</Name>
     </ProjectReference>
   </ItemGroup>

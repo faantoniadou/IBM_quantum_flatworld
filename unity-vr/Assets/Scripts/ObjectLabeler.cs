@@ -1,34 +1,39 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ObjectLabeler : MonoBehaviour
+public class CombinedEffect : MonoBehaviour
 {
+    // HoverEffect variables
+    public Material hoverMaterial;
+    private Material[] defaultMaterials;
+
+    // ObjectLabeler variables
+    public string title; // The title for this part
     public string description; // The description for this part
     public GameObject labelPrefab; // The UI Text or Panel prefab
     public Vector2 screenPosition; // Position on the screen where the label should appear
 
     private GameObject currentLabel; // The label currently being displayed
-    private GameObject outline; // The outline object
 
     private void Start()
     {
-        // Create the outline by duplicating the current object
-        outline = Instantiate(gameObject, transform.position, transform.rotation, transform.parent);
-        outline.transform.localScale = new Vector3(1.05f, 1.05f, 1.05f); // Slightly larger than the original object
-        outline.GetComponent<Renderer>().material.color = Color.black; // Set outline color
-        outline.SetActive(false); // Initially set it to inactive
+        // HoverEffect Start logic
+        defaultMaterials = GetComponent<Renderer>().materials;
     }
 
-    void OnMouseOver()
+    private void OnMouseEnter()
     {
-        outline.SetActive(true); // Show the outline when the mouse hovers over the object
+        if (hoverMaterial)
+        {
+            GetComponent<Renderer>().material = hoverMaterial;
+            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto); // Change to hand cursor
+        }
     }
 
-    void OnMouseExit()
+    private void OnMouseExit()
     {
-        outline.SetActive(false); // Hide the outline when the mouse is no longer over the object
-
-        if (currentLabel != null) Destroy(currentLabel); // Destroy the label
+        GetComponent<Renderer>().materials = defaultMaterials;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto); // Change back to default cursor
     }
 
     void OnMouseDown()
@@ -37,11 +42,15 @@ public class ObjectLabeler : MonoBehaviour
 
         currentLabel = Instantiate(labelPrefab, Vector3.zero, Quaternion.identity); // Create a new label
         currentLabel.transform.SetParent(GameObject.Find("Canvas").transform, false); // Set the canvas as the parent
+        currentLabel.SetActive(true); // Ensure the label is active
         currentLabel.GetComponentInChildren<Text>().text = description; // Set the text of the label
 
-        // Position the label at the specified screen position
-        RectTransform canvasRect = GameObject.Find("Canvas").GetComponent<RectTransform>();
-        currentLabel.GetComponent<RectTransform>().anchoredPosition = new Vector2(canvasRect.sizeDelta.x * screenPosition.x, canvasRect.sizeDelta.y * screenPosition.y);
+        // Set the position and scale of the label
+        RectTransform rectTransform = currentLabel.GetComponent<RectTransform>();
+        rectTransform.offsetMin = new Vector2(421.34f, 653f); // Left, Bottom
+        rectTransform.offsetMax = new Vector2(-2351.993f, -907f); // -Right, -Top (because it's from the top-right corner)
+        rectTransform.localPosition = new Vector3(rectTransform.localPosition.x, rectTransform.localPosition.y, 813.61f);
+        currentLabel.transform.localScale = new Vector3(1.896934f, 1.21544f, 1.407513f);
 
         // Add functionality to the 'X' button to close the label
         Button closeButton = currentLabel.GetComponentInChildren<Button>(); // Assuming the button is a child of the label prefab
