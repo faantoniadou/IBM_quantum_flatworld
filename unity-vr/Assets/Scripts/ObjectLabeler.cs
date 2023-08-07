@@ -12,6 +12,7 @@ public class CombinedEffect : MonoBehaviour
     public string description; // The description for this part
     public GameObject labelPrefab; // The UI Text or Panel prefab
     public Vector2 screenPosition; // Position on the screen where the label should appear
+    public GameObject welcomePanel; // Reference to the Welcome Panel
 
     private GameObject currentLabel; // The label currently being displayed
 
@@ -68,6 +69,11 @@ public class CombinedEffect : MonoBehaviour
             {
                 textComponent.text = description;
             }
+        }
+
+        if (welcomePanel.activeSelf) // Check if the welcome panel is currently active
+        {
+            welcomePanel.SetActive(false); // Hide the welcome panel
         }
     }
 }
