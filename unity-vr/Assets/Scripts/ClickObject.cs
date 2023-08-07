@@ -37,7 +37,7 @@ GameObject GetClickedObject(out RaycastHit hit)
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray.origin, ray.direction * 10, out hit))
         {
-            Debug.Log("Raycast hit: " + hit.collider.name);
+            //Debug.Log("Raycast hit: " + hit.collider.name);
             if (!isPointerOverUIObject()) { target = hit.collider.gameObject; }
         }
         return target;

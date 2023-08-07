@@ -55,5 +55,19 @@ public class CombinedEffect : MonoBehaviour
         // Add functionality to the 'X' button to close the label
         Button closeButton = currentLabel.GetComponentInChildren<Button>(); // Assuming the button is a child of the label prefab
         closeButton.onClick.AddListener(() => Destroy(currentLabel));
+
+        // Get all Text components in the label
+        Text[] texts = currentLabel.GetComponentsInChildren<Text>();
+        foreach (Text textComponent in texts)
+        {
+            if (textComponent.name == "TitleLabel") // Assuming the title Text component is named "TitleLabel"
+            {
+                textComponent.text = title;
+            }
+            else if (textComponent.name == "DescriptionField") // Assuming the description Text component is named "DescriptionField"
+            {
+                textComponent.text = description;
+            }
+        }
     }
 }
