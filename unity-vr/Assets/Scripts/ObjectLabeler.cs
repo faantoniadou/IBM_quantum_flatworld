@@ -14,7 +14,7 @@ public class CombinedEffect : MonoBehaviour
     public Vector2 screenPosition; // Position on the screen where the label should appear
     public GameObject welcomePanel; // Reference to the Welcome Panel
 
-    private GameObject currentLabel; // The label currently being displayed
+    private static GameObject currentLabel; // The label currently being displayed
 
     private void Start()
     {
@@ -39,6 +39,12 @@ public class CombinedEffect : MonoBehaviour
 
     void OnMouseDown()
     {
+        // If there's an existing label, destroy it
+        if (currentLabel != null)
+        {
+            Destroy(currentLabel);
+        }
+
         if (currentLabel != null) Destroy(currentLabel); // Destroy the current label if it exists
 
         currentLabel = Instantiate(labelPrefab, Vector3.zero, Quaternion.identity); // Create a new label
@@ -75,5 +81,7 @@ public class CombinedEffect : MonoBehaviour
         {
             welcomePanel.SetActive(false); // Hide the welcome panel
         }
+
+        
     }
 }

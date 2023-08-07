@@ -2272,6 +2272,7 @@ GameObject:
   - component: {fileID: 8307268465099289086}
   - component: {fileID: 233598413473335793}
   - component: {fileID: 3950667299776120927}
+  - component: {fileID: 8307268465099289087}
   m_Layer: 0
   m_Name: Object_7
   m_TagString: Untagged
@@ -2644,6 +2645,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7986046214764925682}
   m_Mesh: {fileID: -4294552576481311072, guid: b467547e5cf294da3a2ace51426d375f, type: 3}
+--- !u!114 &8307268465099289087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986046214764925682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0666cf1589a940dfa17f27e1c930677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverMaterial: {fileID: 2100000, guid: 40e45ec6b5b4d4b938896751b4f70b9f, type: 2}
+  title: Superconducting Coaxial Lines
+  description: 'These coaxial lines direct signals between the first and second amplifying
+    stages. They are made out of superconductors to eliminate energy loss. '
+  labelPrefab: {fileID: 7481040855274256414, guid: a66fafc066f4d42db9eda1a20f5e8291, type: 3}
+  screenPosition: {x: 0, y: 0}
+  welcomePanel: {fileID: 7481040855252655684}
 --- !u!1 &8672633073500539795
 GameObject:
   m_ObjectHideFlags: 0
