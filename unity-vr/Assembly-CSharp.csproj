@@ -68,6 +68,7 @@
     <Compile Include="Assets/Scripts/CloseLabel.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/TiltWindow.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/ApplicationManager.cs" />
+    <Compile Include="Assets/Scripts/ExitGame.cs" />
     <Compile Include="Assets/Ultimate 10 Plus Shaders/Scripts/U10PS_MouseRotation.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/DragMe.cs" />
     <Compile Include="Assets/Ultimate 10 Plus Shaders/Scripts/U10PS_ExampleReview.cs" />
