@@ -15,16 +15,14 @@
       </p>
     </template>
     <template #footer>
-      <Button label="Start" class="start-button" style="position: relative;" outlined />
+      <Button label="Start" class="start-button" style="position: relative;" outlined @click="startCourse" />
     </template>
   </Card>
 </template>
 
 
-
-
-
 <script>
+
 export default {
   name: 'CourseCard',
   props: {
@@ -48,10 +46,16 @@ export default {
       type: String,
       required: false
     },
-    // add more props as necessary
+  },
+
+  methods: {
+    startCourse() {
+      this.$emit('start-course', this.title);
+    }
   }
 }
 </script>
+
 <style scoped>
 
 .card {

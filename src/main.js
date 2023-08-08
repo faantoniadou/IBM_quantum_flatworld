@@ -6,12 +6,12 @@ import PrimeVue from 'primevue/config';
 import './styles/_theme.scss';
 
 import { router } from './router';
+// import { config } from 'vue/compiler-dom'
+
 // import routes from './router/index.js';
 import 'primevue/resources/themes/saga-blue/theme.css';
 import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
-
-
 
 // primevue
 
@@ -32,6 +32,11 @@ app.component('Carousel', Carousel);
 app.component('Button', Button);
 app.component('Card', Card);
 app.component('RadioButton', RadioButton);
+
+app.config.isCustomElement = tag => tag.startsWith('Unity-');
+// config.isCustomElement = tag => tag.startsWith('Unity-')
+
+app.config.allowedNonProps = ['UnityWebgl', 'UnityLoader'];
 
 app.mount('#app');
 

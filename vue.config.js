@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service');
 module.exports = defineConfig({
+  runtimeCompiler: true,
   transpileDependencies: true,
   css: {
     extract: true, // FALSE: causes a problem with SSR, prefer :style
@@ -8,4 +9,16 @@ module.exports = defineConfig({
     lintStyleOnBuild: true,
     stylelint: {},
   },
+  chainWebpack: config => {
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+      .tap(options => {
+        options.compilerOptions = {
+          ...options.compilerOptions,
+          isCustomElement: tag => tag.startsWith('Unity-')
+        }
+        return options
+      })
+  }
 });
