@@ -22,80 +22,74 @@
   </div>
 
   <BackButton/>
-  <QuantumComputer v-if="showGame"/>
+  <!-- <QuantumComputer v-if="showGame.valueOf"/> -->
+  <QuantumComputer />
 
 
 </template>
 
 
 <script>
-// import { ref } from "vue";
-import BackButton from '../components/BackButton.vue'
-import CourseCard from '../components/CourseCard.vue'
+import { ref } from "vue";
+import BackButton from '../components/BackButton.vue';
+import CourseCard from '../components/CourseCard.vue';
 import QuantumComputer from '../components/QuantumComputer.vue';
-import { ref } from 'vue';
 
 export default {
   name: 'Learning',
-
-  setup() {
-    // Data Properties
-    const showGame = ref(false);
-    const courses = ref([
-      {
-        id: 1,
-        title: "Introduction to Quantum Computing",
-        description: "Learn the basics of quantum computing, including qubits, superposition, quantum teleportation, and more.",
-        image: "https://example.com/images/computer-science.jpg"
-      },
-      {
-        id: 2,
-        title: "The Quantum Computer",
-        description: "Explore the inner workings of a quantum computer, including the quantum gates and circuits that make it work.",
-        image: "https://example.com/images/computer-science.jpg",
-      },
-      {
-        id: 3,
-        title: "Quantum Algorithms",
-        description: "Find out how quantum computers can be used to solve complex problems, including Shor's algorithm and Grover's algorithm.",
-        image: "https://example.com/images/computer-science.jpg"
-      },
-      {
-        id: 4,
-        title: "Quantum Cryptography",
-        description: "Learn how quantum computers can be used to create unbreakable encryption schemes.",
-        image: "https://example.com/images/computer-science.jpg"
-      }
-    ]);
-
-    // Methods
-    const checkCourse = (title) => {
-      if (title === "The Quantum Computer") {
-        console.log(title);
-        showGame.value = true;  // Note the usage of `.value` here
-      }
-    };
-
-    const load = () => {
-      // Assuming you want to use this method for some purpose later
-      // Placeholder function for now
-    };
-
-    // Return properties and methods to the template
-    return {
-      showGame,
-      courses,
-      checkCourse,
-      load
-    };
-  },
-
   components: {
     BackButton,
     CourseCard,
     QuantumComputer
-  }
-}
+  },
+
+  setup() {
+    // Reactive properties using 'ref'
+    const showGame = ref(false);
+    const courses = ref([
+        {
+          id: 1,
+          title: "Introduction to Quantum Computing",
+          description: "Learn the basics of quantum computing, including qubits, superposition, quantum teleportation, and more.",
+          image: "https://example.com/images/computer-science.jpg"
+        },
+        {
+          id: 2,
+          title: "The Quantum Computer",
+          description: "Explore the inner workings of a quantum computer, including the quantum gates and circuits that make it work.",
+          image: "https://example.com/images/computer-science.jpg",
+        },
+        {
+          id: 3,
+          title: "Quantum Algorithms",
+          description: "Find out how quantum computers can be used to solve complex problems, including Shor's algorithm and Grover's algorithm.",
+          image: "https://example.com/images/computer-science.jpg"
+        },
+        {
+          id: 4,
+          title: "Quantum Cryptography",
+          description: "Learn how quantum computers can be used to create unbreakable encryption schemes.",
+          image: "https://example.com/images/computer-science.jpg"
+        }
+      ]);
+
+      // Method to check the course title and show the game
+      const checkCourse = (title) => {
+        console.log("Received start-course with title:", title);
+        if(title === "The Quantum Computer") {
+          showGame.value = true;
+        }
+      };
+
+      // Return reactive properties and methods to the template
+      return {
+        showGame,
+        courses,
+        checkCourse
+      };
+    },
+  };
+
 </script>
 
 <style scoped>

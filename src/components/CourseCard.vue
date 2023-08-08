@@ -50,7 +50,8 @@ export default {
 
   methods: {
     startCourse() {
-      this.$emit('start-course', this.title);
+    console.log("Emitting start-course with title:", this.title);
+    this.$emit('start-course', this.title);
     }
   }
 }
