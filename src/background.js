@@ -67,6 +67,13 @@ ipcMain.on('open-unity-window', () => {
   }
 });
 
+ipcMain.on('close-unity-window', () => {
+  if(unityWindow) {
+    unityWindow.close();
+    unityWindow = null;
+  }
+});
+
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar

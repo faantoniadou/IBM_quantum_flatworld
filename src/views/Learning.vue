@@ -62,12 +62,12 @@ export default {
           description: "Find out how quantum computers can be used to solve complex problems, including Shor's algorithm and Grover's algorithm.",
           image: "https://example.com/images/computer-science.jpg"
         },
-        {
-          id: 4,
-          title: "Quantum Cryptography",
-          description: "Learn how quantum computers can be used to create unbreakable encryption schemes.",
-          image: "https://example.com/images/computer-science.jpg"
-        }
+        // {
+        //   id: 4,
+        //   title: "Quantum Cryptography",
+        //   description: "Learn how quantum computers can be used to create unbreakable encryption schemes.",
+        //   image: "https://example.com/images/computer-science.jpg"
+        // }
       ]);
 
       // Method to check the course title and show the game
