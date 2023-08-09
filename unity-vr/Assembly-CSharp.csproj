@@ -113,6 +113,7 @@
     <None Include="Assets/Materials/Plasma.shader" />
     <None Include="Assets/Ultimate 10 Plus Shaders/Shaders/Simple Sine Wave.shader" />
     <None Include="Assets/Materials/Lava3D.shader" />
+    <None Include="Assets\Plugins\NewFile.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

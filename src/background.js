@@ -4,6 +4,7 @@ import { ipcMain, app, protocol, BrowserWindow } from 'electron';
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer';
 import path from 'path';
+import dotenv from 'dotenv';
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 
@@ -61,16 +62,20 @@ ipcMain.on('open-unity-window', () => {
       }
     });
     // Load Unity content here
-    unityWindow.loadURL('http://localhost:8081');
+    unityWindow.loadURL(process.env.GAME_URL || 'http://localhost:8081');
   } catch (error) {
     console.log(error);
   }
 });
 
 ipcMain.on('close-unity-window', () => {
-  if(unityWindow) {
-    unityWindow.close();
-    unityWindow = null;
+  try {
+    if(unityWindow) {
+      unityWindow.close();
+      unityWindow = null;
+    }
+  } catch (error) {
+    console.log(error);
   }
 });
 

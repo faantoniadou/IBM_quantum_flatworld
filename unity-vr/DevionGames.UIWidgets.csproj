@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Devion Games/UI Widgets/Scripts/Runtime/DevionGames.UIWidgets.asmdef" />
+    <None Include="Assets\Plugins\NewFile.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

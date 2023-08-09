@@ -1,28 +1,20 @@
 ﻿<Properties StartupConfiguration="{A5D8E099-31ED-BB8B-367C-C7DCF76C0620}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ExitGame.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/.jslib">
     <Files>
       <File FileName="Assets/Scripts/ViewObject.cs" Line="24" Column="6" />
       <File FileName="Assets/Scripts/CloseLabel.cs" />
       <File FileName="Assets/Scripts/ClickObject.cs" />
       <File FileName="Assets/Scripts/ObjectLabeler.cs" />
-      <File FileName="Assets/Scripts/ExitGame.cs" Line="14" Column="1" />
-      <File FileName="Assets/Devion Games/Utilities/Scripts/Editor/EditorTools.cs" Line="687" Column="1" />
+      <File FileName="Assets/Scripts/ExitGame.cs" Line="4" Column="2" />
+      <File FileName="Assets/Devion Games/Utilities/Scripts/Editor/EditorTools.cs" />
+      <File FileName="Assets/Plugins/NewFile.txt" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="unity-vr" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Devion Games" expanded="True">
-                <Node name="Utilities" expanded="True">
-                  <Node name="Scripts" expanded="True">
-                    <Node name="Editor" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="Scripts" expanded="True">
-                <Node name="ViewObject.cs" selected="True" />
-              </Node>
+              <Node name="Plugins" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -31,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="acee7961-720a-45bc-ade8-038de62f09d6" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="032273d4-2eb7-46d1-85ec-4b8361e6d9af" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

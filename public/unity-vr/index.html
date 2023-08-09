@@ -117,10 +117,12 @@
 
       document.body.appendChild(script);
 
-      function QuitUnityGame() {
-        console.log('QuitUnityGame');
-        window.ipcRenderer.send('close-unity-window');
-      }
+      mergeInto(LibraryManager.library, {
+        QuitUnityGame: function() {
+          console.log('QUITTING THE UNITY GAME NOW');
+          window.ipcRenderer.send('close-unity-window');
+        }
+      }); 
 
     </script>
   </body>
