@@ -117,12 +117,17 @@
 
       document.body.appendChild(script);
 
-      mergeInto(LibraryManager.library, {
-        QuitUnityGame: function() {
-          console.log('QUITTING THE UNITY GAME NOW');
-          window.ipcRenderer.send('close-unity-window');
-        }
-      }); 
+      // mergeInto(LibraryManager.library, {
+      //   QuitUnityGame: function() {
+      //     console.log('QUITTING THE UNITY GAME NOW');
+      //     window.ipcRenderer.send('close-unity-window');
+      //   }
+      // }); 
+
+      // function OnUnityExit() {
+      //   // Change this URL to wherever you want to redirect upon exit.
+      //   window.location.href = 'https://localhost:8080/learning';
+      // }
 
     </script>
   </body>
