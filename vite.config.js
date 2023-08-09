@@ -16,6 +16,9 @@ export default defineConfig({
       isCustomElement: tag => tag === 'UnityWebgl'
     }
   },
+  ssr: {
+    external: ['vue', 'vue-router'],
+  },
 });
 
 

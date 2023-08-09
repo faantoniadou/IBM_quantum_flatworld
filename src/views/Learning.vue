@@ -34,6 +34,7 @@ import { ref } from "vue";
 import BackButton from '../components/BackButton.vue';
 import CourseCard from '../components/CourseCard.vue';
 import QuantumComputer from '../components/QuantumComputer.vue';
+import { useRouter } from 'vue-router';
 
 export default {
   name: 'Learning',
@@ -45,7 +46,10 @@ export default {
 
   setup() {
     // Reactive properties using 'ref'
-    const showGame = ref(false);
+    const router = useRouter();
+    // const route = useRoute();
+
+    // const showGame = ref(false);
     const courses = ref([
         {
           id: 1,
@@ -77,13 +81,16 @@ export default {
       const checkCourse = (title) => {
         console.log("Received start-course with title:", title);
         if(title === "The Quantum Computer") {
-          showGame.value = true;
+          // showGame.value = true;
+          
+          // Navigate to the quantum computer route
+          router.push('/quantum-computer');
         }
       };
 
       // Return reactive properties and methods to the template
       return {
-        showGame,
+        // showGame,
         courses,
         checkCourse
       };
