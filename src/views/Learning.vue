@@ -31,7 +31,6 @@
 import { ref } from "vue";
 import BackButton from '../components/BackButton.vue';
 import CourseCard from '../components/CourseCard.vue';
-// import QuantumComputer from '../components/QuantumComputer.vue';
 
 
 export default {
@@ -43,11 +42,7 @@ export default {
   },
 
   setup() {
-    // Reactive properties using 'ref'
-    // const router = useRouter();
-    // const route = useRoute();
-
-    // const showGame = ref(false);
+    
     const courses = ref([
         {
           id: 1,
@@ -80,22 +75,19 @@ export default {
         // console.log("Received start-course with title:", title);
         if(title === "The Quantum Computer") {
           
-          // showGame.value = true;
-          
           // Navigate to the quantum computer route
           // router.push('/quantum-computer');
           if (window.ipcRenderer) {
-              console.log('ipcRenderer exists');
+              // console.log('ipcRenderer exists');
               window.ipcRenderer.send('open-unity-window');
           } else {
-              console.log('ipcRenderer does not exist');
+              // console.log('ipcRenderer does not exist');
           }
         }
       };
 
       // Return reactive properties and methods to the template
       return {
-        // showGame,
         courses,
         checkCourse
       };

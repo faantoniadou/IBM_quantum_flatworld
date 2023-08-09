@@ -51,8 +51,8 @@ ipcMain.on('open-unity-window', () => {
   try {
     console.log("Received IPC message to open Unity window");
     let unityWindow = new BrowserWindow({
-      width: 800,
-      height: 600,
+      // make window full screen
+      fullscreen: true,
       webPreferences: {
         nodeIntegration: false,
         contextIsolation: true,
