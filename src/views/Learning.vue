@@ -34,7 +34,7 @@ import { ref } from "vue";
 import BackButton from '../components/BackButton.vue';
 import CourseCard from '../components/CourseCard.vue';
 import QuantumComputer from '../components/QuantumComputer.vue';
-import { useRouter } from 'vue-router';
+
 
 export default {
   name: 'Learning',
@@ -46,7 +46,7 @@ export default {
 
   setup() {
     // Reactive properties using 'ref'
-    const router = useRouter();
+    // const router = useRouter();
     // const route = useRoute();
 
     // const showGame = ref(false);
@@ -84,7 +84,10 @@ export default {
           // showGame.value = true;
           
           // Navigate to the quantum computer route
-          router.push('/quantum-computer');
+          // router.push('/quantum-computer');
+          if (window.ipcRenderer) {
+            window.ipcRenderer.send('open-unity-window');
+          }
         }
       };
 
