@@ -29,9 +29,10 @@ async function createWindow() {
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
+      nodeIntegration: false,
+      contextIsolation: true,
+      enableRemoteModule: true,
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
-      contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION,
     },
   });
 
@@ -46,31 +47,24 @@ async function createWindow() {
   }
 }
 
-async function createUnityWindow() {
-  const unityWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: false, // for security reasons
-      contextIsolation: true
-    }
-  })
-
-  // Load the Unity WebGL build
-  unityWindow.loadURL('http://localhost:8081')
-}
-
 ipcMain.on('open-unity-window', () => {
-  let unityWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
-      contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION,
-    }
-  });
-  // Load Unity content here
-  unityWindow.loadURL('http://localhost:8081');
+  try {
+    console.log("Received IPC message to open Unity window");
+    let unityWindow = new BrowserWindow({
+      width: 800,
+      height: 600,
+      webPreferences: {
+        nodeIntegration: false,
+        contextIsolation: true,
+        enableRemoteModule: true,
+        preload: path.join(__dirname, 'preload.js'),
+      }
+    });
+    // Load Unity content here
+    unityWindow.loadURL('http://localhost:8081');
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 // Quit when all windows are closed.
@@ -111,6 +105,7 @@ if (isDevelopment) {
         app.quit();
       }
     });
+
   } else {
     process.on('SIGTERM', () => {
       app.quit();

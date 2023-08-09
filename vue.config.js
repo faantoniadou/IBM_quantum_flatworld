@@ -8,6 +8,8 @@ module.exports = defineConfig({
   pluginOptions: {
     lintStyleOnBuild: true,
     stylelint: {},
+    electronBuilder: {
+      preload: '/src/preload.js',
   },
   chainWebpack: config => {
     config.module
@@ -20,5 +22,6 @@ module.exports = defineConfig({
         }
         return options
       })
-  }
+    }
+  },
 });

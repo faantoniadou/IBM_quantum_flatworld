@@ -16,7 +16,12 @@ export default {
   name: 'App',
   components: {
     MenubarComponent
-  }
+  },
+  // methods: {
+  //   test(){
+  //     window.ipcRenderer.send('open-unity-window');
+  //   }
+  // }
 }
 </script>
 

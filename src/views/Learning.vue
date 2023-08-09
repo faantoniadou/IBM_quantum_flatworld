@@ -22,8 +22,6 @@
   </div>
 
   <BackButton/>
-  <!-- <QuantumComputer v-if="showGame.valueOf"/> -->
-  <QuantumComputer />
 
 
 </template>
@@ -33,7 +31,7 @@
 import { ref } from "vue";
 import BackButton from '../components/BackButton.vue';
 import CourseCard from '../components/CourseCard.vue';
-import QuantumComputer from '../components/QuantumComputer.vue';
+// import QuantumComputer from '../components/QuantumComputer.vue';
 
 
 export default {
@@ -41,7 +39,7 @@ export default {
   components: {
     BackButton,
     CourseCard,
-    QuantumComputer
+    // QuantumComputer
   },
 
   setup() {
@@ -79,14 +77,18 @@ export default {
 
       // Method to check the course title and show the game
       const checkCourse = (title) => {
-        console.log("Received start-course with title:", title);
+        // console.log("Received start-course with title:", title);
         if(title === "The Quantum Computer") {
+          
           // showGame.value = true;
           
           // Navigate to the quantum computer route
           // router.push('/quantum-computer');
           if (window.ipcRenderer) {
-            window.ipcRenderer.send('open-unity-window');
+              console.log('ipcRenderer exists');
+              window.ipcRenderer.send('open-unity-window');
+          } else {
+              console.log('ipcRenderer does not exist');
           }
         }
       };
