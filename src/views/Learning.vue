@@ -12,7 +12,9 @@
   </div>
   <div class="course-container" style="margin-left: 100px;">
     <div v-for="(courseGroup, category) in groupedCourses" :key="category" class="category-container">
-    <h2>{{ category }}</h2>
+      <Divider align="left" type="solid">
+        <b>{{ category }}</b>
+      </Divider>
     <div class="courses">
       <!-- <div class="course-container" style="margin-left: 100px;"> -->
         <CourseCard 
@@ -37,6 +39,7 @@
 import { ref, computed } from "vue";
 import BackButton from '../components/BackButton.vue';
 import CourseCard from '../components/CourseCard.vue';
+
 
 export default {
   name: 'Learning',
@@ -128,12 +131,12 @@ export default {
 
 .category-container {
   margin-bottom: 20px; /* Adjust as needed */
+  width: 100%;
 }
 
 .courses {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex: wrap;
 }
 
 .course-container {

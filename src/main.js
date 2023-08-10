@@ -20,6 +20,7 @@ import Button from 'primevue/button';
 import Card from 'primevue/card';
 import RadioButton from 'primevue/radiobutton';
 import Carousel from 'primevue/carousel';
+import Divider from 'primevue/divider';
 
 
 const app = createApp(App);
@@ -32,6 +33,7 @@ app.component('Carousel', Carousel);
 app.component('Button', Button);
 app.component('Card', Card);
 app.component('RadioButton', RadioButton);
+app.component('Divider', Divider);
 
 app.config.isCustomElement = tag => tag.startsWith('Unity-');
 // config.isCustomElement = tag => tag.startsWith('Unity-')
