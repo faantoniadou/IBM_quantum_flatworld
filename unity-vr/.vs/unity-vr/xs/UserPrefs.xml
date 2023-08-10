@@ -5,7 +5,7 @@
       <File FileName="Assets/Scripts/CloseLabel.cs" />
       <File FileName="Assets/Scripts/ClickObject.cs" />
       <File FileName="Assets/Scripts/ObjectLabeler.cs" />
-      <File FileName="Assets/Scripts/ExitGame.cs" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/ExitGame.cs" Line="10" Column="64" />
       <File FileName="Assets/Devion Games/Utilities/Scripts/Editor/EditorTools.cs" />
     </Files>
     <Pads>
@@ -14,7 +14,7 @@
           <Node name="unity-vr" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="ViewObject.cs" selected="True" />
+                <Node name="ExitGame.cs" selected="True" />
               </Node>
             </Node>
           </Node>

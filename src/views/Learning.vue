@@ -11,14 +11,20 @@
     </div>
   </div>
   <div class="course-container" style="margin-left: 100px;">
-    <CourseCard 
-      v-for="course in courses" 
-      :key="course.id" 
-      :title="course.title" 
-      :description="course.description" 
-      :image="course.image"
-      @start-course="checkCourse"
-    />
+    <div v-for="(courseGroup, category) in groupedCourses" :key="category" class="category-container">
+    <h2>{{ category }}</h2>
+    <div class="courses">
+      <!-- <div class="course-container" style="margin-left: 100px;"> -->
+        <CourseCard 
+          v-for="course in courseGroup" 
+          :key="course.id" 
+          :title="course.title" 
+          :description="course.description" 
+          :image="course.image"
+          @start-course="checkCourse"
+        />
+      </div>
+    </div>
   </div>
 
   <BackButton/>
@@ -28,10 +34,9 @@
 
 
 <script>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import BackButton from '../components/BackButton.vue';
 import CourseCard from '../components/CourseCard.vue';
-
 
 export default {
   name: 'Learning',
@@ -46,29 +51,51 @@ export default {
     const courses = ref([
         {
           id: 1,
-          title: "Introduction to Quantum Computing",
+          title: "Hello Quantum!",
           description: "Learn the basics of quantum computing, including qubits, superposition, quantum teleportation, and more.",
-          image: "https://example.com/images/computer-science.jpg"
+          image: "https://example.com/images/computer-science.jpg",
+          category: "Basic"
         },
         {
           id: 2,
           title: "The Quantum Computer",
           description: "Explore the inner workings of a quantum computer, including the quantum gates and circuits that make it work.",
           image: "https://example.com/images/computer-science.jpg",
+          category: "Advanced"
         },
         {
           id: 3,
           title: "Quantum Algorithms",
           description: "Find out how quantum computers can be used to solve complex problems, including Shor's algorithm and Grover's algorithm.",
-          image: "https://example.com/images/computer-science.jpg"
+          image: "https://example.com/images/computer-science.jpg",
+          category: "Intermediate"
         },
-        // {
-        //   id: 4,
-        //   title: "Quantum Cryptography",
-        //   description: "Learn how quantum computers can be used to create unbreakable encryption schemes.",
-        //   image: "https://example.com/images/computer-science.jpg"
-        // }
+        {
+          id: 4,
+          title: "Quantum Circuits",
+          description: "Learn how quantum computers can be used to create unbreakable encryption schemes.",
+          image: "https://example.com/images/computer-science.jpg",
+          category: "Intermediate"
+        },
+        {
+          id: 4,
+          title: "Look Into the Future",
+          description: "Learn how quantum computers can be used to create unbreakable encryption schemes.",
+          image: "https://example.com/images/computer-science.jpg",
+          category: "Advanced"
+        }
       ]);
+
+      const groupedCourses = computed(() => {
+        return courses.value.reduce((acc, course) => {
+          if (!acc[course.category]) {
+            acc[course.category] = [];
+          }
+          acc[course.category].push(course);
+          return acc;
+        }, {});
+      });
+
 
       // Method to check the course title and show the game
       const checkCourse = (title) => {
@@ -89,7 +116,8 @@ export default {
       // Return reactive properties and methods to the template
       return {
         courses,
-        checkCourse
+        checkCourse,
+        groupedCourses
       };
     },
   };
@@ -97,6 +125,16 @@ export default {
 </script>
 
 <style scoped>
+
+.category-container {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
 .course-container {
   display: flex;

@@ -6,6 +6,8 @@ public class ExitGame : MonoBehaviour
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+//#elif UNITY_WEBGL
+//        Application.ExternalEval("window.closeUnityGame();");
 #else
         Application.Quit();
 #endif
