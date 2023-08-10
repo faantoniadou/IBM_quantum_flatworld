@@ -58,17 +58,17 @@ export default {
         },
         {
           id: 2,
-          title: "The Quantum Computer",
-          description: "Explore the inner workings of a quantum computer, including the quantum gates and circuits that make it work.",
-          image: "https://example.com/images/computer-science.jpg",
-          category: "Advanced"
-        },
-        {
-          id: 3,
           title: "Quantum Algorithms",
           description: "Find out how quantum computers can be used to solve complex problems, including Shor's algorithm and Grover's algorithm.",
           image: "https://example.com/images/computer-science.jpg",
           category: "Intermediate"
+        },
+        {
+          id: 3,
+          title: "The Quantum Computer",
+          description: "Explore the inner workings of a quantum computer, including the quantum gates and circuits that make it work.",
+          image: "https://example.com/images/computer-science.jpg",
+          category: "Advanced"
         },
         {
           id: 4,
