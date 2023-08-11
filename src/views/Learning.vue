@@ -39,6 +39,7 @@
 import { ref, computed } from "vue";
 import BackButton from '../components/BackButton.vue';
 import CourseCard from '../components/CourseCard.vue';
+import { useRouter } from 'vue-router';
 
 
 export default {
@@ -46,7 +47,6 @@ export default {
   components: {
     BackButton,
     CourseCard,
-    // QuantumComputer
   },
 
   setup() {
@@ -106,6 +106,7 @@ export default {
         }, {});
       });
 
+      const router = useRouter();
 
       // Method to check the course title and show the game
       const checkCourse = (title) => {
@@ -118,9 +119,12 @@ export default {
               // console.log('ipcRenderer exists');
               window.ipcRenderer.send('open-unity-window');
           } else {
-              // console.log('ipcRenderer does not exist');
+            console.log('ipcRenderer does not exist');
           }
-        }
+        } else if (title === "QiSkit Schematics") {
+          console.log("clicked scheme")
+          router.push('/qiskit-schematics-table');
+        };
       };
 
       // Return reactive properties and methods to the template

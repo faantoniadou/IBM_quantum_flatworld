@@ -37,7 +37,6 @@ export default {
   methods: {
     load() {
       this.loading = true;
-      // do something here, then set loading back to false when finished
     },
   },
 }

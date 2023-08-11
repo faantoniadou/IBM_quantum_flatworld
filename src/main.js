@@ -21,6 +21,10 @@ import Card from 'primevue/card';
 import RadioButton from 'primevue/radiobutton';
 import Carousel from 'primevue/carousel';
 import Divider from 'primevue/divider';
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
+import ColumnGroup from 'primevue/columngroup';   
+import Row from 'primevue/row';                   
 
 
 const app = createApp(App);
@@ -34,6 +38,11 @@ app.component('Button', Button);
 app.component('Card', Card);
 app.component('RadioButton', RadioButton);
 app.component('Divider', Divider);
+app.component('DataTable', DataTable);
+app.component('Column', Column);
+app.component('ColumnGroup', ColumnGroup);
+app.component('Row', Row);
+
 
 app.config.isCustomElement = tag => tag.startsWith('Unity-');
 
