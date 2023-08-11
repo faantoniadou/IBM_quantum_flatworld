@@ -6,6 +6,7 @@ import qiskit
 from qiskit.visualization import plot_histogram, plot_bloch_vector, plot_gate_map, plot_circuit_layout
 from qiskit.visualization import plot_state_city, plot_state_qsphere, plot_state_paulivec, plot_state_hinton
 from matplotlib import pyplot as plt
+import os
 
 # Function to save gate as PNG
 def save_gate_as_png(gate_name):
@@ -71,6 +72,12 @@ def save_gate_as_png(gate_name):
         raise ValueError(f"Unknown gate: {gate_name}")
     
     figure = qc.draw(output='mpl')
+    
+    save_path = os.path.join(os.pardir, 'public', 'circuit_icons')
+    if not os.path.exists(save_path):
+        # pop an error if the path doesn't exist
+        raise ValueError(f"Path {save_path} does not exist")
+
     figure.savefig(f"{gate_name}.png")
     plt.close(figure)
 

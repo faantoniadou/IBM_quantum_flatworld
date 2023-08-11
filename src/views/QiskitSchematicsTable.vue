@@ -4,7 +4,6 @@
           <template #header>
               <div class="flex flex-wrap align-items-center justify-content-between gap-2">
                   <span class="text-xl text-900 font-bold">Qiskit Gates</span>
-                  <Button icon="pi pi-refresh" rounded raised />
               </div>
           </template>
           <Column field="name" header="Name"></Column>
@@ -50,5 +49,6 @@ const gates = ref([]);
 </script>
 
 <style scoped>
+/* make  */
 
 </style>
