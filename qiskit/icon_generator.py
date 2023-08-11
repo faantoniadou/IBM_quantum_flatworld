@@ -72,13 +72,16 @@ def save_gate_as_png(gate_name):
         raise ValueError(f"Unknown gate: {gate_name}")
     
     figure = qc.draw(output='mpl')
-    
+
     save_path = os.path.join(os.pardir, 'public', 'circuit_icons')
     if not os.path.exists(save_path):
         # pop an error if the path doesn't exist
         raise ValueError(f"Path {save_path} does not exist")
-
-    figure.savefig(f"{gate_name}.png")
+    
+    else:
+        save_path = os.path.join(save_path, f"{gate_name}.png")
+        figure.savefig(save_path)
+        
     plt.close(figure)
 
 # List of gates you want to generate icons for
