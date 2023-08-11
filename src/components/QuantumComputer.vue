@@ -1,3 +1,4 @@
+<!-- This script doesn't work but can be used in case embedding the game in the Vue app is preferred -->
 <template>
   <div style="width: 800px; height: 600px; border: 1px solid #f00">
     <UnityVue :unity="unityContext" />

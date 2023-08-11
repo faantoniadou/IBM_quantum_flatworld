@@ -81,11 +81,18 @@ export default {
           category: "Intermediate"
         },
         {
-          id: 4,
+          id: 5,
           title: "Look Into the Future",
           description: "Learn how quantum computers can be used to create unbreakable encryption schemes.",
           image: "https://example.com/images/computer-science.jpg",
           category: "Advanced"
+        },
+        {
+          id: 6,
+          title: "QiSkit Schematics",
+          description: "Explore QiSkit schematics and how they can be used to create quantum circuits.",
+          image: "https://example.com/images/computer-science.jpg",
+          category: "Basic"
         }
       ]);
 

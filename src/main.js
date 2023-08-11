@@ -36,7 +36,6 @@ app.component('RadioButton', RadioButton);
 app.component('Divider', Divider);
 
 app.config.isCustomElement = tag => tag.startsWith('Unity-');
-// config.isCustomElement = tag => tag.startsWith('Unity-')
 
 app.config.allowedNonProps = ['UnityWebgl', 'UnityLoader'];
 

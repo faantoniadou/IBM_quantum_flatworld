@@ -17,11 +17,6 @@ export default {
   components: {
     MenubarComponent
   },
-  // methods: {
-  //   test(){
-  //     window.ipcRenderer.send('open-unity-window');
-  //   }
-  // }
 }
 </script>
 
