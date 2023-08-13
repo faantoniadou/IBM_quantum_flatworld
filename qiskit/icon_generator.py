@@ -74,6 +74,10 @@ def save_gate_as_png(gate_name):
     figure = qc.draw(output='mpl')
 
     save_path = os.path.join(os.pardir, 'public', 'circuit_icons')
+    # parent directory of this script
+    parent_dir = os.path.dirname(os.path.realpath(__file__))
+    save_path = os.path.join(parent_dir, save_path)
+
     if not os.path.exists(save_path):
         # pop an error if the path doesn't exist
         raise ValueError(f"Path {save_path} does not exist")

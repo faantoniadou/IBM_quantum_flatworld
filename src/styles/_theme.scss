@@ -2581,8 +2581,8 @@
   border-radius: 0;
 }
 .p-datatable .p-datatable-header {
-  background: #071426;
-  color: rgba(255, 255, 255, 0.6);
+  background: white;
+  color: black;
   border: 1px solid #0b213f;
   border-width: 0 0 1px 0;
   padding: 1rem 1rem;
@@ -2602,8 +2602,8 @@
   border: 1px solid #0b213f;
   border-width: 0 0 1px 0;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.87);
-  background: #071426;
+  color: black;
+  background: white;
   transition: box-shadow 0.2s;
 }
 .p-datatable .p-datatable-tfoot > tr > td {
@@ -2654,8 +2654,8 @@
   outline: 0 none;
 }
 .p-datatable .p-datatable-tbody > tr {
-  background: #071426;
-  color: rgba(255, 255, 255, 0.87);
+  background: white;
+  color: black;
   transition: box-shadow 0.2s;
 }
 .p-datatable .p-datatable-tbody > tr > td {
