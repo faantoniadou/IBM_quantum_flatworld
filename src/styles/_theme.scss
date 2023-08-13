@@ -2616,7 +2616,7 @@
   background: #071426;
 }
 .p-datatable .p-sortable-column .p-sortable-column-icon {
-  color: rgba(255, 255, 255, 0.6);
+  color: white;
   margin-left: 0.5rem;
 }
 .p-datatable .p-sortable-column .p-sortable-column-badge {
@@ -2624,7 +2624,7 @@
   height: 1.143rem;
   min-width: 1.143rem;
   line-height: 1.143rem;
-  color: rgba(255, 255, 255, 0.87);
+  color: white;
   background: rgba(196, 181, 253, 0.16);
   margin-left: 0.5rem;
 }
@@ -2633,18 +2633,18 @@
   color: rgba(255, 255, 255, 0.87);
 }
 .p-datatable .p-sortable-column:not(.p-highlight):hover .p-sortable-column-icon {
-  color: rgba(255, 255, 255, 0.87);
+  color: black;
 }
 .p-datatable .p-sortable-column.p-highlight {
-  background: rgba(196, 181, 253, 0.16);
-  color: rgba(255, 255, 255, 0.87);
+  background: rgba(183, 175, 219, 1);
+  color: black;
 }
 .p-datatable .p-sortable-column.p-highlight .p-sortable-column-icon {
-  color: rgba(255, 255, 255, 0.87);
+  color: black;
 }
 .p-datatable .p-sortable-column.p-highlight:hover {
   background: rgba(196, 181, 253, 0.16);
-  color: rgba(255, 255, 255, 0.87);
+  color: white;
 }
 .p-datatable .p-sortable-column.p-highlight:hover .p-sortable-column-icon {
   color: rgba(255, 255, 255, 0.87);

@@ -1,13 +1,13 @@
 <template>
-  <div class="card">
-      <DataTable :value="gates" :resizableColumns="true" showGridlines :tableProps="{ style: { minWidth: '50rem' } }" tableStyle="min-width: 50rem">
+  <div class="card" style="margin-left: 60px; margin-right: 60px;">
+      <DataTable :value="gates" :resizableColumns="true" showGridlines :tableProps="{ style: { minWidth: '50rem' } }" tableStyle="min-width: 50rem;">
           <template #header>
               <div class="flex flex-wrap align-items-center justify-content-between gap-2">
                   <span class="text-xl text-900 font-bold" style="color: black;">Qiskit Gates</span>
               </div>
           </template>
-          <Column field="title" header="Name" style="width: 200px" sortable></Column>
-          <Column header="Icon">
+          <Column field="title" header="Name" style="width: 150px" sortable></Column>
+          <Column header="Icon" style="min-width: 200px;">
               <template #body="slotProps">
                   <img :src="`/circuit_icons/${slotProps.data.name}.png`" :alt="slotProps.data.name" class="w-6rem shadow-2 border-round" />
               </template>
@@ -19,12 +19,12 @@
 </template>
 
 <script setup>
+// This component creates a table of some gates available in Qiskit.
 import { ref, onMounted } from 'vue';
 import BackButton from '../components/BackButton.vue';
-// import { useRouter } from 'vue-router';
 
 onMounted(() => {
-  // You can make an API call here if needed. For this example, I'm setting the data directly.
+  // we can make an API call here if needed. For this example, I'm setting the data directly.
   gates.value = [
       { name: 'h', title: 'Hadamard gate', description: 'The Hadamard gate creates a superposition state.' },
       { name: 'x', title: 'Pauli-X gate', description: 'The Pauli-X gate is a bit-flip gate.'},
@@ -52,4 +52,8 @@ const gates = ref([]);
 </script>
 
 <style scoped>
+.card {
+    border-radius: 95px;
+    overflow: hidden; /* Important to ensure content doesn't overflow the rounded corners */
+}
 </style>
