@@ -7,10 +7,10 @@
 
 
 :root {
-  --surface-a:#2b1151;
+  --surface-a:#361566;
   --surface-b:#31135e;
   --surface-c:rgba(255, 255, 255, 0.03);
-  --surface-d:#260b3f;
+  --surface-d:#2b1151;
   --surface-e:#361566;
   --surface-f:#361566;
   --text-color:rgba(255, 255, 255, 0.87);
@@ -2599,7 +2599,7 @@
 .p-datatable .p-datatable-thead > tr > th {
   text-align: left;
   padding: 1rem 1rem;
-  border: 1px solid #0b213f;
+  border: 1px solid black;
   border-width: 0 0 1px 0;
   font-weight: 700;
   color: black;
@@ -2609,7 +2609,7 @@
 .p-datatable .p-datatable-tfoot > tr > td {
   text-align: left;
   padding: 1rem 1rem;
-  border: 1px solid #0b213f;
+  border: 1px solid black;
   border-width: 0 0 1px 0;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.87);
@@ -3944,7 +3944,7 @@
 }
 
 .p-divider .p-divider-content {
-  background-color: #071426;
+  background-color: #1e0b3b;
 }
 .p-divider.p-divider-horizontal {
   margin: 1.25rem 0;
