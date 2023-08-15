@@ -27,7 +27,9 @@ const items = ref([
 export default {
   name: "MenubarComponent",
   setup() {
-    return items
+    return {
+      items: items.value
+    }
   }
 }
 </script>
