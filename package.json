@@ -32,7 +32,7 @@
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
     "primeng": "~9.0.6",
-    "primevue": "^3.30.0",
+    "primevue": "^3.32.0",
     "unity-webgl": "^3.5.1",
     "vite": "^4.0.0",
     "vue": "^3.2.45",
@@ -40,6 +40,7 @@
     "vue-material-design-icons": "^5.2.0",
     "vue-router": "^4.1.6",
     "vue-unity-webgl": "^1.2.0",
+    "vuedraggable": "^4.1.0",
     "vuex": "^4.1.0"
   },
   "devDependencies": {

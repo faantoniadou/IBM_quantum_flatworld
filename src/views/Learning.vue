@@ -93,6 +93,13 @@ export default {
           description: "Explore QiSkit schematics and how they can be used to create quantum circuits.",
           image: "https://example.com/images/computer-science.jpg",
           category: "Basic"
+        },
+        {
+          id: 7,
+          title: "IBM Quantum Composer",
+          description: "Learn how to use the IBM Quantum Composer to create quantum circuits.",
+          image: "https://example.com/images/computer-science.jpg",
+          category: "Advanced"
         }
       ]);
 
