@@ -64,6 +64,7 @@
     <Compile Include="Assets/Unity UI Samples/Scripts/ResizePanel.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/TiltWindow.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/ApplicationManager.cs" />
+    <Compile Include="Assets/Scripts/SphereGridDrawer.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/DragMe.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/DropMe.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/ActiveStateToggler.cs" />
