@@ -59,12 +59,18 @@ def save_gate_as_png(gate_name):
     elif gate_name == 'rz':
         qc = qiskit.QuantumCircuit(2)
         qc.rz(0, 1)
-    elif gate_name == 'u':
-        qc = qiskit.QuantumCircuit(2)
-        qc.u(0, 1, 2)
+
+    # draw the s gate
     elif gate_name == 's':
-        qc = qiskit.QuantumCircuit(2)
-        qc.s(0, 1)
+        qr = qiskit.QuantumRegister(2)
+        qc = qiskit.QuantumCircuit(qr)
+        qc.s(qr[1])
+
+    elif gate_name == 't':
+        qr = qiskit.QuantumRegister(2)
+        qc = qiskit.QuantumCircuit(qr)
+        qc.t(qr[1])
+
     elif gate_name == 'id':
         qc = qiskit.QuantumCircuit(2)
         qc.id(0)
@@ -90,7 +96,7 @@ def save_gate_as_png(gate_name):
 
 # List of gates you want to generate icons for
 gates = ['h', 'x', 'y', 'z', 'cx', 'ccx', 'swap', 'cz', 'cy', 'ch', 
-         'crx', 'cry', 'crz', 'r', 'rx', 'ry', 'rz', 'u', 's', 'id']
+         'crx', 'cry', 'crz', 'r', 'rx', 'ry', 'rz', 's', 't', 'id']
 
 # Generate and save PNG for each gate
 for gate in gates:
