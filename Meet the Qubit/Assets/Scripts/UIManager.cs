@@ -20,13 +20,8 @@ public class UIManager : MonoBehaviour
     // Call this when the "Next" button on the Bloch Sphere Panel is clicked
     public void ShowQuboPanel()
     {
-        blochSpherePanel.SetActive(false); // Hide welcome panel
+        blochSpherePanel.SetActive(false);
         quboPanel.SetActive(true); // Show Bloch Sphere panel
-    }
-
-    public void HideBlochSphere()
-    {
-        blochSphere.SetActive(false);
     }
 
     public void ShowBlochSphere()
@@ -36,22 +31,28 @@ public class UIManager : MonoBehaviour
 
     public void ShowQubo()
     {
+        blochSphere.SetActive(false);
         quboObject.SetActive(true);
     }
 
     public void ShowGatePanel()
     {
+        quboPanel.SetActive(false);
         gateButtons.SetActive(true);
         gatePanel.SetActive(true);
     }
 
-
-
-
-    // Optionally, if you want a "Back" button on the Bloch Sphere Panel
-    public void ShowWelcomePanel()
+    public void HideGatePanel()
     {
-        blochSpherePanel.SetActive(false);
-        welcomePanel.SetActive(true);
+        gatePanel.SetActive(false);
     }
+
+
+
+    //// Optionally, if you want a "Back" button on the Bloch Sphere Panel
+    //public void ShowWelcomePanel()
+    //{
+    //    blochSpherePanel.SetActive(false);
+    //    welcomePanel.SetActive(true);
+    //}
 }
