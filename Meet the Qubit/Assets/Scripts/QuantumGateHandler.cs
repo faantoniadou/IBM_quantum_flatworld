@@ -44,7 +44,9 @@ public class QuantumGateHandler : MonoBehaviour
             Vector3 blochVector = new Vector3(response.bloch_vector[0], response.bloch_vector[1], response.bloch_vector[2]);
 
             MoveQuboToPosition(blochVector);
+            Debug.Log("Received Bloch Vector: " + jsonResponse);
         }
+
     }
 
     private void MoveQuboToPosition(Vector3 blochVector)
