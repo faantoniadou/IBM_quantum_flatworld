@@ -408,7 +408,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 91634726}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 98191813}
+        m_TargetAssemblyTypeName: QuantumGateHandler, Assembly-CSharp
+        m_MethodName: OnHadamardGateClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &91634726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,6 +567,7 @@ GameObject:
   - component: {fileID: 88816134}
   - component: {fileID: 98191811}
   - component: {fileID: 98191812}
+  - component: {fileID: 98191813}
   m_Layer: 5
   m_Name: Hadamard
   m_TagString: Untagged
@@ -637,6 +650,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &98191813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98191810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e3c094bf79f4b22a9bb09ad017cbc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quboTransform: {fileID: 234671157}
+  blochSphereRadius: 12.95124
 --- !u!1 &98191814
 GameObject:
   m_ObjectHideFlags: 0
@@ -8242,6 +8269,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2032736763}
+        m_TargetAssemblyTypeName: BlochSphereController, Assembly-CSharp
+        m_MethodName: StopAndResetRotation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1392799144
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14181,11 +14220,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2032736757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28850d3b9e2b34fd5b87117fefba1dfd, type: 3}
+  m_Script: {fileID: 11500000, guid: 65d1d09b5743f4b20bef2490123bb132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 5
-  rotationAxis: {x: 0, y: 1, z: 0}
+  rotationSpeed: 20
 --- !u!1 &2042567394
 GameObject:
   m_ObjectHideFlags: 0
