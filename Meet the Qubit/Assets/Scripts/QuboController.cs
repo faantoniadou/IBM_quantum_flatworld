@@ -4,11 +4,14 @@ public class QuboController : MonoBehaviour
 {
     private Animator anim;
     public Transform quboTransform; // Reference to the Qubo's transform
-    public float blochSphereRadius = 12.95124f;  // The radius of the Bloch sphere
+    public GameObject blochSphere; // Reference to the Bloch Sphere GameObject, set this in the Unity Editor
+
+    private float blochSphereRadius;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        blochSphereRadius = blochSphere.transform.localScale.x / 2; // Assuming the sphere is uniformly scaled
     }
 
     public void MoveToZeroState()
