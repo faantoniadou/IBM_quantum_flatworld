@@ -9,14 +9,21 @@ import numpy as np
 app = Flask(__name__)
 CORS(app)
 
+# we have to keep track of the state of the qubit 
+current_state = qiskit.QuantumCircuit(1)  # global variable
+
 @app.route('/apply_gate', methods=['POST'])
+
 def apply_gate():
+    global current_state  # use global state
+
     try:
         data = request.json
         gate_name = data['gate_name']
         
         # Use Qiskit to apply the gate
-        qc = qiskit.QuantumCircuit(1)
+        qc = current_state  # use the existing state
+        
         if gate_name == 'hadamard':
             qc.h(0)
         elif gate_name == 'x':

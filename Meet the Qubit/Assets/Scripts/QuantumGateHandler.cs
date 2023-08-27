@@ -21,40 +21,10 @@ public class QuantumGateHandler : MonoBehaviour
         blochSphereRadius = blochSphere.transform.localScale.x / 2; // Assuming the sphere is uniformly scaled
     }
 
-    public void OnHadamardGateClick()
+    public void OnGateClick(string gateName)
     {
-        Debug.Log("Hadamard Gate button clicked");
-        StartCoroutine(ApplyGate("hadamard"));
-    }
-
-    public void OnXGateClick()
-    {
-        Debug.Log("X Gate button clicked");
-        StartCoroutine(ApplyGate("x"));
-    }
-
-    public void OnYGateClick()
-    {
-        Debug.Log("Y Gate button clicked");
-        StartCoroutine(ApplyGate("y"));
-    }
-
-    public void OnZGateClick()
-    {
-        Debug.Log("Z Gate button clicked");
-        StartCoroutine(ApplyGate("z"));
-    }
-
-    public void OnSGateClick()
-    {
-        Debug.Log("S Gate button clicked");
-        StartCoroutine(ApplyGate("s"));
-    }
-
-    public void OnTGateClick()
-    {
-        Debug.Log("T Gate button clicked");
-        StartCoroutine(ApplyGate("t"));
+        Debug.Log($"{gateName.ToUpper()} Gate button clicked");
+        StartCoroutine(ApplyGate(gateName));
     }
 
     private IEnumerator ApplyGate(string gateName)
