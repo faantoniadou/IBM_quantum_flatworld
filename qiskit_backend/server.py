@@ -4,6 +4,7 @@ import qiskit
 from qiskit.visualization import plot_bloch_vector
 import matplotlib
 matplotlib.use('Agg')
+import numpy as np
 
 
 app = Flask(__name__)

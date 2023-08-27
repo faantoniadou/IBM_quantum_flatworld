@@ -17,6 +17,7 @@ public class QuantumGateHandler : MonoBehaviour
 
     public void OnHadamardGateClick()
     {
+        Debug.Log("Gate button clicked");
         StartCoroutine(ApplyGate("hadamard"));
     }
 
@@ -51,8 +52,13 @@ public class QuantumGateHandler : MonoBehaviour
 
     private void MoveQuboToPosition(Vector3 blochVector)
     {
+        Debug.Log("Attempting to move Qubo");
+     
         blochVector.Normalize();
         Vector3 targetPosition = blochVector * blochSphereRadius;
         quboTransform.position = targetPosition;
+
+        Debug.Log("Target Position: " + targetPosition);
+        Debug.Log("Qubo's new position: " + quboTransform.position);
     }
 }
