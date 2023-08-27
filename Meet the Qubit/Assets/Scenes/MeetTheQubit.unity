@@ -8194,6 +8194,7 @@ GameObject:
   - component: {fileID: 1392799142}
   - component: {fileID: 1392799141}
   - component: {fileID: 1392799145}
+  - component: {fileID: 1392799146}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -8388,6 +8389,25 @@ MonoBehaviour:
   quboObject: {fileID: 234671153}
   gateButtons: {fileID: 1020405858}
   gatePanel: {fileID: 153485578}
+--- !u!114 &1392799146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392799138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfba3e17d95724622b4396c7b9cdf956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hadamardButton: {fileID: 91634722}
+  xGateButton: {fileID: 72503480}
+  yGateButton: {fileID: 2066864429}
+  zGateButton: {fileID: 1746646624}
+  sGateButton: {fileID: 1489423000}
+  tGateButton: {fileID: 551946680}
+  activateButtonsButton: {fileID: 1392799143}
 --- !u!1 &1416897832
 GameObject:
   m_ObjectHideFlags: 0

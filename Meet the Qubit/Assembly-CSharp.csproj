@@ -68,6 +68,7 @@
     <Compile Include="Assets/Scripts/SphereGridDrawer.cs" />
     <Compile Include="Assets/Scripts/QuboController.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/DragMe.cs" />
+    <Compile Include="Assets/Scripts/ActivateButtons.cs" />
     <Compile Include="Assets/Scripts/QuantumGateHandler.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/DropMe.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/ActiveStateToggler.cs" />

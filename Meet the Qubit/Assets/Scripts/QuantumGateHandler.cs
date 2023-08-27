@@ -22,10 +22,10 @@ public class QuantumGateHandler : MonoBehaviour
     }
 
     public void OnGateClick(string gateName)
-    {
-        Debug.Log($"{gateName.ToUpper()} Gate button clicked");
-        StartCoroutine(ApplyGate(gateName));
-    }
+{
+    Debug.Log($"{gateName.ToUpper()} Gate button clicked");
+    StartCoroutine(ApplyGate(gateName));
+}
 
     private IEnumerator ApplyGate(string gateName)
     {

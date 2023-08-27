@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{9E0F6663-7D63-575A-976F-65E0597D634A}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/QuantumGateHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ActivateButtons.cs">
     <Files>
       <File FileName="Assets/Scripts/BlochSphereController.cs" Line="32" Column="1" />
       <File FileName="Assets/Scripts/QuboController.cs" Line="18" Column="6" />
       <File FileName="Assets/Scripts/UIManager.cs" />
-      <File FileName="Assets/Scripts/QuantumGateHandler.cs" Line="3" Column="18" />
+      <File FileName="Assets/Scripts/QuantumGateHandler.cs" Line="40" Column="43" />
+      <File FileName="Assets/Scripts/ActivateButtons.cs" Line="13" Column="23" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,7 +23,6 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="684dbe37-164b-48ee-8b4b-16afbfc04350" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
