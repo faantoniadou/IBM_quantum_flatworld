@@ -99,14 +99,26 @@ public class QuantumGateHandler : MonoBehaviour
         }
         else
         {
-            string jsonResponse = www.downloadHandler.text;
-            BlochVectorResponse response = JsonUtility.FromJson<BlochVectorResponse>(jsonResponse);
-            Vector3 blochVector = new Vector3(response.bloch_vector[0], response.bloch_vector[1], response.bloch_vector[2]);
+            Debug.Log("Raw Server Response: " + www.downloadHandler.text);
 
-            MoveQuboToPosition(blochVector);
-            Debug.Log("Received Bloch Vector: " + jsonResponse);
+            BlochVectorResponse response = JsonUtility.FromJson<BlochVectorResponse>(www.downloadHandler.text);
 
+            if (response == null)
+            {
+                Debug.LogError("Response is null");
+            }
+            else if (response.bloch_vector == null)
+            {
+                Debug.LogError("Bloch vector is null");
+            }
+            else
+            {
+                Vector3 blochVector = new Vector3(response.bloch_vector[0], response.bloch_vector[1], response.bloch_vector[2]);
+                MoveQuboToPosition(blochVector);
+                Debug.Log("Received Bloch Vector: " + www.downloadHandler.text);
+            }
         }
+
     }
 
 
