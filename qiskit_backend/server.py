@@ -13,6 +13,14 @@ CORS(app)
 current_state = qiskit.QuantumCircuit(1)  # global variable
 
 @app.route('/apply_gate', methods=['POST'])
+@app.route('/reset', methods=['POST'])
+
+
+def reset_qubit():
+    # Reset qubit to the |0> state to start
+    global current_state  # use global state
+    current_state = qiskit.QuantumCircuit(1)  # Reset to a new circuit
+    return jsonify({"message": "Qubit reset to |0> state"})
 
 def apply_gate():
     global current_state  # use global state

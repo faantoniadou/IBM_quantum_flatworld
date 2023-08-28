@@ -1,14 +1,17 @@
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 using System.Collections;
 
 public class QuantumGateHandler : MonoBehaviour
 {
     public Transform quboTransform;
     public GameObject blochSphere; // Reference to the Bloch Sphere GameObject
+    //public Text gateExplainerText;  // Reference to the Text component
+
 
     private float blochSphereRadius;
-    private string baseURL = "http://127.0.0.1:5000";
+    private const string baseURL = "http://127.0.0.1:5000";
 
     [System.Serializable]
     public class BlochVectorResponse
@@ -19,13 +22,64 @@ public class QuantumGateHandler : MonoBehaviour
     private void Start()
     {
         blochSphereRadius = blochSphere.transform.localScale.x / 2; // Assuming the sphere is uniformly scaled
+        ResetQuboToZeroState();
+        StartCoroutine(ResetQubitStateOnServer());
+    }
+
+    private IEnumerator ResetQubitStateOnServer()
+    {
+        string url = baseURL + "/reset";
+        UnityWebRequest www = UnityWebRequest.Post(url, new WWWForm());
+
+        yield return www.SendWebRequest();
+
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            Debug.Log("Qubit state reset on server.");
+        }
+    }
+
+    private void ResetQuboToZeroState()
+    {
+        Vector3 zeroStatePosition = new Vector3(0, blochSphereRadius, 0);  // Replace with the position representing |0> state on your Bloch sphere
+        quboTransform.position = zeroStatePosition;
     }
 
     public void OnGateClick(string gateName)
-{
-    Debug.Log($"{gateName.ToUpper()} Gate button clicked");
-    StartCoroutine(ApplyGate(gateName));
-}
+    {
+        Debug.Log($"{gateName.ToUpper()} Gate button clicked");
+        StartCoroutine(ApplyGate(gateName));
+
+        //// Update the explainer text
+        //switch (gateName)
+        //{
+        //    case "hadamard":
+        //        gateExplainerText.text = "The Hadamard gate creates superposition.";
+        //        break;
+        //    case "x":
+        //        gateExplainerText.text = "The X gate flips the qubit along the X-axis.";
+        //        break;
+        //    case "y":
+        //        gateExplainerText.text = "The Y gate flips the qubit along the Y-axis.";
+        //        break;
+        //    case "z":
+        //        gateExplainerText.text = "The Z gate flips the qubit along the Z-axis.";
+        //        break;
+        //    case "s":
+        //        gateExplainerText.text = "The S gate rotates the qubit by π/2 along the Z-axis.";
+        //        break;
+        //    case "t":
+        //        gateExplainerText.text = "The T gate rotates the qubit by π/4 along the Z-axis.";
+        //        break;
+        //    default:
+        //        gateExplainerText.text = "Unknown gate.";
+        //        break;
+        //}
+    }
 
     private IEnumerator ApplyGate(string gateName)
     {
@@ -51,8 +105,11 @@ public class QuantumGateHandler : MonoBehaviour
 
             MoveQuboToPosition(blochVector);
             Debug.Log("Received Bloch Vector: " + jsonResponse);
+
         }
     }
+
+
 
     private void MoveQuboToPosition(Vector3 blochVector)
     {

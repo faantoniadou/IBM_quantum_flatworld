@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public GameObject quboObject;
     public GameObject gateButtons;
     public GameObject gatePanel;
+    public GameObject gateExplainerPanel;
 
     // Call this when the "Next" button on the Welcome Panel is clicked
     public void ShowBlochSpherePanel()
@@ -45,6 +46,12 @@ public class UIManager : MonoBehaviour
     public void HideGatePanel()
     {
         gatePanel.SetActive(false);
+    }
+
+    public void ShowGateExplainerPanel()
+    {
+        gateExplainerPanel.SetActive(true);
+
     }
 
 

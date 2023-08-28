@@ -786,6 +786,7 @@ MonoBehaviour:
   quboObject: {fileID: 234671153}
   gateButtons: {fileID: 1020405858}
   gatePanel: {fileID: 153485578}
+  gateExplainerPanel: {fileID: 0}
 --- !u!1 &163150929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1045,6 +1046,7 @@ MonoBehaviour:
   quboObject: {fileID: 234671153}
   gateButtons: {fileID: 0}
   gatePanel: {fileID: 0}
+  gateExplainerPanel: {fileID: 0}
 --- !u!114 &216165417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,6 +2370,7 @@ MonoBehaviour:
   quboObject: {fileID: 234671153}
   gateButtons: {fileID: 1020405858}
   gatePanel: {fileID: 153485578}
+  gateExplainerPanel: {fileID: 0}
 --- !u!114 &585601593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2566,7 +2569,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: 0.093502164, y: -0.9877945, z: -0.0020013757, w: 0.12456104}
-  m_LocalPosition: {x: -12.04, y: -11.03, z: 37.03}
+  m_LocalPosition: {x: -0.4, y: -3.8, z: 33.9}
   m_LocalScale: {x: 1, y: 1, z: 0.081682}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8389,6 +8392,7 @@ MonoBehaviour:
   quboObject: {fileID: 234671153}
   gateButtons: {fileID: 1020405858}
   gatePanel: {fileID: 153485578}
+  gateExplainerPanel: {fileID: 0}
 --- !u!114 &1392799146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15654,6 +15658,7 @@ MonoBehaviour:
   quboObject: {fileID: 0}
   gateButtons: {fileID: 0}
   gatePanel: {fileID: 0}
+  gateExplainerPanel: {fileID: 0}
 --- !u!222 &8221695402499153020
 CanvasRenderer:
   m_ObjectHideFlags: 0
