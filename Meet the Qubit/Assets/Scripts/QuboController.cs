@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class QuboController : MonoBehaviour
 {
-    private Animator anim;
-    public Transform quboTransform; // Reference to the Qubo's transform
+    private Animator  anim;
+    public Transform  quboTransform; // Reference to the Qubo's transform
     public GameObject blochSphere; // Reference to the Bloch Sphere GameObject, set this in the Unity Editor
 
     private float blochSphereRadius;
@@ -29,5 +29,11 @@ public class QuboController : MonoBehaviour
     public void DisableAnimator()
     {
         anim.enabled = false;
+    }
+
+    // Function to trigger the jump animation
+    public void TriggerJump()
+    {
+        anim.SetTrigger("Jump");
     }
 }

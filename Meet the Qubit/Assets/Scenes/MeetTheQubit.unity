@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 74405532}
   - component: {fileID: 95231289}
   - component: {fileID: 95231290}
+  - component: {fileID: 95231291}
   m_Layer: 5
   m_Name: X-Gate
   m_TagString: Untagged
@@ -518,6 +519,18 @@ MonoBehaviour:
             m_StringArgument: X-Gate
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 95231291}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnGateHover
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: x
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -526,6 +539,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
           m_MethodName: set_text
           m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 95231291}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -564,6 +589,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quboTransform: {fileID: 234671157}
   blochSphere: {fileID: 2032736757}
+--- !u!114 &95231291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83764568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db803c0a216c40a1963272fbb861440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  welcomePanel: {fileID: 7481040856123016825}
+  blochSpherePanel: {fileID: 470375995771580350}
+  quboPanel: {fileID: 1783822537}
+  blochSphere: {fileID: 2032736757}
+  quboObject: {fileID: 234671153}
+  gateButtons: {fileID: 1020405858}
+  gatePanel: {fileID: 153485578}
+  gateExplainerPanel: {fileID: 733432284}
+  gateExplainerText: {fileID: 404348477}
 --- !u!222 &95231292
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -587,6 +633,7 @@ GameObject:
   - component: {fileID: 98191811}
   - component: {fileID: 98191812}
   - component: {fileID: 98191813}
+  - component: {fileID: 98191815}
   m_Layer: 5
   m_Name: Hadamard
   m_TagString: Untagged
@@ -653,6 +700,18 @@ MonoBehaviour:
             m_StringArgument: Hadamard Gate
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 98191815}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnGateHover
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: hadamard
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -661,6 +720,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
           m_MethodName: set_text
           m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 98191815}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -717,6 +788,119 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &98191815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98191810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db803c0a216c40a1963272fbb861440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  welcomePanel: {fileID: 7481040856123016825}
+  blochSpherePanel: {fileID: 470375995771580350}
+  quboPanel: {fileID: 1783822537}
+  blochSphere: {fileID: 2032736757}
+  quboObject: {fileID: 234671153}
+  gateButtons: {fileID: 1020405858}
+  gatePanel: {fileID: 153485578}
+  gateExplainerPanel: {fileID: 733432284}
+  gateExplainerText: {fileID: 404348477}
+--- !u!1 &145924788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 145924789}
+  - component: {fileID: 145924792}
+  - component: {fileID: 145924791}
+  - component: {fileID: 145924790}
+  m_Layer: 5
+  m_Name: Window
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &145924789
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145924788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -17.99}
+  m_LocalScale: {x: 1.7910959, y: 0.61956054, z: 0.94321537}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 180568676}
+  - {fileID: 404348476}
+  m_Father: {fileID: 733432285}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -2.080017, y: -59.98999}
+  m_SizeDelta: {x: -102.99, y: 91.13}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &145924790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145924788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b01eb497714c1449cb2df46eb5ac6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: {x: 0, y: 0}
+--- !u!114 &145924791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145924788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6672802, g: 0.23584905, b: 0.9433962, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6858abb4516aae344881bf286b3aac33, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &145924792
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145924788}
+  m_CullTransparentMesh: 0
 --- !u!1 &153485578
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,6 +959,7 @@ MonoBehaviour:
   gateButtons: {fileID: 1020405858}
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 0}
+  gateExplainerText: {fileID: 0}
 --- !u!1 &163150929
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +991,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &180568675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 180568676}
+  - component: {fileID: 180568677}
+  m_Layer: 5
+  m_Name: Vertical Group
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &180568676
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180568675}
+  m_LocalRotation: {x: 0.0000000018626447, y: 0.000000002793967, z: 0.0000000041591184, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.66442585}
+  m_LocalScale: {x: 0.9824598, y: 2.1729677, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 145924789}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 2.5408325, y: -272.67828}
+  m_SizeDelta: {x: -100, y: -190}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &180568677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180568675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 2
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &183956066
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,7 +1081,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183956066}
   m_LocalRotation: {x: -0, y: -0, z: -1.7347167e-18, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -15.18}
+  m_LocalPosition: {x: 0, y: 0, z: -8.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -844,7 +1092,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -68}
-  m_SizeDelta: {x: 185, y: 68}
+  m_SizeDelta: {x: 195, y: 68}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &183956068
 MonoBehaviour:
@@ -859,7 +1107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 30
+    m_Left: 40
     m_Right: 50
     m_Top: 4
     m_Bottom: 4
@@ -1002,7 +1250,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216165414}
   m_LocalRotation: {x: -0.055432614, y: 0.02192295, z: -0.0022884856, w: 0.99821913}
-  m_LocalPosition: {x: 0, y: 0, z: 39}
+  m_LocalPosition: {x: 0, y: 0, z: 40.689}
   m_LocalScale: {x: 0.8764172, y: 0.72528976, z: 1.2692047}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1012,8 +1260,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 751, y: -639}
-  m_SizeDelta: {x: 205, y: 60}
+  m_AnchoredPosition: {x: 759.01, y: -789.14}
+  m_SizeDelta: {x: 205, y: 77.65}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &216165416
 MonoBehaviour:
@@ -1032,9 +1280,10 @@ MonoBehaviour:
   quboPanel: {fileID: 1783822537}
   blochSphere: {fileID: 2032736757}
   quboObject: {fileID: 234671153}
-  gateButtons: {fileID: 0}
-  gatePanel: {fileID: 0}
-  gateExplainerPanel: {fileID: 0}
+  gateButtons: {fileID: 1020405858}
+  gatePanel: {fileID: 153485578}
+  gateExplainerPanel: {fileID: 733432284}
+  gateExplainerText: {fileID: 404348477}
 --- !u!114 &216165417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,18 +1378,6 @@ MonoBehaviour:
       - m_Target: {fileID: 216165416}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ShowQuboPanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 216165416}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: HideBlochSphere
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1552,7 +1789,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300253930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.4}
+  m_LocalPosition: {x: 0, y: 0, z: -10.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1561,7 +1798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -64}
+  m_AnchoredPosition: {x: 40, y: -64}
   m_SizeDelta: {x: 105, y: 60}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &300253932
@@ -1585,7 +1822,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
+    m_Font: {fileID: 12800000, guid: d7cffddcbc0cc8f4ebe6e28eb9804082, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -1713,6 +1950,132 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378354064}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &404348475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 404348476}
+  - component: {fileID: 404348480}
+  - component: {fileID: 404348479}
+  - component: {fileID: 404348478}
+  - component: {fileID: 404348477}
+  m_Layer: 5
+  m_Name: DescriptionField
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &404348476
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404348475}
+  m_LocalRotation: {x: 0.0000000018626447, y: 0.000000002793967, z: 0.0000000041591184, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
+  m_LocalScale: {x: 0.9710715, y: 3.7729037, z: 1.2563}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 145924789}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 61, y: -1957}
+  m_SizeDelta: {x: 929.28, y: 486.37}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &404348477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404348475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: d7cffddcbc0cc8f4ebe6e28eb9804082, type: 3}
+    m_FontSize: 35
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 230
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &404348478
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404348475}
+  m_CullTransparentMesh: 1
+--- !u!114 &404348479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404348475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: 1
+  m_LayoutPriority: 1
+--- !u!114 &404348480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404348475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 40, y: 0}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &472411065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,7 +2239,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
+    m_Font: {fileID: 12800000, guid: d7cffddcbc0cc8f4ebe6e28eb9804082, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -1958,7 +2321,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
+    m_Font: {fileID: 12800000, guid: d7cffddcbc0cc8f4ebe6e28eb9804082, type: 3}
     m_FontSize: 46
     m_FontStyle: 0
     m_BestFit: 0
@@ -2045,6 +2408,7 @@ GameObject:
   - component: {fileID: 551227292}
   - component: {fileID: 555628281}
   - component: {fileID: 555628282}
+  - component: {fileID: 555628283}
   m_Layer: 5
   m_Name: T-Gate
   m_TagString: Untagged
@@ -2231,6 +2595,18 @@ MonoBehaviour:
             m_StringArgument: T-Gate
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 555628283}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnGateHover
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: t
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -2239,6 +2615,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
           m_MethodName: set_text
           m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 555628283}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2277,6 +2665,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quboTransform: {fileID: 234671157}
   blochSphere: {fileID: 2032736757}
+--- !u!114 &555628283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541752408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db803c0a216c40a1963272fbb861440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  welcomePanel: {fileID: 7481040856123016825}
+  blochSpherePanel: {fileID: 470375995771580350}
+  quboPanel: {fileID: 1783822537}
+  blochSphere: {fileID: 2032736757}
+  quboObject: {fileID: 234671153}
+  gateButtons: {fileID: 1020405858}
+  gatePanel: {fileID: 153485578}
+  gateExplainerPanel: {fileID: 733432284}
+  gateExplainerText: {fileID: 404348477}
 --- !u!224 &555628284
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2358,7 +2767,8 @@ MonoBehaviour:
   quboObject: {fileID: 234671153}
   gateButtons: {fileID: 1020405858}
   gatePanel: {fileID: 153485578}
-  gateExplainerPanel: {fileID: 0}
+  gateExplainerPanel: {fileID: 733432284}
+  gateExplainerText: {fileID: 404348477}
 --- !u!114 &585601593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2627,6 +3037,43 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &733432284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 733432285}
+  m_Layer: 5
+  m_Name: GateExplainerPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &733432285
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733432284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -18.9}
+  m_LocalScale: {x: 0.8899288, y: 0.7144855, z: 0.53503484}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 145924789}
+  m_Father: {fileID: 1362870697}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 1380, y: 527}
+  m_SizeDelta: {x: -2781.15, y: -1695.64}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &757574449
 GameObject:
   m_ObjectHideFlags: 0
@@ -7835,7 +8282,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
+    m_Font: {fileID: 12800000, guid: d7cffddcbc0cc8f4ebe6e28eb9804082, type: 3}
     m_FontSize: 46
     m_FontStyle: 0
     m_BestFit: 0
@@ -8158,11 +8605,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1609960296}
-  - {fileID: 474778825699463231}
   - {fileID: 9176856245050851724}
+  - {fileID: 474778825699463231}
   - {fileID: 1783822538}
   - {fileID: 1020405859}
   - {fileID: 153485579}
+  - {fileID: 733432285}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8381,6 +8829,7 @@ MonoBehaviour:
   gateButtons: {fileID: 1020405858}
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 0}
+  gateExplainerText: {fileID: 0}
 --- !u!114 &1392799146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8518,6 +8967,7 @@ GameObject:
   - component: {fileID: 1492896956}
   - component: {fileID: 1497298393}
   - component: {fileID: 1497298394}
+  - component: {fileID: 1497298395}
   m_Layer: 5
   m_Name: S-Gate
   m_TagString: Untagged
@@ -8704,6 +9154,18 @@ MonoBehaviour:
             m_StringArgument: S-Gate
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1497298395}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnGateHover
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: s
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -8712,6 +9174,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
           m_MethodName: set_text
           m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1497298395}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8750,6 +9224,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quboTransform: {fileID: 234671157}
   blochSphere: {fileID: 2032736757}
+--- !u!114 &1497298395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483390840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db803c0a216c40a1963272fbb861440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  welcomePanel: {fileID: 7481040856123016825}
+  blochSpherePanel: {fileID: 470375995771580350}
+  quboPanel: {fileID: 1783822537}
+  blochSphere: {fileID: 2032736757}
+  quboObject: {fileID: 234671153}
+  gateButtons: {fileID: 1020405858}
+  gatePanel: {fileID: 153485578}
+  gateExplainerPanel: {fileID: 733432284}
+  gateExplainerText: {fileID: 404348477}
 --- !u!224 &1497298396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8994,7 +9489,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
+    m_Font: {fileID: 12800000, guid: d7cffddcbc0cc8f4ebe6e28eb9804082, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -9124,6 +9619,7 @@ GameObject:
   - component: {fileID: 1747365956}
   - component: {fileID: 1776614369}
   - component: {fileID: 1776614370}
+  - component: {fileID: 1776614371}
   m_Layer: 5
   m_Name: Z-Gate
   m_TagString: Untagged
@@ -9227,6 +9723,18 @@ MonoBehaviour:
             m_StringArgument: Z-Gate
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1776614371}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnGateHover
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: z
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -9235,6 +9743,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
           m_MethodName: set_text
           m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1776614371}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9273,6 +9793,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quboTransform: {fileID: 234671157}
   blochSphere: {fileID: 2032736757}
+--- !u!114 &1776614371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756873600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db803c0a216c40a1963272fbb861440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  welcomePanel: {fileID: 7481040856123016825}
+  blochSpherePanel: {fileID: 470375995771580350}
+  quboPanel: {fileID: 1783822537}
+  blochSphere: {fileID: 2032736757}
+  quboObject: {fileID: 234671153}
+  gateButtons: {fileID: 1020405858}
+  gatePanel: {fileID: 153485578}
+  gateExplainerPanel: {fileID: 733432284}
+  gateExplainerText: {fileID: 404348477}
 --- !u!222 &1776614372
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14655,6 +15196,7 @@ GameObject:
   - component: {fileID: 2064441097}
   - component: {fileID: 2073930958}
   - component: {fileID: 2073930959}
+  - component: {fileID: 2073930960}
   m_Layer: 5
   m_Name: Y-Gate
   m_TagString: Untagged
@@ -14691,6 +15233,18 @@ MonoBehaviour:
             m_StringArgument: Y-Gate
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2073930960}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnGateHover
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: y
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -14699,6 +15253,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
           m_MethodName: set_text
           m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: y
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2073930960}
+          m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14737,6 +15303,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quboTransform: {fileID: 234671157}
   blochSphere: {fileID: 2032736757}
+--- !u!114 &2073930960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073930957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db803c0a216c40a1963272fbb861440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  welcomePanel: {fileID: 7481040856123016825}
+  blochSpherePanel: {fileID: 470375995771580350}
+  quboPanel: {fileID: 1783822537}
+  blochSphere: {fileID: 2032736757}
+  quboObject: {fileID: 234671153}
+  gateButtons: {fileID: 1020405858}
+  gatePanel: {fileID: 153485578}
+  gateExplainerPanel: {fileID: 733432284}
+  gateExplainerText: {fileID: 404348477}
 --- !u!224 &42145356897956368
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14812,7 +15399,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470375995771580350}
   m_LocalRotation: {x: -0.007886425, y: -0.021985218, z: 0.0026229834, w: 0.9997238}
-  m_LocalPosition: {x: 0, y: 0, z: -12.9}
+  m_LocalPosition: {x: 0, y: 0, z: -12.917}
   m_LocalScale: {x: 0.20725746, y: 1.8558387, z: 0.42153788}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14822,8 +15409,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.897, y: -2.522, z: 0.32}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1004, y: 176}
-  m_SizeDelta: {x: -2773.3335, y: -1560}
+  m_AnchoredPosition: {x: 1003.97, y: 183.11}
+  m_SizeDelta: {x: -2773.33, y: -1403.53}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!224 &590028067359378688
 RectTransform:
@@ -14832,7 +15419,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4123697119566791607}
-  m_LocalRotation: {x: 0.0007339692, y: 0.009298588, z: -0.0017919827, w: 0.99995494}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -18}
   m_LocalScale: {x: 1.7910959, y: 0.61956054, z: 0.94321537}
   m_ConstrainProportionsScale: 0
@@ -14840,13 +15427,12 @@ RectTransform:
   - {fileID: 2153712389096744966}
   - {fileID: 6051563131850453665}
   - {fileID: 8221695402499108536}
-  - {fileID: 8887864310380629049}
   m_Father: {fileID: 9176856245050851724}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0.086, y: 1.065, z: -0.205}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0, y: -60}
+  m_AnchoredPosition: {x: 0, y: -28}
   m_SizeDelta: {x: -37.388412, y: 91.134636}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1308757409261585021
@@ -15048,7 +15634,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
+    m_Font: {fileID: 12800000, guid: d7cffddcbc0cc8f4ebe6e28eb9804082, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -15109,8 +15695,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308757409261585021}
   m_LocalRotation: {x: 0.0000000018626447, y: 0.000000002793967, z: 0.0000000041591184, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3.283}
-  m_LocalScale: {x: 0.9710715, y: 1.010501, z: 1.2563}
+  m_LocalPosition: {x: 0, y: 0, z: -2.307}
+  m_LocalScale: {x: 0.9710715, y: 0.7317139, z: 1.2563}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 355706772451431609}
@@ -15118,8 +15704,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 39.46, y: -606.95}
-  m_SizeDelta: {x: 979.24, y: 501.13}
+  m_AnchoredPosition: {x: 53.08, y: -723.63}
+  m_SizeDelta: {x: 964.38, y: 881.91}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &4876558423791984455
 MonoBehaviour:
@@ -15226,7 +15812,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3840165398319552103}
   m_LocalRotation: {x: 0.0000000018626447, y: 0.000000002793967, z: 0.0000000041591184, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.93321}
   m_LocalScale: {x: 0.9710715, y: 3.7729037, z: 1.2563}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15235,8 +15821,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 61, y: -1957}
-  m_SizeDelta: {x: 929.2781, y: 501.13464}
+  m_AnchoredPosition: {x: 60.68, y: -599.32}
+  m_SizeDelta: {x: 929.28, y: 126.91}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &6243669247832318218
 MonoBehaviour:
@@ -15523,7 +16109,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
+    m_Font: {fileID: 12800000, guid: d7cffddcbc0cc8f4ebe6e28eb9804082, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -15641,12 +16227,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   welcomePanel: {fileID: 7481040856123016825}
   blochSpherePanel: {fileID: 470375995771580350}
-  quboPanel: {fileID: 0}
-  blochSphere: {fileID: 0}
-  quboObject: {fileID: 0}
-  gateButtons: {fileID: 0}
-  gatePanel: {fileID: 0}
-  gateExplainerPanel: {fileID: 0}
+  quboPanel: {fileID: 1783822537}
+  blochSphere: {fileID: 2032736757}
+  quboObject: {fileID: 234671153}
+  gateButtons: {fileID: 1020405858}
+  gatePanel: {fileID: 153485578}
+  gateExplainerPanel: {fileID: 733432284}
+  gateExplainerText: {fileID: 404348477}
 --- !u!222 &8221695402499153020
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15684,8 +16271,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
-    m_FontSize: 53
+    m_Font: {fileID: 12800000, guid: d7cffddcbc0cc8f4ebe6e28eb9804082, type: 3}
+    m_FontSize: 59
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -15699,8 +16286,9 @@ MonoBehaviour:
   m_Text: "This is the Boch Sphere. The Bloch Sphere is a geometric representation
     used in quantum mechanics to visualize the state of a single qubit, the fundamental
     unit of quantum information. On this sphere:\n\n- The north pole typically represents
-    the state |0\u27E9>.\n\n- The south pole represents the state |1\u27E9>.\n\n-
-    Any point on the surface of the sphere represents a valid qubit state."
+    the state |0\u27E9\u27E9\u27E9\u27E9\u27E9>.\n\n- The south pole represents the
+    state |1\u27E9>.\n\n- Any point on the surface of the sphere represents a valid
+    qubit state."
 --- !u!222 &8887864310380592889
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15732,20 +16320,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8887864310400304793}
-  m_LocalRotation: {x: 0.0000000018626447, y: 0.000000002793967, z: 0.0000000041591184, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.1}
-  m_LocalScale: {x: 0.731426, y: 2.3902645, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -17.4725}
+  m_LocalScale: {x: 1.3100542, y: 1.4809136, z: 0.9432155}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8887864310380629051}
   - {fileID: 8887864310380629055}
-  m_Father: {fileID: 590028067359378688}
+  m_Father: {fileID: 9176856245050851724}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 131}
-  m_SizeDelta: {x: -110, y: 80}
+  m_AnchoredPosition: {x: 1.1608887, y: -32.62204}
+  m_SizeDelta: {x: -147.38843, y: 123.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &8887864310380629051
 RectTransform:
@@ -15784,7 +16372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: 2}
+  m_AnchoredPosition: {x: 1, y: -12}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8887864310400304793
@@ -15922,12 +16510,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7cb2912222469634ba17a77055919ea8, type: 3}
-    m_FontSize: 70
+    m_Font: {fileID: 12800000, guid: d7cffddcbc0cc8f4ebe6e28eb9804082, type: 3}
+    m_FontSize: 75
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 7
-    m_MaxSize: 70
+    m_MinSize: 0
+    m_MaxSize: 75
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -15959,17 +16547,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7481040856123016825}
-  m_LocalRotation: {x: -0.0632745, y: -0, z: -0, w: 0.9979962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -18.9}
   m_LocalScale: {x: 0.8899288, y: 0.7144855, z: 0.53503484}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8887864310380629049}
   - {fileID: 590028067359378688}
   m_Father: {fileID: 1362870697}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: -7.256, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1376, y: 440}
+  m_AnchoredPosition: {x: 1376, y: 448}
   m_SizeDelta: {x: -2773.3335, y: -1560}
   m_Pivot: {x: 0, y: 0.5}

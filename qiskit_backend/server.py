@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import qiskit
-from qiskit.visualization import plot_bloch_vector
+# from qiskit.visualization import plot_bloch_vector
 import matplotlib
 matplotlib.use('Agg')
 import numpy as np

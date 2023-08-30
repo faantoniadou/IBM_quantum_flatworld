@@ -5,15 +5,15 @@ using System.Collections;
 
 public class QuantumGateHandler : MonoBehaviour
 {
-    public Transform quboTransform;
+    public Transform  quboTransform;
     public GameObject blochSphere; // Reference to the Bloch Sphere GameObject
-    //public Text gateExplainerText;  // Reference to the Text component
 
-
-    private float blochSphereRadius;
+    private float        blochSphereRadius;
     private const string baseURL = "http://127.0.0.1:5000";
 
+
     [System.Serializable]
+
     public class BlochVectorResponse
     {
         public float[] bloch_vector;
@@ -53,39 +53,13 @@ public class QuantumGateHandler : MonoBehaviour
     {
         Debug.Log($"{gateName.ToUpper()} Gate button clicked");
         StartCoroutine(ApplyGate(gateName));
-
-        //// Update the explainer text
-        //switch (gateName)
-        //{
-        //    case "hadamard":
-        //        gateExplainerText.text = "The Hadamard gate creates superposition.";
-        //        break;
-        //    case "x":
-        //        gateExplainerText.text = "The X gate flips the qubit along the X-axis.";
-        //        break;
-        //    case "y":
-        //        gateExplainerText.text = "The Y gate flips the qubit along the Y-axis.";
-        //        break;
-        //    case "z":
-        //        gateExplainerText.text = "The Z gate flips the qubit along the Z-axis.";
-        //        break;
-        //    case "s":
-        //        gateExplainerText.text = "The S gate rotates the qubit by π/2 along the Z-axis.";
-        //        break;
-        //    case "t":
-        //        gateExplainerText.text = "The T gate rotates the qubit by π/4 along the Z-axis.";
-        //        break;
-        //    default:
-        //        gateExplainerText.text = "Unknown gate.";
-        //        break;
-        //}
     }
 
     private IEnumerator ApplyGate(string gateName)
     {
         string url = baseURL + "/apply_gate";
 
-        UnityWebRequest www = new UnityWebRequest(url, "POST");
+        UnityWebRequest www = new(url, "POST");
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes("{\"gate_name\": \"" + gateName + "\"}");
         www.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
         www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
