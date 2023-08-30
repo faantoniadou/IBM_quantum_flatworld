@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject gatePanel;
     public GameObject gateExplainerPanel;
     public Text       gateExplainerText;
+    //public Animator   quboAnimator; // Reference to the Animator component on the Qubo GameObject.
 
     //private bool      continueJumping = true; // New field to control jumping animation
 

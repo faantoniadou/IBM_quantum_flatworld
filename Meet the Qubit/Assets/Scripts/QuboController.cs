@@ -1,17 +1,42 @@
 using UnityEngine;
+using System.Collections;
 
 public class QuboController : MonoBehaviour
 {
-    private Animator  anim;
-    public Transform  quboTransform; // Reference to the Qubo's transform
-    public GameObject blochSphere; // Reference to the Bloch Sphere GameObject, set this in the Unity Editor
-
+    private Animator anim;
+    public Transform quboTransform;
+    public GameObject blochSphere;
     private float blochSphereRadius;
+
+    private int jumpCounter = 0; // Added this to count the number of jumps
+    private const int maxJumps = 2; // Maximum allowed jumps
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-        blochSphereRadius = blochSphere.transform.localScale.x / 2; // Assuming the sphere is uniformly scaled
+        blochSphereRadius = blochSphere.transform.localScale.x / 2;
+    }
+
+    public void TriggerJump()
+    {
+        if (jumpCounter < maxJumps)
+        {
+            StartCoroutine(DelayedJump());
+        }
+    }
+
+    private IEnumerator DelayedJump()
+    {
+        yield return new WaitForSeconds(0.5f);  // wait for half a second
+
+        if (gameObject.activeInHierarchy)
+        {
+            if (anim != null)
+            {
+                anim.SetTrigger("Jump");
+                jumpCounter++;
+            }
+        }
     }
 
     public void MoveToZeroState()
@@ -19,7 +44,6 @@ public class QuboController : MonoBehaviour
         anim.Play("MoveToZeroState");
     }
 
-    // This function will be called as an animation event
     public void OverrideQuboPosition()
     {
         Vector3 targetPosition = quboTransform.position.normalized * blochSphereRadius;
@@ -31,9 +55,9 @@ public class QuboController : MonoBehaviour
         anim.enabled = false;
     }
 
-    // Function to trigger the jump animation
-    public void TriggerJump()
+    // Call this function when you want to reset the jump counter, perhaps when Qubo reappears
+    public void ResetJumpCounter()
     {
-        anim.SetTrigger("Jump");
+        jumpCounter = 0;
     }
 }
