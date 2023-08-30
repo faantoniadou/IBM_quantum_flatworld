@@ -27,7 +27,7 @@ public class QuboController : MonoBehaviour
 
     private IEnumerator DelayedJump()
     {
-        yield return new WaitForSeconds(0.5f);  // wait for half a second
+        yield return new WaitForSeconds(0.2f);  // wait for half a second
 
         if (gameObject.activeInHierarchy)
         {
