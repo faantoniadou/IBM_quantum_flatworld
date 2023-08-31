@@ -74,7 +74,7 @@ ipcMain.on('open-unity-window', (event, gameName) => { // Adding the event and g
           preload: path.join(__dirname, 'preload.js'),
         }
       });
-      unityWindow.loadURL(gameConfig.gameURL || 'http://localhost:8081'); // No need to set process.env.GAME_URL
+      unityWindow.loadURL(gameConfig.gameURL || 'http://localhost:8081');
     }
   } catch (error) {
     console.log(error);
