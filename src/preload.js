@@ -1,4 +1,4 @@
-const { contextBridge, ipcRenderer } = require('electron');
+import { contextBridge, ipcRenderer } from 'electron';
 
 const validSendChannels = ['open-unity-window', 'close-unity-window'];
 const validReceiveChannels = ['channel_from_main'];

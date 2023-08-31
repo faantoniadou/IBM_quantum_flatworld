@@ -5,8 +5,18 @@ import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer';
 import path from 'path';
 import dotenv from 'dotenv';
+import fs from 'fs';
+import e from 'express';
+
+
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
+const gameConfigFilePath = path.join(__dirname, '/games.json'); // path to games.json file which contains the game urls
+const gameConfigs = JSON.parse(fs.readFileSync(gameConfigFilePath, 'utf-8'));
+
+function findGameConfig(gameName) {
+  return gameConfigs.find(config => config.gameName === gameName);
+}
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
@@ -48,21 +58,24 @@ async function createWindow() {
   }
 }
 
-ipcMain.on('open-unity-window', () => {
+ipcMain.on('open-unity-window', (event, gameName) => { // Adding the event and gameName parameters
   try {
-    console.log("Received IPC message to open Unity window");
-    let unityWindow = new BrowserWindow({
-      // make window full screen
-      fullscreen: true,
-      webPreferences: {
-        nodeIntegration: false,
-        contextIsolation: true,
-        enableRemoteModule: true,
-        preload: path.join(__dirname, 'preload.js'),
-      }
-    });
-    // Load Unity content here
-    unityWindow.loadURL(process.env.GAME_URL || 'http://localhost:8081');
+    const gameConfig = findGameConfig(gameName); // gameName comes from the renderer process
+    if (!gameConfig) {
+      console.log("Game config not found");
+      return;
+    } else {
+      let unityWindow = new BrowserWindow({
+        fullscreen: true,
+        webPreferences: {
+          nodeIntegration: false,
+          contextIsolation: true,
+          enableRemoteModule: true,
+          preload: path.join(__dirname, 'preload.js'),
+        }
+      });
+      unityWindow.loadURL(gameConfig.gameURL || 'http://localhost:8081'); // No need to set process.env.GAME_URL
+    }
   } catch (error) {
     console.log(error);
   }
