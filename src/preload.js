@@ -17,6 +17,3 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
     }
   }
 });
-
-
-// alert("It Worked!") // Remove this line once you confirm it worked

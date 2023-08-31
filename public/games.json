@@ -1,0 +1,10 @@
+[
+  {
+    "gameName": "The Quantum Computer",
+    "gameURL": "http://localhost:8081"
+  },
+  {
+    "gameName": "The Bloch Sphere",
+    "gameURL": "http://localhost:8081"
+  }
+]

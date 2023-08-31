@@ -1,7 +1,6 @@
 <template>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="path_to_your_stylesheet/primeicons.css">
+  <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces"/>
     <MenubarComponent/>
     <router-view>
 

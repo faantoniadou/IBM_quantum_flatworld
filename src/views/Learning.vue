@@ -54,8 +54,8 @@ export default {
     const courses = ref([
         {
           id: 1,
-          title: "Hello Quantum!",
-          description: "Learn the basics of quantum computing, including qubits, superposition, quantum teleportation, and more.",
+          title: "The Bloch Sphere",
+          description: "Meet Qubo, your quantum computer guide, and learn about the Bloch sphere representation of qubits.",
           image: "https://example.com/images/computer-science.jpg",
           category: "Basic"
         },
