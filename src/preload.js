@@ -10,6 +10,7 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
       ipcRenderer.send(channel, data);
     }
   },
+  
   receive: (channel, func) => {
     if (validReceiveChannels.includes(channel)) {
       // Deliberately strip event as it includes `sender`

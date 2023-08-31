@@ -124,7 +124,7 @@ export default {
           // router.push('/quantum-computer');
           if (window.ipcRenderer) {
               // console.log('ipcRenderer exists');
-              window.ipcRenderer.send('open-unity-window');
+              window.ipcRenderer.send('open-unity-window', title);
           } else {
             console.log('ipcRenderer does not exist');
           }
