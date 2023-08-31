@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 function startServer(courseTitle, callback) {
   // Course URLs for different courses'
   const courseURLs = {
-    'The Quantum Computer': '/unity-vr',
+    'The Quantum Computer': 'unity-vr',
     'The Bloch Sphere': 'The Bloch Sphere',
     // ... other courses
   };
@@ -24,12 +24,14 @@ function startServer(courseTitle, callback) {
   }
 
   app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', 'public', courseURL, 'index.html'));
+    const fullPath = path.join(__dirname, '..', 'public', courseURL, 'index.html');
+    console.log("Serving file from: ", fullPath);
+    res.sendFile(fullPath);
   });
 
   server = app.listen(0, 'localhost', () => {
     const port = server.address().port;
-    console.log(`Course server listening at http://localhost:${port}`);
+    console.log(`Course server listening at port ${port}`);
     callback(port);
   });
 
@@ -40,9 +42,6 @@ const stopServer = () => {
   if (server) {
     server.close(() => {
       console.log('Server stopped');
-      if (callback) {
-        callback();
-      }
     });
   }
 };

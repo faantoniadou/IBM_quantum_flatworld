@@ -69,6 +69,13 @@ ipcMain.on('open-unity-window', (event, title) => {
         },
       });
 
+      unityWindow.on('closed', () => {
+        stopServer(() => {
+          console.log('Course server stopped');
+        });
+        unityWindow = null;
+      });
+
       unityWindow.loadURL(courseURL);
 
       unityWindow.on('closed', () => {
@@ -79,6 +86,7 @@ ipcMain.on('open-unity-window', (event, title) => {
     console.log(error);
   }
 });
+
 
 ipcMain.on('close-unity-window', () => {
   try {

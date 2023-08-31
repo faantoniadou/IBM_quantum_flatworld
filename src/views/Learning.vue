@@ -118,13 +118,14 @@ export default {
       // Method to check the course title and show the game
       const checkCourse = (title) => {
         // console.log("Received start-course with title:", title);
-        if(title === "The Quantum Computer") {
+        if(title === "The Quantum Computer" || title === "The Bloch Sphere") {
           
           // Navigate to the quantum computer route
           // router.push('/quantum-computer');
           if (window.ipcRenderer) {
               // console.log('ipcRenderer exists');
               window.ipcRenderer.send('open-unity-window', title);
+              console.log(`sent message to open unity window to open ${title}`)
           } else {
             console.log('ipcRenderer does not exist');
           }
