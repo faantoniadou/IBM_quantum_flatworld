@@ -23,9 +23,8 @@ import Carousel from 'primevue/carousel';
 import Divider from 'primevue/divider';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
-import ColumnGroup from 'primevue/columngroup';   
-import Row from 'primevue/row';                   
-
+import ColumnGroup from 'primevue/columngroup';
+import Row from 'primevue/row';
 
 const app = createApp(App);
 
@@ -43,10 +42,8 @@ app.component('Column', Column);
 app.component('ColumnGroup', ColumnGroup);
 app.component('Row', Row);
 
-
-app.config.isCustomElement = tag => tag.startsWith('Unity-');
+app.config.isCustomElement = (tag) => tag.startsWith('Unity-');
 
 app.config.allowedNonProps = ['UnityWebgl', 'UnityLoader'];
 
 app.mount('#app');
-

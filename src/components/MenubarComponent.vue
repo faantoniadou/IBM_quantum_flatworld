@@ -11,6 +11,6 @@
 <script>
 
 export default {
-  name: "MenubarComponent",
+  name: "MenubarComponent"
 }
 </script>

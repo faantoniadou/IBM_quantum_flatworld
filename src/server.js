@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 
+
 let server;
 
 const app = express();
@@ -10,8 +11,8 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 function startServer(courseTitle, callback) {
   // Course URLs for different courses'
   const courseURLs = {
-    "The Quantum Computer": "/unity-vr",
-    "The Bloch Sphere": "The Bloch Sphere"
+    'The Quantum Computer': '/unity-vr',
+    'The Bloch Sphere': 'The Bloch Sphere',
     // ... other courses
   };
 
@@ -46,4 +47,5 @@ const stopServer = () => {
   }
 };
 
-module.exports = { startServer, stopServer };
+export { startServer, stopServer };
+

@@ -9,8 +9,6 @@ const { startServer, stopServer } = require('./server.js');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
-
-
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } },
@@ -51,11 +49,9 @@ async function createWindow() {
   }
 }
 
-
 let unityWindow;
 
-
-ipcMain.on('open-unity-window', (event, title) => { 
+ipcMain.on('open-unity-window', (event, title) => {
   try {
     console.log('Received open-unity-window with title:', title);
 
@@ -68,9 +64,9 @@ ipcMain.on('open-unity-window', (event, title) => {
         webPreferences: {
           nodeIntegration: false,
           contextIsolation: true,
-          enableRemoteModule: false, 
+          enableRemoteModule: false,
           preload: path.join(__dirname, 'preload.js'),
-        }
+        },
       });
 
       unityWindow.loadURL(courseURL);
@@ -79,21 +75,18 @@ ipcMain.on('open-unity-window', (event, title) => {
         stopServer();
       });
     });
-
   } catch (error) {
     console.log(error);
   }
 });
 
-
 ipcMain.on('close-unity-window', () => {
   try {
-    if(unityWindow) {
+    if (unityWindow) {
       unityWindow.close();
       unityWindow = null;
     }
     stopServer();
-
   } catch (error) {
     console.log(error);
   }
@@ -137,7 +130,6 @@ if (isDevelopment) {
         app.quit();
       }
     });
-
   } else {
     process.on('SIGTERM', () => {
       app.quit();
