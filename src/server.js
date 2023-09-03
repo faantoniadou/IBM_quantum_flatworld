@@ -2,16 +2,40 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import dotenv from 'dotenv';
+import { spawn } from 'child_process';
 
-dotenv.config({ path: path.join(__dirname, '..', '/.env') });
-
-
-// let server;
+dotenv.config({ path: path.join(__dirname, '../', '..', '/.env') });
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, '..')));
 const gamePort = process.env.PORT || 8081;
+const flaskPort = process.env.FLASK_PORT || 5000;
+const flaskDir = path.join(__dirname, '..', 'qiskit_backend');
+
+let flask;
+
+const startFlaskServer = () => {
+  const flaskEnv = { ...process.env, FLASK_APP: "server.py" };
+  flask = spawn('flask', ['run', '--host=0.0.0.0', `--port=${flaskPort}`], { cwd: flaskDir, env: flaskEnv });
+
+  flask.stdout.on('data', (data) => {
+    console.log(`Flask stdout: ${data}`);
+  });
+
+  flask.stderr.on('data', (data) => {
+    console.error(`Flask stderr: ${data}`);
+  });
+
+  flask.on('exit', (code) => {
+    console.log(`Flask process exited with code ${code}`);
+    if (code !== 0) {
+      console.log('Restarting Flask server...');
+      startFlaskServer();
+    }
+  });
+};
+
 
 // Course URLs for different courses
 const courseURLs = {
@@ -19,6 +43,7 @@ const courseURLs = {
   'The Bloch Sphere': 'TheBlochSphere',
   // ... other courses
 };
+
 
 app.use(express.static(path.join(__dirname, '..')));
 
@@ -60,10 +85,16 @@ app.get('*.js', (req, res, next) => {
   next();
 });
 
-// Start the server
+
+
+
+// Start the servers
 try {
   const server = app.listen(gamePort, () => {
     console.log(`Server listening on port ${gamePort}`);
+
+  // Start the Flask server 
+    startFlaskServer();
   });
 } catch (error) {
   console.error('Error starting server:', error);

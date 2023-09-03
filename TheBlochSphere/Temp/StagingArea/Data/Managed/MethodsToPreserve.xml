@@ -1,0 +1,55 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="BlochSphereController">
+			<method name="StopAndResetRotation"/>
+		</type>
+		<type fullname="QuantumGateHandler">
+			<method name="OnGateClick"/>
+			<method name="OnGateClick"/>
+			<method name="OnGateClick"/>
+			<method name="OnGateClick"/>
+			<method name="OnGateClick"/>
+			<method name="OnGateClick"/>
+		</type>
+		<type fullname="QuboController">
+			<method name="MoveToZeroState"/>
+			<method name="TriggerJump"/>
+		</type>
+		<type fullname="UIManager">
+			<method name="HideGatePanel"/>
+			<method name="OnGateHover"/>
+			<method name="OnGateHover"/>
+			<method name="OnGateHover"/>
+			<method name="OnGateHover"/>
+			<method name="OnGateHover"/>
+			<method name="OnGateHover"/>
+			<method name="OnPointerExit"/>
+			<method name="OnPointerExit"/>
+			<method name="OnPointerExit"/>
+			<method name="OnPointerExit"/>
+			<method name="OnPointerExit"/>
+			<method name="OnPointerExit"/>
+			<method name="ShowBlochSphere"/>
+			<method name="ShowBlochSpherePanel"/>
+			<method name="ShowGatePanel"/>
+			<method name="ShowQubo"/>
+			<method name="ShowQuboPanel"/>
+		</type>
+	</assembly>
+	<assembly fullname="UnityEngine.UI" ignoreIfMissing="1">
+		<type fullname="UnityEngine.UI.Text">
+			<method name="set_text"/>
+			<method name="set_text"/>
+			<method name="set_text"/>
+			<method name="set_text"/>
+			<method name="set_text"/>
+			<method name="set_text"/>
+			<method name="set_text"/>
+			<method name="set_text"/>
+			<method name="set_text"/>
+			<method name="set_text"/>
+			<method name="set_text"/>
+			<method name="set_text"/>
+		</type>
+	</assembly>
+</linker>
