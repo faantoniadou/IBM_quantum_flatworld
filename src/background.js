@@ -5,11 +5,10 @@ import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer';
 import path from 'path';
 // import dotenv from 'dotenv';
-const { startServer, stopServer } = require('./server.js');
+import { startServer, stopServer } from './server.js';
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
-// Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } },
 ]);
@@ -69,17 +68,13 @@ ipcMain.on('open-unity-window', (event, title) => {
         },
       });
 
+      unityWindow.loadURL(courseURL);
+
       unityWindow.on('closed', () => {
         stopServer(() => {
           console.log('Course server stopped');
         });
         unityWindow = null;
-      });
-
-      unityWindow.loadURL(courseURL);
-
-      unityWindow.on('closed', () => {
-        stopServer();
       });
     });
   } catch (error) {
