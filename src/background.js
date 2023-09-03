@@ -18,6 +18,7 @@ protocol.registerSchemesAsPrivileged([
 ]);
 
 async function createWindow() {
+  console.log(process.env.COURSE_PORT); 
   const win = new BrowserWindow({
     width: 1400,
     height: 900,
