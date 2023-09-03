@@ -3,12 +3,17 @@ import path from 'path';
 import fs from 'fs';
 import dotenv from 'dotenv';
 import { spawn } from 'child_process';
+import cors from 'cors';
+import { createProxyMiddleware } from 'http-proxy-middleware';
+
 
 dotenv.config({ path: path.join(__dirname, '../', '..', '/.env') });
 
 const app = express();
 
+app.use(cors());
 app.use(express.static(path.join(__dirname, '..')));
+
 const gamePort = process.env.PORT || 8081;
 const flaskPort = process.env.FLASK_PORT || 3000;
 const flaskDir = path.join(__dirname, '..', 'qiskit_backend');
@@ -46,6 +51,13 @@ const courseURLs = {
 
 
 app.use(express.static(path.join(__dirname, '..')));
+
+app.use(cors({origin: `http://localhost:${gamePort}`}));
+
+app.use('/api', createProxyMiddleware({
+  target: `http://localhost:${flaskPort}`,  // Flask server URL
+  changeOrigin: true,
+}));
 
 // Define a single route that will handle all courseTitle values
 app.get('/:courseTitle', (req, res) => {
@@ -85,8 +97,6 @@ app.get('*.js', (req, res, next) => {
   res.set('Content-Type', 'text/javascript');
   next();
 });
-
-
 
 
 // Start the servers

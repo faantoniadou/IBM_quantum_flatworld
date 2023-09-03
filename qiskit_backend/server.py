@@ -1,13 +1,21 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import qiskit
-# from qiskit.visualization import plot_bloch_vector
 import matplotlib
 matplotlib.use('Agg')
 import numpy as np
+import os # for environment variables
+from dotenv import load_dotenv
 
+unity_port = os.getenv('COURSE_PORT')
 app = Flask(__name__)
+
 CORS(app)
+
+# get the environment variables from the parent directory's .env file
+load_dotenv(dotenv_path='../.env')
+
+CORS(app, resources={r"/*": {"origins": f"http://localhost:{unity_port}"}})
 
 # we have to keep track of the state of the qubit 
 current_state = qiskit.QuantumCircuit(1)  # global variable
