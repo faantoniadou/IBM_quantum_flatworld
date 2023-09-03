@@ -4,20 +4,21 @@ import { ipcMain, app, protocol, BrowserWindow } from 'electron';
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer';
 import path from 'path';
-// import dotenv from 'dotenv';
-import { startServer, stopServer } from './server.js';
+import dotenv from 'dotenv';
+import './server.js';
+import { stopServer } from './server.js';
+dotenv.config({ path: path.join(__dirname, '../.env') });
+
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
+const gamePort = process.env.COURSE_PORT || 8081; 
 
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } },
 ]);
 
 async function createWindow() {
-  // Create the browser window.
   const win = new BrowserWindow({
-    // make window full screen
-    // fullscreen: true,
     width: 1400,
     height: 900,
     fullscreenable: true,
@@ -26,10 +27,7 @@ async function createWindow() {
     closable: true,
     minimizable: true,
     maximizable: true,
-    // titleBarStyle: 'hidden',
     webPreferences: {
-      // Use pluginOptions.nodeIntegration, leave this alone
-      // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: false,
       contextIsolation: true,
       enableRemoteModule: true,
@@ -38,12 +36,10 @@ async function createWindow() {
   });
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
-    // Load the url of the dev server if in development mode
     await win.loadURL(process.env.WEBPACK_DEV_SERVER_URL);
     if (!process.env.IS_TEST) win.webContents.openDevTools();
   } else {
     createProtocol('app');
-    // Load the index.html when not in development
     win.loadURL('app://./index.html');
   }
 }
@@ -53,35 +49,26 @@ let unityWindow;
 ipcMain.on('open-unity-window', (event, title) => {
   try {
     console.log('Received open-unity-window with title:', title);
+    let courseURL = `http://localhost:${gamePort}/${encodeURIComponent(title)}`;
+    unityWindow = new BrowserWindow({
+      fullscreen: true,
+      webPreferences: {
+        nodeIntegration: false,
+        contextIsolation: true,
+        enableRemoteModule: false,
+        preload: path.join(__dirname, 'preload.js'),
+      },
+    });
 
-    // Start the server and get the dynamically-allocated port
-    startServer(title, (port) => {
-      let courseURL = `http://localhost:${port}`;
-
-      unityWindow = new BrowserWindow({
-        fullscreen: true,
-        webPreferences: {
-          nodeIntegration: false,
-          contextIsolation: true,
-          enableRemoteModule: false,
-          preload: path.join(__dirname, 'preload.js'),
-        },
-      });
-
-      unityWindow.loadURL(courseURL);
-
-      unityWindow.on('closed', () => {
-        stopServer(() => {
-          console.log('Course server stopped');
-        });
-        unityWindow = null;
-      });
+    unityWindow.loadURL(courseURL);
+    console.log('Loaded course URL:', courseURL);
+    unityWindow.on('closed', () => {
+      unityWindow = null;
     });
   } catch (error) {
     console.log(error);
   }
 });
-
 
 ipcMain.on('close-unity-window', () => {
   try {
@@ -89,33 +76,23 @@ ipcMain.on('close-unity-window', () => {
       unityWindow.close();
       unityWindow = null;
     }
-    stopServer();
   } catch (error) {
     console.log(error);
   }
 });
 
-// Quit when all windows are closed.
 app.on('window-all-closed', () => {
-  // On macOS it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
 app.on('activate', () => {
-  // On macOS it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
   if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
 app.on('ready', async () => {
   if (isDevelopment && !process.env.IS_TEST) {
-    // Install Vue Devtools
     try {
       await installExtension(VUEJS3_DEVTOOLS);
     } catch (e) {
@@ -125,7 +102,6 @@ app.on('ready', async () => {
   createWindow();
 });
 
-// Exit cleanly on request from parent process in development mode.
 if (isDevelopment) {
   if (process.platform === 'win32') {
     process.on('message', (data) => {
