@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, '..')));
 const gamePort = process.env.PORT || 8081;
-const flaskPort = process.env.FLASK_PORT || 5000;
+const flaskPort = process.env.FLASK_PORT || 3000;
 const flaskDir = path.join(__dirname, '..', 'qiskit_backend');
 
 let flask;
@@ -40,7 +40,7 @@ const startFlaskServer = () => {
 // Course URLs for different courses
 const courseURLs = {
   'The Quantum Computer': 'unity-vr',
-  'The Bloch Sphere': 'TheBlochSphere',
+  'The Bloch Sphere': 'the-bloch-sphere',
   // ... other courses
 };
 
@@ -69,7 +69,8 @@ app.get('/:courseTitle', (req, res) => {
     }
 
     let modifiedData = data.replace(/TemplateData\//g, `../public/${courseURL}/TemplateData/`);
-    modifiedData = modifiedData.replace(/\/Build/g, `../public/${courseURL}/Build`);
+    // modifiedData = modifiedData.replace(/\/Build/g, `../public/${courseURL}/Build`);
+    modifiedData = modifiedData.replace(/Build/g, `../public/${courseURL}/Build`);
     modifiedData = modifiedData.replace(/StreamingAssets/g, `../public/${courseURL}/StreamingAssets`);
 
     res.send(modifiedData);

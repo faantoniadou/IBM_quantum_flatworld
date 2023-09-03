@@ -6,7 +6,7 @@ import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer';
 import path from 'path';
 import dotenv from 'dotenv';
 import './server.js';
-import { stopServer } from './server.js';
+// import { stopServer } from './server.js';
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
 

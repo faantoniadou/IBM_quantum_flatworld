@@ -29,10 +29,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -204,7 +202,7 @@ ScriptsOnlyBuild:
     fullTypeName: UIManager
     methodName: ShowBlochSpherePanel
   sceneClasses:
-    Assets/Scenes/MeetTheQubit.unity:
+    Assets/Scenes/TheBlochSphere.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -1340,6 +1338,5 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   platform: 20
   scenePathNames:
-  - Assets/Scenes/MeetTheQubit.unity
-  playerPath: /Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/public/The
-    Bloch Sphere
+  - Assets/Scenes/TheBlochSphere.unity
+  playerPath: /Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/public/the-bloch-sphere
