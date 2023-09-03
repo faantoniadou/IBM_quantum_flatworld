@@ -7,9 +7,10 @@ public class QuantumGateHandler : MonoBehaviour
 {
     public Transform  quboTransform;
     public GameObject blochSphere; // Reference to the Bloch Sphere GameObject
+    public ServerConfig serverConfig;
 
     private float        blochSphereRadius;
-    private const string baseURL = "http://127.0.0.1:5000";
+    //private const string baseURL = "http://127.0.0.1:5000";
 
 
     [System.Serializable]
@@ -28,7 +29,7 @@ public class QuantumGateHandler : MonoBehaviour
 
     private IEnumerator ResetQubitStateOnServer()
     {
-        string url = baseURL + "/reset";
+        string url = serverConfig.baseURL;
         UnityWebRequest www = UnityWebRequest.Post(url, new WWWForm());
 
         yield return www.SendWebRequest();
@@ -57,7 +58,8 @@ public class QuantumGateHandler : MonoBehaviour
 
     private IEnumerator ApplyGate(string gateName)
     {
-        string url = baseURL + "/apply_gate";
+        string url = serverConfig.baseURL + "/apply_gate";
+        //string url = baseURL + "/apply_gate";
 
         UnityWebRequest www = new(url, "POST");
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes("{\"gate_name\": \"" + gateName + "\"}");

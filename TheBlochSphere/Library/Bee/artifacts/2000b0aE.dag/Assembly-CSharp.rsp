@@ -339,6 +339,7 @@
 "Assets/Scripts/BlochSphereController.cs"
 "Assets/Scripts/QuantumGateHandler.cs"
 "Assets/Scripts/QuboController.cs"
+"Assets/Scripts/ServerConfig.cs"
 "Assets/Scripts/SphereGridDrawer.cs"
 "Assets/Scripts/UIManager.cs"
 "Assets/Unity UI Samples/Scripts/ActiveStateToggler.cs"

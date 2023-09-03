@@ -589,6 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quboTransform: {fileID: 234671157}
   blochSphere: {fileID: 2032736757}
+  serverConfig: {fileID: 11400000, guid: 5c642620c447d47fd83367b90edba3c0, type: 2}
 --- !u!114 &95231291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,6 +771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quboTransform: {fileID: 234671157}
   blochSphere: {fileID: 2032736757}
+  serverConfig: {fileID: 11400000, guid: 5c642620c447d47fd83367b90edba3c0, type: 2}
 --- !u!1 &98191814
 GameObject:
   m_ObjectHideFlags: 0
@@ -2677,6 +2679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quboTransform: {fileID: 234671157}
   blochSphere: {fileID: 2032736757}
+  serverConfig: {fileID: 11400000, guid: 5c642620c447d47fd83367b90edba3c0, type: 2}
 --- !u!114 &555628283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9236,6 +9239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quboTransform: {fileID: 234671157}
   blochSphere: {fileID: 2032736757}
+  serverConfig: {fileID: 11400000, guid: 5c642620c447d47fd83367b90edba3c0, type: 2}
 --- !u!114 &1497298395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9805,6 +9809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quboTransform: {fileID: 234671157}
   blochSphere: {fileID: 2032736757}
+  serverConfig: {fileID: 11400000, guid: 5c642620c447d47fd83367b90edba3c0, type: 2}
 --- !u!114 &1776614371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15315,6 +15320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quboTransform: {fileID: 234671157}
   blochSphere: {fileID: 2032736757}
+  serverConfig: {fileID: 11400000, guid: 5c642620c447d47fd83367b90edba3c0, type: 2}
 --- !u!114 &2073930960
 MonoBehaviour:
   m_ObjectHideFlags: 0

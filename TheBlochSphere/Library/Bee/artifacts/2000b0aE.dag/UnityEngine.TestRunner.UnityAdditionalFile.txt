@@ -1,1 +1,1 @@
-/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit
+/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere

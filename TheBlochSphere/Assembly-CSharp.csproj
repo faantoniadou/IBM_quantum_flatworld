@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9E0F6663-7D63-575A-976F-65E0597D634A}</ProjectGuid>
+    <ProjectGuid>{BD911A8F-17A6-DA43-0E49-56F5D95EB5AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -74,6 +74,7 @@
     <Compile Include="Assets/Unity UI Samples/Scripts/ActiveStateToggler.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/DragPanel.cs" />
     <Compile Include="Assets/Unity UI Samples/Scripts/ScrollDetailTexture.cs" />
+    <Compile Include="Assets/Scripts/ServerConfig.cs" />
     <Compile Include="Assets/Scripts/UIManager.cs" />
   </ItemGroup>
   <ItemGroup>

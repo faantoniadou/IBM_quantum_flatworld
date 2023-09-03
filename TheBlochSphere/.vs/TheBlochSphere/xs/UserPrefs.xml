@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{BD911A8F-17A6-DA43-0E49-56F5D95EB5AC}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/QuantumGateHandler.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ServerConfig.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/QuantumGateHandler.cs" Line="13" Column="33" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TheBlochSphere" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="ServerConfig.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8733b061-96f3-4829-82b4-ff6efc860fc2" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
