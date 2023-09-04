@@ -771,7 +771,7 @@
 .p-dropdown:not(.p-disabled).p-focus {
   outline: 0 none;
   outline-offset: 0;
-  box-shadow: 0 0 0 0.2rem rgba(196, 181, 253, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(86, 62, 104, 0.6);
   border-color: #C4B5FD;
 }
 .p-dropdown.p-dropdown-clearable .p-dropdown-label {
@@ -806,7 +806,7 @@
 .p-dropdown-panel {
   background: #d2c5dd;
   color: rgba(5, 5, 5, 0.87);
-  border: 1px solid #d2c5dd;
+  border: 1px solid #463851;
   border-radius: 6px;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
 }
@@ -834,25 +834,25 @@
   margin: 0;
   padding: 0.75rem 1.25rem;
   border: 0 none;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(15, 12, 12, 0.87);
   background: transparent;
   transition: box-shadow 0.2s;
   border-radius: 0;
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(15, 12, 12, 0.87);
   background: rgba(196, 181, 253, 0.16);
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight.p-focus {
-  background: rgba(217, 181, 253, 0.24);
+  background: rgba(30, 21, 37, 0.6);
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled).p-focus {
-  color: rgba(255, 255, 255, 0.87);
-  background: #321247;
+  color: rgba(15, 12, 12, 0.87);
+  background: transparent;
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
   color: rgba(255, 255, 255, 0.87);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(157, 113, 186, 0.655);
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item-group {
   margin: 0;

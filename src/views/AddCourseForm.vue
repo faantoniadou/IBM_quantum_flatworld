@@ -14,18 +14,18 @@
   <div class="add-course-form">
     <div class="flex flex-column gap-2" style="padding: 20px;">
         <label for="title" style="display: block; margin-bottom: 10px;">Course Title</label>
-        <InputText id="title" v-model="value" aria-describedby="title-help" placeholder="Title" size="large" style="width: 300px;"/>
+        <InputText id="title" v-model="value" aria-describedby="title-help" placeholder="Title" style="width: 300px;"/>
     </div>
     <div class="flex flex-column gap-2" style="padding: 20px;">
         <label for="description" style="display: block; margin-bottom: 10px;">Course Description</label>
-        <InputText id="description" v-model="value" aria-describedby="title-help" placeholder="Description" size="large" style="width: 300px;"/>
+        <InputText id="description" v-model="value" aria-describedby="title-help" placeholder="Description" style="width: 300px;"/>
     </div>
     <div class="flex flex-column gap-2" style="padding: 20px;">
         <label for="levels" style="display: block; margin-bottom: 10px;">Course Level</label>
         <Dropdown v-model="selectedLevel" :options="categories" optionLabel="level" placeholder="Select a Level" class="['w-full md:w-14rem', { 'p-invalid': errorMessage }]" style="width: 300px;"/>
     </div>
     <div class="button-container" style="width:100%; padding: 20px; ">
-      <Button label="Submit" :loading="loading" class="p-button-lg" style="padding: 20px; font-size: 14px; width: 300px; height:45px; background-color: #7027ab;"/>
+      <Button label="Submit" :loading="loading" class="p-button-lg" style="padding: 20px; font-size: 15px; width: 300px; height:45px; background-color: #7027ab;"/>
     </div>
   </div>
 
