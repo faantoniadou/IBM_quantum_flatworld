@@ -7,13 +7,11 @@ import numpy as np
 import os # for environment variables
 from dotenv import load_dotenv
 
-unity_port = os.getenv('COURSE_PORT')
-app = Flask(__name__)
-
-CORS(app)
-
 # get the environment variables from the parent directory's .env file
 load_dotenv(dotenv_path='../.env')
+
+unity_port = os.getenv('COURSE_PORT', '8081')
+app = Flask(__name__)
 
 CORS(app, resources={r"/*": {"origins": f"http://localhost:{unity_port}"}})
 
@@ -76,4 +74,4 @@ def apply_gate():
         return jsonify({"error": str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=os.getenv('DEBUG', 'false') == 'true', port=unity_port)

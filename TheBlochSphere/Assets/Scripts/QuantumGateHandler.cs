@@ -10,7 +10,6 @@ public class QuantumGateHandler : MonoBehaviour
     public ServerConfig serverConfig;
 
     private float        blochSphereRadius;
-    //private const string baseURL = "http://127.0.0.1:5000";
 
 
     [System.Serializable]
@@ -59,8 +58,7 @@ public class QuantumGateHandler : MonoBehaviour
     private IEnumerator ApplyGate(string gateName)
     {
         string url = serverConfig.baseURL + "/apply_gate";
-        //string url = baseURL + "/apply_gate";
-
+        
         UnityWebRequest www = new(url, "POST");
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes("{\"gate_name\": \"" + gateName + "\"}");
         www.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);

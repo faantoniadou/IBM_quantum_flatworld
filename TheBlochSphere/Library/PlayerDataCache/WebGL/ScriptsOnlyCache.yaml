@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - ButtonController
     - QuantumGateHandler
     - QuboController
+    - ServerConfig
     - SphereGridDrawer
     - TiltWindow
     - UIManager
@@ -285,6 +286,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 7466}
     - Class: 114
       Script: {instanceID: 7750}
+    - Class: 114
+      Script: {instanceID: 24190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1290,7 +1293,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 8e90743cacd110f723c327bc707fbd56
+      Hash: b1fc4596bbc8cf640a4bea95827f8702
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: QuantumGateHandler
@@ -1336,6 +1339,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: e97154f6a2a632dc8f4f23993b3fd0f8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ServerConfig
   platform: 20
   scenePathNames:
   - Assets/Scenes/TheBlochSphere.unity

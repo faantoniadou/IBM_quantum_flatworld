@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9164c6b35ba5a4032a51a2054b1aa543, type: 3}
   m_Name: ServerConfig
   m_EditorClassIdentifier: 
-  baseURL: http://127.0.0.1:5000
+  baseURL: http://127.0.0.1:3000

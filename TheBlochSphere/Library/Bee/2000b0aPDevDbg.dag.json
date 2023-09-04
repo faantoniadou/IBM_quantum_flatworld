@@ -5977,7 +5977,7 @@
       "DisplayName": "Writing Assembly-CSharp.rsp",
       "ActionType": "WriteFile",
       "PayloadOffset": 419867,
-      "PayloadLength": 29423,
+      "PayloadLength": 29456,
       "PayloadDebugContentSnippet": "-target:library\n-out:\"Library/",
       "Inputs": [],
       "Outputs": [
@@ -5989,7 +5989,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/2000b0aPDevDbg.dag/Assembly-CSharp.rsp2",
       "DisplayName": "Writing Assembly-CSharp.rsp2",
       "ActionType": "WriteFile",
-      "PayloadOffset": 449383,
+      "PayloadOffset": 449416,
       "PayloadLength": 0,
       "PayloadDebugContentSnippet": "",
       "Inputs": [],
@@ -6201,6 +6201,7 @@
         "Assets/Scripts/BlochSphereController.cs",
         "Assets/Scripts/QuantumGateHandler.cs",
         "Assets/Scripts/QuboController.cs",
+        "Assets/Scripts/ServerConfig.cs",
         "Assets/Scripts/SphereGridDrawer.cs",
         "Assets/Scripts/UIManager.cs",
         "Assets/Unity UI Samples/Scripts/ActiveStateToggler.cs",
@@ -6328,7 +6329,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/2000b0aPDevDbg.dag/Assembly-CSharp.dll.mvfrm.rsp",
       "DisplayName": "Writing Assembly-CSharp.dll.mvfrm.rsp",
       "ActionType": "WriteFile",
-      "PayloadOffset": 449485,
+      "PayloadOffset": 449518,
       "PayloadLength": 6135,
       "PayloadDebugContentSnippet": "Library/Bee/artifacts/mvdfrm/U",
       "Inputs": [],
@@ -6772,7 +6773,7 @@
     {
       "Annotation": "BuildPlayerDataGenerator Library/BuildPlayerData/Player/RuntimeInitializeOnLoads.json (+1 other)",
       "DisplayName": "BuildPlayerDataGenerator RuntimeInitializeOnLoads",
-      "Action": "\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/Tools/netcorerun/netcorerun\" \"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/Bee/PlayerScriptAssemblies/Unity.Postprocessing.Runtime.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/Bee/PlayerScriptAssemblies/Unity.Timeline.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.Core.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.Flow.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.State.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/Bee/PlayerScriptAssemblies/UnityEngine.TestRunner.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/PlaybackEngines/WebGLSupport/Managed\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/Managed/UnityEngine\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netstandard\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/NetStandard/Extensions/2.0.0\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/NetStandard/ref/2.1.0\" -s=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/Bee/PlayerScriptAssemblies\" -s=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom\" -s=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc\" -o=\"Library/BuildPlayerData/Player\" -rn=\"RuntimeInitializeOnLoads.json\" -tn=\"TypeDb-All.json\"",
+      "Action": "\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/Tools/netcorerun/netcorerun\" \"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/Bee/PlayerScriptAssemblies/Assembly-CSharp.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/Bee/PlayerScriptAssemblies/Unity.Postprocessing.Runtime.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/Bee/PlayerScriptAssemblies/Unity.TextMeshPro.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/Bee/PlayerScriptAssemblies/Unity.Timeline.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.Core.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.Flow.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/Bee/PlayerScriptAssemblies/Unity.VisualScripting.State.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/Bee/PlayerScriptAssemblies/UnityEngine.TestRunner.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/Bee/PlayerScriptAssemblies/UnityEngine.UI.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll\" -a=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/PlaybackEngines/WebGLSupport/Managed\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/Managed/UnityEngine\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netstandard\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/NetStandard/Extensions/2.0.0\" -s=\"/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/NetStandard/ref/2.1.0\" -s=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/Bee/PlayerScriptAssemblies\" -s=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom\" -s=\"/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc\" -o=\"Library/BuildPlayerData/Player\" -rn=\"RuntimeInitializeOnLoads.json\" -tn=\"TypeDb-All.json\"",
       "Inputs": [
         "/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/Tools/netcorerun/netcorerun",
         "/Applications/Unity/Hub/Editor/2022.3.4f1/Unity.app/Contents/Tools/BuildPlayerDataGenerator/BuildPlayerDataGenerator.exe",
@@ -6926,7 +6927,7 @@
   ],
   "StatSignatures": [
     {
-      "File": "/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/getconf"
+      "File": "/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/getconf"
     },
     {
       "File": "Assets/csc.rsp"
@@ -7000,6 +7001,6 @@
   "SharedResources": [],
   "Scanners": [],
   "Identifier": "Library/Bee/2000b0aPDevDbg.dag.json",
-  "PayloadsFile": "/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/Meet the Qubit/Library/Bee/2000b0aPDevDbg.dag.payloads",
+  "PayloadsFile": "/Users/fedraan/Desktop/Courses/MSc Summer Project/code files/quant_flat_ibm/TheBlochSphere/Library/Bee/2000b0aPDevDbg.dag.payloads",
   "RelativePathToRoot": "../.."
 }

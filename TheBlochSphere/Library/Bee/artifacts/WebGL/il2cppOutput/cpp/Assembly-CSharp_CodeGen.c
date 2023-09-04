@@ -54,6 +54,7 @@ extern void U3CDelayedJumpU3Ed__8_MoveNext_m6091F1CB9B4A5969B5F3809625FF241A04FB
 extern void U3CDelayedJumpU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m9B2A295E2C1A43F9529B09EBB8AE1D9B955FD126 (void);
 extern void U3CDelayedJumpU3Ed__8_System_Collections_IEnumerator_Reset_m8732AA8F775113301A7C3EDD82048004C338953A (void);
 extern void U3CDelayedJumpU3Ed__8_System_Collections_IEnumerator_get_Current_mFD8C5F26844A73387F87CF2F2F8A96988D508A5F (void);
+extern void ServerConfig__ctor_mD438583647047D455A8BA1E415825E281C5E3721 (void);
 extern void SphereGridDrawer_Start_m60B9B1373CB96C6E6FB8ADD2AF6ED4AB1A046E2F (void);
 extern void SphereGridDrawer_DrawGrid_m6B78C0D8D82A23D6A0F60B2BDABF966887B3EDC8 (void);
 extern void SphereGridDrawer_DrawLatitudeLine_m5E9195BED5B14FEAD47AAC7F328FCF780E4E6930 (void);
@@ -130,7 +131,7 @@ extern void TiltWindow_Update_m8B983CF008A896D2A99DEF6C2271BB4A418DCA03 (void);
 extern void TiltWindow__ctor_m998EDCD27C0C488CB5469BDB8439F0F41293BA64 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1 (void);
-static Il2CppMethodPointer s_methodPointers[119] = 
+static Il2CppMethodPointer s_methodPointers[120] = 
 {
 	ButtonController_Start_m8975058804BCD3388B4EAA2D6926FED30275C7A6,
 	ButtonController_SetGateButtonsInteractable_mEB4C45EB571011A414D9542C6ACA18E894BD7B05,
@@ -174,6 +175,7 @@ static Il2CppMethodPointer s_methodPointers[119] =
 	U3CDelayedJumpU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m9B2A295E2C1A43F9529B09EBB8AE1D9B955FD126,
 	U3CDelayedJumpU3Ed__8_System_Collections_IEnumerator_Reset_m8732AA8F775113301A7C3EDD82048004C338953A,
 	U3CDelayedJumpU3Ed__8_System_Collections_IEnumerator_get_Current_mFD8C5F26844A73387F87CF2F2F8A96988D508A5F,
+	ServerConfig__ctor_mD438583647047D455A8BA1E415825E281C5E3721,
 	SphereGridDrawer_Start_m60B9B1373CB96C6E6FB8ADD2AF6ED4AB1A046E2F,
 	SphereGridDrawer_DrawGrid_m6B78C0D8D82A23D6A0F60B2BDABF966887B3EDC8,
 	SphereGridDrawer_DrawLatitudeLine_m5E9195BED5B14FEAD47AAC7F328FCF780E4E6930,
@@ -252,7 +254,7 @@ static Il2CppMethodPointer s_methodPointers[119] =
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1_Get_mBEB95BEB954BB63E9710BBC7AD5E78C4CB0A0033,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_v1__ctor_mE70FB23ACC1EA12ABC948AA22C2E78B2D0AA39B1,
 };
-static const int32_t s_InvokerIndices[119] = 
+static const int32_t s_InvokerIndices[120] = 
 {
 	4379,
 	3459,
@@ -296,6 +298,7 @@ static const int32_t s_InvokerIndices[119] =
 	4291,
 	4379,
 	4291,
+	4379,
 	4379,
 	4379,
 	3562,
@@ -376,7 +379,7 @@ static const int32_t s_InvokerIndices[119] =
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
 {
-	{ 0x0600004F, { 0, 2 } },
+	{ 0x06000050, { 0, 2 } },
 };
 extern const uint32_t g_rgctx_T_t28CB1661FF7BDEDFBEE527928DE91AAF71B0053A;
 extern const uint32_t g_rgctx_GameObject_GetComponent_TisT_t28CB1661FF7BDEDFBEE527928DE91AAF71B0053A_m434819A31A3BA0618593B1C358F484D0D617E3EE;
@@ -389,7 +392,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	119,
+	120,
 	s_methodPointers,
 	0,
 	NULL,
