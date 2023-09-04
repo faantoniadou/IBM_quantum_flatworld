@@ -13,9 +13,9 @@
   <div class="course-container" style="margin-left: 100px;">
     <div class="button-container" style="width:100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
       <p style="width: 100%; padding: 10px; text-align: center;">
-        <!-- <router-link to="/add-course-form"> -->
+        <router-link to="/add-course">
           <Button label="Add Course" :loading="loading" class="p-button-lg" style="font-size: 22px; width: 100%; height: 80px;"/>
-        <!-- </router-link> -->
+        </router-link>
       </p>
     </div>
     <div v-for="(courseGroup, category) in groupedCourses" :key="category" class="category-container">

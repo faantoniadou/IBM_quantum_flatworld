@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Learning from '../views/Learning.vue';
 import Teaching from '../views/Teaching.vue';
-import AddCourse from '../views/AddCourseForm.vue';
+import AddCourseForm from '../views/AddCourseForm.vue';
 import QiskitSchematicsTable from '../views/QiskitSchematicsTable.vue';
 
 const routes = [
@@ -24,7 +24,7 @@ const routes = [
   {
     path: '/add-course',
     name: 'AddCourse',
-    component: AddCourse,
+    component: AddCourseForm,
   },
   {
     path: '/qiskit-schematics-table',
