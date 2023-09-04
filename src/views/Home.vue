@@ -14,7 +14,9 @@
         </router-link>
       </p>
       <p style="padding: 20px; text-align: center;">
-        <Button label="Teaching" :loading="loading" @click="load" class="p-button-lg" style="font-size: 32px; width: 600px; height: 120px;" disabled outlined/>
+        <router-link to="/teaching">
+          <Button label="Teaching" :loading="loading" class="p-button-lg" style="font-size: 32px; width: 600px; height: 120px;" outlined/>
+        </router-link>
       </p>
       <p style="padding: 20px; text-align: center;">
         <Button label="Demo" :loading="loading" @click="load" class="p-button-lg" style="font-size: 32px; width: 600px; height: 120px;" disabled outlined/>

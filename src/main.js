@@ -46,4 +46,12 @@ app.config.isCustomElement = (tag) => tag.startsWith('Unity-');
 
 app.config.allowedNonProps = ['UnityWebgl', 'UnityLoader'];
 
+app.config.warnHandler = function(msg, vm, trace) {
+  // `trace` is the component hierarchy trace
+  if (msg.includes('Missing required prop: "category"' || 'Failed to resolve component: h:outputStylesheet')) {
+    return;
+  }
+  console.warn(msg + trace);
+};
+
 app.mount('#app');
