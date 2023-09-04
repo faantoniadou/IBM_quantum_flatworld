@@ -41,9 +41,7 @@ app.use(cors({
   },
 }));
 
-
-// app.use(cors({origin: `http://localhost:${gamePort}`}));
-
+app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '..')));
 
@@ -91,6 +89,33 @@ app.get('/courses', (req, res) => {
     res.send(data);
   });
 });
+
+app.post('/add-course', (req, res) => {
+  const newCourse = req.body;
+
+  // Read the existing courses from the JSON file
+  fs.readFile(path.resolve(__dirname, '../src/data/courses.json'), 'utf8', (err, data) => {
+    if (err) {
+      res.status(500).send('Server error');
+      return;
+    }
+
+    // Parse the existing courses and add the new course
+    const courses = JSON.parse(data);
+    courses.push(newCourse);
+
+    // Write the updated courses back to the JSON file
+    fs.writeFile(path.resolve(__dirname, '../src/data/courses.json'), JSON.stringify(courses, null, 2), (err) => {
+      if (err) {
+        res.status(500).send('Server error');
+        return;
+      }
+
+      res.send('Course added successfully');
+    });
+  });
+});
+
 
 // Define a single route that will handle all courseTitle values
 app.get('/:courseTitle', (req, res) => {

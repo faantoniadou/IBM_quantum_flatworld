@@ -1,20 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Learning from '../views/Learning.vue';
+import Teaching from '../views/Teaching.vue';
+import AddCourse from '../views/AddCourseForm.vue';
 import QiskitSchematicsTable from '../views/QiskitSchematicsTable.vue';
 
 const routes = [
-  { path: '/', 
+  { 
+    path: '/', 
     name: 'Home', 
     component: Home 
   },
-  { path: '/learning', 
+  { 
+    path: '/learning', 
     name: 'Learning', 
     component: Learning 
   },
-  { path: '/teaching',
+  { 
+    path: '/teaching',
     name: 'Teaching',
-    component: () => import(/* webpackChunkName: "teaching" */ '../views/Teaching.vue')
+    component: Teaching,
+  },
+  {
+    path: '/add-course',
+    name: 'AddCourse',
+    component: AddCourse,
   },
   {
     path: '/qiskit-schematics-table',
