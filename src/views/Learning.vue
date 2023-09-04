@@ -36,11 +36,13 @@
 
 
 <script>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import BackButton from '../components/BackButton.vue';
 import CourseCard from '../components/CourseCard.vue';
 import { useRouter } from 'vue-router';
+import axios from 'axios';
 
+axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL;
 
 export default {
   name: 'Learning',
@@ -51,98 +53,61 @@ export default {
 
   setup() {
     
-    const courses = ref([
-        {
-          id: 1,
-          title: "The Bloch Sphere",
-          description: "Meet Qubo, your quantum computer guide, and learn about the Bloch sphere representation of qubits.",
-          image: "https://example.com/images/computer-science.jpg",
-          category: "Basic"
-        },
-        {
-          id: 2,
-          title: "Quantum Algorithms",
-          description: "Find out how quantum computers can be used to solve complex problems, including Shor's algorithm and Grover's algorithm.",
-          image: "https://example.com/images/computer-science.jpg",
-          category: "Intermediate"
-        },
-        {
-          id: 3,
-          title: "The Quantum Computer",
-          description: "Explore the inner workings of a quantum computer, including the quantum gates and circuits that make it work.",
-          image: "https://example.com/images/computer-science.jpg",
-          category: "Advanced"
-        },
-        {
-          id: 4,
-          title: "Quantum Circuits",
-          description: "Learn how quantum computers can be used to create unbreakable encryption schemes.",
-          image: "https://example.com/images/computer-science.jpg",
-          category: "Intermediate"
-        },
-        {
-          id: 5,
-          title: "Look Into the Future",
-          description: "Learn how quantum computers can be used to create unbreakable encryption schemes.",
-          image: "https://example.com/images/computer-science.jpg",
-          category: "Advanced"
-        },
-        {
-          id: 6,
-          title: "QiSkit Schematics",
-          description: "Explore QiSkit schematics and how they can be used to create quantum circuits.",
-          image: "https://example.com/images/computer-science.jpg",
-          category: "Basic"
-        },
-        {
-          id: 7,
-          title: "IBM Quantum Composer",
-          description: "Learn how to use the IBM Quantum Composer to create quantum circuits.",
-          image: "https://example.com/images/computer-science.jpg",
-          category: "Advanced"
+    const courses = ref([]);
+
+    async function fetchCourses() {
+      try {
+        const response = await axios.get('/courses');
+        courses.value = response.data;
+      } catch (error) {
+        console.error('Error fetching courses:', error);
+      }
+    }
+
+    onMounted(() => {
+      fetchCourses();
+    });
+
+    const groupedCourses = computed(() => {
+      return courses.value.reduce((acc, course) => {
+        if (!acc[course.category]) {
+          acc[course.category] = [];
         }
-      ]);
+        acc[course.category].push(course);
+        return acc;
+      }, {});
+    });
 
-      const groupedCourses = computed(() => {
-        return courses.value.reduce((acc, course) => {
-          if (!acc[course.category]) {
-            acc[course.category] = [];
-          }
-          acc[course.category].push(course);
-          return acc;
-        }, {});
-      });
+    const router = useRouter();
 
-      const router = useRouter();
-
-      // Method to check the course title and show the game
-      const checkCourse = (title) => {
-        // console.log("Received start-course with title:", title);
-        if(title === "The Quantum Computer" || title === "The Bloch Sphere") {
-          
-          // Navigate to the quantum computer route
-          // router.push('/quantum-computer');
-          if (window.ipcRenderer) {
-              // console.log('ipcRenderer exists');
-              window.ipcRenderer.send('open-unity-window', title);
-              console.log(`sent message to open unity window to open ${title}`)
-          } else {
-            console.log('ipcRenderer does not exist');
-          }
-        } else if (title === "QiSkit Schematics") {
-          console.log("clicked scheme")
-          router.push('/qiskit-schematics-table');
-        };
+    // Method to check the course title and show the game
+    const checkCourse = (title) => {
+      // console.log("Received start-course with title:", title);
+      if(title === "The Quantum Computer" || title === "The Bloch Sphere") {
+        
+        // Navigate to the quantum computer route
+        // router.push('/quantum-computer');
+        if (window.ipcRenderer) {
+            // console.log('ipcRenderer exists');
+            window.ipcRenderer.send('open-unity-window', title);
+            console.log(`sent message to open unity window to open ${title}`)
+        } else {
+          console.log('ipcRenderer does not exist');
+        }
+      } else if (title === "QiSkit Schematics") {
+        console.log("clicked scheme")
+        router.push('/qiskit-schematics-table');
       };
+    };
 
-      // Return reactive properties and methods to the template
-      return {
-        courses,
-        checkCourse,
-        groupedCourses
-      };
-    },
-  };
+    // Return reactive properties and methods to the template
+    return {
+      courses,
+      checkCourse,
+      groupedCourses
+    };
+  },
+};
 
 </script>
 

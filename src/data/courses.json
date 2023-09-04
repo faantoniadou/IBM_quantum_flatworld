@@ -1,0 +1,51 @@
+[
+  {
+      "id": 1,
+      "title": "The Bloch Sphere",
+      "description": "Meet Qubo, your quantum computer guide, and learn about the Bloch sphere representation of qubits.",
+      "image": "https://example.com/images/computer-science.jpg",
+      "category": "Basic"
+  },
+  {
+      "id": 2,
+      "title": "Quantum Algorithms",
+      "description": "Find out how quantum computers can be used to solve complex problems, including Shor's algorithm and Grover's algorithm.",
+      "image": "https://example.com/images/computer-science.jpg",
+      "category": "Intermediate"
+  },
+  {
+      "id": 3,
+      "title": "The Quantum Computer",
+      "description": "Explore the inner workings of a quantum computer, including the quantum gates and circuits that make it work.",
+      "image": "https://example.com/images/computer-science.jpg",
+      "category": "Advanced"
+  },
+  {
+      "id": 4,
+      "title": "Quantum Circuits",
+      "description": "Learn how quantum computers can be used to create unbreakable encryption schemes.",
+      "image": "https://example.com/images/computer-science.jpg",
+      "category": "Intermediate"
+  },
+  {
+      "id": 5,
+      "title": "Look Into the Future",
+      "description": "Learn how quantum computers can be used to create unbreakable encryption schemes.",
+      "image": "https://example.com/images/computer-science.jpg",
+      "category": "Advanced"
+  },
+  {
+      "id": 6,
+      "title": "QiSkit Schematics",
+      "description": "Explore QiSkit schematics and how they can be used to create quantum circuits.",
+      "image": "https://example.com/images/computer-science.jpg",
+      "category": "Basic"
+  },
+  {
+      "id": 7,
+      "title": "IBM Quantum Composer",
+      "description": "Learn how to use the IBM Quantum Composer to create quantum circuits.",
+      "image": "https://example.com/images/computer-science.jpg",
+      "category": "Advanced"
+  }
+]

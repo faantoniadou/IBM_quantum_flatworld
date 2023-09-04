@@ -11,14 +11,41 @@ dotenv.config({ path: path.join(__dirname, '../', '..', '/.env') });
 
 const app = express();
 
-app.use(cors());
-app.use(express.static(path.join(__dirname, '..')));
-
 const gamePort = process.env.PORT || 8081;
 const flaskPort = process.env.FLASK_PORT || 3000;
 const flaskDir = path.join(__dirname, '..', 'qiskit_backend');
 
+const allowedOrigins = [
+  `http://localhost:${gamePort}`,
+  `${process.env.BASE_URL}`,
+  'http://localhost:${flaskPort}',
+];
+
+// Course URLs for different courses
+const courseURLs = {
+  'The Quantum Computer': 'unity-vr',
+  'The Bloch Sphere': 'the-bloch-sphere',
+  // ... other courses
+};
+
 let flask;
+
+app.use(cors({
+  origin: (origin, callback) => { 
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = `The CORS policy for this site does not allow access from the specified Origin.`;
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+}));
+
+
+// app.use(cors({origin: `http://localhost:${gamePort}`}));
+
+
+app.use(express.static(path.join(__dirname, '..')));
 
 const startFlaskServer = () => {
   const flaskEnv = { ...process.env, FLASK_APP: "server.py" };
@@ -42,22 +69,28 @@ const startFlaskServer = () => {
 };
 
 
-// Course URLs for different courses
-const courseURLs = {
-  'The Quantum Computer': 'unity-vr',
-  'The Bloch Sphere': 'the-bloch-sphere',
-  // ... other courses
-};
-
-
-app.use(express.static(path.join(__dirname, '..')));
-
-app.use(cors({origin: `http://localhost:${gamePort}`}));
-
 app.use('/api', createProxyMiddleware({
   target: `http://localhost:${flaskPort}`,  // Flask server URL
   changeOrigin: true,
 }));
+
+// Define a route for the courses.json file
+app.get('/courses', (req, res) => {
+  // read the courses.json file which is in the same directory as this file
+  const coursesPath = path.join(__dirname, '../src/data/courses.json');
+  fs.readFile(coursesPath, 'utf8', (err, data) => {
+    if (err) {
+      console.error(`Error reading courses.json: ${err}`);
+      res.status(500).send('Internal server error');
+      return;
+    } else if (!data) {
+      console.error('No data in courses.json');
+      return;
+    }
+
+    res.send(data);
+  });
+});
 
 // Define a single route that will handle all courseTitle values
 app.get('/:courseTitle', (req, res) => {
@@ -81,7 +114,6 @@ app.get('/:courseTitle', (req, res) => {
     }
 
     let modifiedData = data.replace(/TemplateData\//g, `../public/${courseURL}/TemplateData/`);
-    // modifiedData = modifiedData.replace(/\/Build/g, `../public/${courseURL}/Build`);
     modifiedData = modifiedData.replace(/Build/g, `../public/${courseURL}/Build`);
     modifiedData = modifiedData.replace(/StreamingAssets/g, `../public/${courseURL}/StreamingAssets`);
 
@@ -111,7 +143,6 @@ try {
   console.error('Error starting server:', error);
 }
 
-
 // Stop server function
 const stopServer = () => {
   if (server) {
@@ -120,5 +151,6 @@ const stopServer = () => {
     });
   }
 };
+
 
 export { stopServer };
