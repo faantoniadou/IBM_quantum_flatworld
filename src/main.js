@@ -1,19 +1,18 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+
+// styles
 import './assets/tailwind.css';
 import './styles/custom.css';
-import PrimeVue from 'primevue/config';
 import './styles/_theme.scss';
 
 import { router } from './router';
-// import { config } from 'vue/compiler-dom'
 
-// import routes from './router/index.js';
+// primevue
+import PrimeVue from 'primevue/config';
 import 'primevue/resources/themes/saga-blue/theme.css';
 import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
-
-// primevue
 
 import Menubar from 'primevue/menubar';
 import Button from 'primevue/button';
@@ -26,14 +25,17 @@ import Column from 'primevue/column';
 import ColumnGroup from 'primevue/columngroup';
 import Row from 'primevue/row';
 import InputText from 'primevue/inputtext';
-// import InputTextarea from 'primevue/inputtextarea';
 import Dropdown from 'primevue/dropdown';
+import FileUpload from 'primevue/fileupload';
+import ToastService from 'primevue/toastservice';
 
 const app = createApp(App);
 
 app.use(PrimeVue);
 app.use(router);
+app.use(ToastService);
 
+// primevue components
 app.component('Menubar', Menubar);
 app.component('Carousel', Carousel);
 app.component('Button', Button);
@@ -45,8 +47,11 @@ app.component('Column', Column);
 app.component('ColumnGroup', ColumnGroup);
 app.component('Row', Row);
 app.component('InputText', InputText);
-// app.component('InputTextarea', InputTextarea);
 app.component('Dropdown', Dropdown);
+app.component('FileUpload', FileUpload);
+
+
+
 
 app.config.isCustomElement = (tag) => tag.startsWith('Unity-');
 
@@ -60,4 +65,4 @@ app.config.warnHandler = function(msg, vm, trace) {
   console.warn(msg + trace);
 };
 
-app.mount('#app');
+app.mount('#app'); // mount the app

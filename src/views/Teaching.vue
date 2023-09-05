@@ -29,7 +29,6 @@
           :key="course.id" 
           :title="course.title" 
           :description="course.description" 
-          :image="course.image"
           @start-course="checkCourse"
         />
       </div>

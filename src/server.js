@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import { spawn } from 'child_process';
 import cors from 'cors';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import multer from 'multer';
 
 
 dotenv.config({ path: path.join(__dirname, '../', '..', '/.env') });
@@ -28,7 +29,44 @@ const courseURLs = {
   // ... other courses
 };
 
+// Set up Multer to save uploaded files to the 'public' directory
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, '../public'));
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  }
+});
+
+const upload = multer({ storage: storage });
+
+app.post('/upload', upload.array('demo[]'), (req, res) => {
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.');
+  }
+
+  // The name of the input field (i.e. "demo[]") is used to retrieve the uploaded file
+  let demoFiles = req.files['demo[]'];
+
+  if (!Array.isArray(demoFiles)) {
+    demoFiles = [demoFiles];
+  }
+
+  demoFiles.forEach((file) => {
+    // Use the mv() method to place the file in the "public" directory
+    file.mv(path.join(__dirname, '../public', file.name), (err) => {
+      if (err) {
+        return res.status(500).send(err);
+      }
+    });
+  });
+
+  res.send('File uploaded!');
+});
+
 let flask;
+
 
 app.use(cors({
   origin: (origin, callback) => { 
@@ -39,6 +77,9 @@ app.use(cors({
     }
     return callback(null, true);
   },
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204,
 }));
 
 app.use(express.json());
@@ -115,7 +156,6 @@ app.post('/add-course', (req, res) => {
     });
   });
 });
-
 
 // Define a single route that will handle all courseTitle values
 app.get('/:courseTitle', (req, res) => {

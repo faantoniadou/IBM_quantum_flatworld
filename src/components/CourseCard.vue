@@ -2,10 +2,6 @@
   <Card :pt="{ body: { class: 'bg-primary border-round-lg' } }" class="card">
     <template #title>
         <div class="title-container">
-          <!-- <Button icon="material-icons" class="course-icon" style="width: 44px; margin-right: 10px;" rounded>
-            <i class="material-icons course-icon-image">school</i>
-          </Button> -->
-          <!-- align the title to the right -->
           <span class="course-title">{{ title }}</span>
         </div>
       </template>
@@ -35,10 +31,6 @@ export default {
       required: true
     },
     creator: {
-      type: String,
-      required: false
-    },
-    image: {
       type: String,
       required: false
     },

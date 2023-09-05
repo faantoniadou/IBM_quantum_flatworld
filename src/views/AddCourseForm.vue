@@ -13,23 +13,31 @@
 
   <div class="add-course-form">
     <div class="flex flex-column gap-2" style="padding: 20px;">
-        <label for="title" style="display: block; margin-bottom: 10px;">Course Title</label>
-        <InputText id="title" v-model="value" aria-describedby="title-help" placeholder="Title" style="width: 300px;"/>
+      <label for="title" style="display: block; margin-bottom: 10px;">Course Title</label>
+      <InputText id="title" v-model="course.title" aria-describedby="title-help" placeholder="Title" style="width: 300px;"/>
     </div>
     <div class="flex flex-column gap-2" style="padding: 20px;">
-        <label for="description" style="display: block; margin-bottom: 10px;">Course Description</label>
-        <InputText id="description" v-model="value" aria-describedby="title-help" placeholder="Description" style="width: 300px;"/>
+      <label for="description" style="display: block; margin-bottom: 10px;">Course Description</label>
+      <InputText id="description" v-model="course.description" aria-describedby="title-help" placeholder="Description" style="width: 300px;"/>
     </div>
     <div class="flex flex-column gap-2" style="padding: 20px;">
-        <label for="levels" style="display: block; margin-bottom: 10px;">Course Level</label>
-        <Dropdown v-model="selectedLevel" :options="categories" optionLabel="level" placeholder="Select a Level" class="['w-full md:w-14rem', { 'p-invalid': errorMessage }]" style="width: 300px;"/>
+      <label for="levels" style="display: block; margin-bottom: 10px;">Course Level</label>
+      <Dropdown id="levels" v-model="course.category" :options="categories" optionLabel="level" placeholder="Select a Level" class="['w-full md:w-14rem', { 'p-invalid': errorMessage }]" style="width: 300px;"/>
     </div>
+
+    <div class="card" style="width: 341px; padding: 20px;">
+      <Toast />
+      <FileUpload :name="'demo[]'" :url=uploadUrl @upload="onAdvancedUpload" :multiple="true" :maxFileSize="1000000000">
+        <template #empty>
+          <p>Drag and drop Unity WebGL build folders here to upload.</p>
+        </template>
+      </FileUpload>
+    </div>
+
     <div class="button-container" style="width:100%; padding: 20px; ">
-      <Button label="Submit" :loading="loading" class="p-button-lg" style="padding: 20px; font-size: 15px; width: 300px; height:45px; background-color: #7027ab;"/>
+      <Button label="Submit" @click="handleSubmit" :loading="loading" class="p-button-lg" style="padding: 20px; font-size: 15px; width: 300px; height:45px; background-color: #793dae;"/>
     </div>
   </div>
-
-                
 
   <BackButton/>
 </template>
@@ -38,6 +46,7 @@
 import { ref } from 'vue';
 import axios from 'axios';
 import BackButton from '../components/BackButton.vue';
+import { useToast } from "primevue/usetoast"; 
 
 axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL;
 
@@ -52,11 +61,11 @@ export default {
     const course = ref({
       title: '',
       description: '',
-      image: '',
       category: null,
     });
 
     const selectedLevel = ref();
+    const loading = ref(false);
 
     const categories = ref([
       { level: 'Basic', code: 'Basic' },
@@ -66,25 +75,47 @@ export default {
 
     const addCourse = async () => {
       try {
+        loading.value = true;
+        
+        // extract level property from selected category
+        course.value.category = course.value["category"].level;
+        
         await axios.post('/add-course', course.value);
         alert('Course added successfully');
+        // go back to the previous page
+        window.history.back();
         course.value = {
           title: '',
           description: '',
-          image: '',
-          category: '',
+          category: null,
         };
       } catch (error) {
         console.error('Error adding course:', error);
         alert('Error adding course');
+      } finally {
+        loading.value = false;
       }
     };
+
+    const handleSubmit = () => {
+      addCourse();
+    };
+
+    const toast = useToast(); 
+
+    const onAdvancedUpload = () => {
+      toast.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000 });
+    };  
 
     return {
       course,
       categories,
       addCourse,
       selectedLevel,
+      handleSubmit,
+      loading,
+      onAdvancedUpload,
+      uploadUrl: axios.defaults.baseURL + '/upload',
     };
   },
 };
