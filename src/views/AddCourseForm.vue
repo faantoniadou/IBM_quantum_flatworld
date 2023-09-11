@@ -27,11 +27,12 @@
 
     <div class="card" style="width: 341px; padding: 20px;">
       <Toast />
-      <FileUpload :name="'demo[]'" :url=uploadUrl @upload="onAdvancedUpload" :multiple="true" :maxFileSize="1000000000">
+      <FileUpload :name="'demo[]'" @upload="onFileSelect" :multiple="true" :maxFileSize="10000000000">
         <template #empty>
           <p>Drag and drop Unity WebGL build folders here to upload.</p>
         </template>
       </FileUpload>
+
     </div>
 
     <div class="button-container" style="width:100%; padding: 20px; ">
@@ -66,6 +67,7 @@ export default {
 
     const selectedLevel = ref();
     const loading = ref(false);
+    const selectedFiles = ref(null);
 
     const categories = ref([
       { level: 'Basic', code: 'Basic' },
@@ -97,29 +99,55 @@ export default {
       }
     };
 
-    const handleSubmit = () => {
-      addCourse();
+    const handleSubmit = async () => {
+      if (validateForm()) {
+        const formData = new FormData();
+        formData.append('course', JSON.stringify(course.value));
+        
+        if (selectedFiles.value) {
+          selectedFiles.value.forEach(file => {
+            formData.append('demo[]', file);
+          });
+        }
+
+        try {
+          await axios.post('/upload', formData);
+          await addCourse();
+        } catch (error) {
+          console.error('Error uploading files and adding course:', error);
+        }
+      }
+    };
+
+    const validateForm = () => {
+      if(!course.value.title || !course.value.description || !course.value.category) {
+        alert('Please fill in all the fields');
+        return false;
+      }
+      return true;
     };
 
     const toast = useToast(); 
 
-    const onAdvancedUpload = () => {
-      toast.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000 });
-    };  
-
     return {
       course,
       categories,
-      addCourse,
       selectedLevel,
       handleSubmit,
       loading,
-      onAdvancedUpload,
+      selectedFiles,
+      toast,
       uploadUrl: axios.defaults.baseURL + '/upload',
     };
   },
+  methods: {
+    onFileSelect(event) {
+      this.selectedFiles = event.files;
+    },
+  },
 };
 </script>
+
 
 <style scoped>
 .add-course-form {

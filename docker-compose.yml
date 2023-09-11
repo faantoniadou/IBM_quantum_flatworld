@@ -1,0 +1,10 @@
+version: '3.1'
+services:
+  express_server:
+    image: ibm_quant_flat/express_server
+    ports:
+      - "8080:8081"
+  flask_server:
+    image: ibm_quant_flat/flask_server
+    ports:
+      - "3000:3000"

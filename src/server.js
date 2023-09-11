@@ -42,28 +42,49 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.post('/upload', upload.array('demo[]'), (req, res) => {
-  if (!req.files || Object.keys(req.files).length === 0) {
-    return res.status(400).send('No files were uploaded.');
-  }
+  try {
+    const course = JSON.parse(req.body.course);
+    const files = req.files;
 
-  // The name of the input field (i.e. "demo[]") is used to retrieve the uploaded file
-  let demoFiles = req.files['demo[]'];
+    if (!files || files.length === 0) {
+      return res.status(400).send('No files were uploaded.');
+    }
 
-  if (!Array.isArray(demoFiles)) {
-    demoFiles = [demoFiles];
-  }
-
-  demoFiles.forEach((file) => {
-    // Use the mv() method to place the file in the "public" directory
-    file.mv(path.join(__dirname, '../public', file.name), (err) => {
-      if (err) {
-        return res.status(500).send(err);
-      }
+    // Save files to the public directory
+    files.forEach((file) => {
+      fs.writeFile(path.join(__dirname, '../public', file.originalname), file.buffer, (err) => {
+        if (err) {
+          return res.status(500).send(err);
+        }
+      });
     });
-  });
 
-  res.send('File uploaded!');
+    // Update the courses.json file with the new course data
+    fs.readFile(path.resolve(__dirname, '../src/data/courses.json'), 'utf8', (err, data) => {
+      if (err) {
+        res.status(500).send('Server error');
+        return;
+      }
+
+      // Parse the existing courses and add the new course
+      const courses = JSON.parse(data);
+      courses.push(course);
+
+      // Write the updated courses back to the JSON file
+      fs.writeFile(path.resolve(__dirname, '../src/data/courses.json'), JSON.stringify(courses, null, 2), (err) => {
+        if (err) {
+          res.status(500).send('Server error');
+          return;
+        }
+
+        res.send('File uploaded and course added successfully!');
+      });
+    });
+  } catch (error) {
+    res.status(500).send('Server error: ' + error.message);
+  }
 });
+
 
 let flask;
 

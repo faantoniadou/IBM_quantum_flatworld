@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path='../.env')
 
 unity_port = os.getenv('COURSE_PORT', '8081')
+flask_port = os.getenv('FLASK_PORT', '3000')
 app = Flask(__name__)
 
 CORS(app, resources={r"/*": {"origins": f"http://localhost:{unity_port}"}})
@@ -74,4 +75,4 @@ def apply_gate():
         return jsonify({"error": str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=os.getenv('DEBUG', 'false') == 'true', port=unity_port)
+    app.run(debug=os.getenv('DEBUG', 'false') == 'true', port=flask_port)
