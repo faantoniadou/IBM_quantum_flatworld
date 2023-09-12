@@ -30,10 +30,6 @@ export default {
       type: String,
       required: true
     },
-    creator: {
-      type: String,
-      required: false
-    },
     category: {
       type: String,
       required: true

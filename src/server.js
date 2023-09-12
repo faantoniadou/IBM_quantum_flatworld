@@ -43,7 +43,6 @@ const upload = multer({ storage: storage });
 
 app.post('/upload', upload.array('demo[]'), (req, res) => {
   try {
-    const course = JSON.parse(req.body.course);
     const files = req.files;
 
     if (!files || files.length === 0) {
@@ -59,31 +58,12 @@ app.post('/upload', upload.array('demo[]'), (req, res) => {
       });
     });
 
-    // Update the courses.json file with the new course data
-    fs.readFile(path.resolve(__dirname, '../src/data/courses.json'), 'utf8', (err, data) => {
-      if (err) {
-        res.status(500).send('Server error');
-        return;
-      }
-
-      // Parse the existing courses and add the new course
-      const courses = JSON.parse(data);
-      courses.push(course);
-
-      // Write the updated courses back to the JSON file
-      fs.writeFile(path.resolve(__dirname, '../src/data/courses.json'), JSON.stringify(courses, null, 2), (err) => {
-        if (err) {
-          res.status(500).send('Server error');
-          return;
-        }
-
-        res.send('File uploaded and course added successfully!');
-      });
-    });
+    res.send('File uploaded successfully!');
   } catch (error) {
     res.status(500).send('Server error: ' + error.message);
   }
 });
+
 
 
 let flask;
