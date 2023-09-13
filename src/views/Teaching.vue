@@ -100,7 +100,7 @@ export default {
         } else {
           console.log('ipcRenderer does not exist');
         }
-      } else if (title === "QiSkit Schematics") {
+      } else if (title === "Qiskit Schematics") {
         console.log("clicked scheme")
         router.push('/qiskit-schematics-table');
       };
