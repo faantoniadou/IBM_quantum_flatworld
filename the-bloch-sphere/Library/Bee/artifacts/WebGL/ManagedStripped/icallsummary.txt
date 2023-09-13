@@ -338,6 +338,7 @@ UnityEngine.GUIUtility::set_systemCopyBuffer
 UnityEngine.Hash128::Hash128ToStringImpl_Injected
 UnityEngine.Hash128::Parse_Injected
 UnityEngine.Input::CheckDisabled
+UnityEngine.Input::GetKeyDownInt
 UnityEngine.Input::GetMouseButton
 UnityEngine.Input::GetMouseButtonDown
 UnityEngine.Input::GetMouseButtonUp

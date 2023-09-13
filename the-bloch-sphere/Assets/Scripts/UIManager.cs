@@ -5,19 +5,76 @@ using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject welcomePanel;
-    public GameObject blochSpherePanel;
-    public GameObject quboPanel;
-    public GameObject blochSphere;
-    public GameObject quboObject;
-    public GameObject gateButtons;
-    public GameObject gatePanel;
-    public GameObject gateExplainerPanel;
-    public Text       gateExplainerText;
-    //public Animator   quboAnimator; // Reference to the Animator component on the Qubo GameObject.
+    public GameObject         welcomePanel;
+    public GameObject         blochSpherePanel;
+    public GameObject         quboPanel;
+    public GameObject         blochSphere;
+    public GameObject         quboObject;
+    public GameObject         gateButtons;
+    public GameObject         gatePanel;
+    public GameObject         gateExplainerPanel;
+    public Text               gateExplainerText;
+    public QuantumGateHandler quantumGateHandler;
+    public Button             welcomeNextButton;
+    public Button             blochSphereNextButton;
+    public Button             quboNextButton;
+    public Button             gateNextButton;
 
-    //private bool      continueJumping = true; // New field to control jumping animation
 
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            quantumGateHandler.OnGateClick("hadamard");
+            OnGateHover("hadamard");
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+            quantumGateHandler.OnGateClick("x");
+            OnGateHover("x");
+        }
+        else if (Input.GetKeyDown(KeyCode.Y))
+        {
+            quantumGateHandler.OnGateClick("y");
+            OnGateHover("y");
+        }
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            quantumGateHandler.OnGateClick("z");
+            OnGateHover("z");
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            quantumGateHandler.OnGateClick("s");
+            OnGateHover("s");
+        }
+        else if (Input.GetKeyDown(KeyCode.T))
+        {
+            quantumGateHandler.OnGateClick("t");
+            OnGateHover("t");
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (welcomePanel.activeSelf)
+            {
+                welcomeNextButton.onClick.Invoke();
+            }
+            else if (blochSpherePanel.activeSelf)
+            {
+                blochSphereNextButton.onClick.Invoke();
+            }
+            else if (quboPanel.activeSelf)
+            {
+                quboNextButton.onClick.Invoke();
+            }
+            else if (gatePanel.activeSelf)
+            {
+                gateNextButton.onClick.Invoke();
+            }
+        }
+    }
 
     // Call this when the "Next" button on the Welcome Panel is clicked
     public void ShowBlochSpherePanel()
@@ -42,15 +99,11 @@ public class UIManager : MonoBehaviour
     {
         blochSphere.SetActive(false);
         quboObject.SetActive(true);
-        //StartCoroutine(StartQuboJumpingAfterDelay(0.5f));  // Start jumping after a 0.5 second delay
     }
 
     private IEnumerator StartQuboJumpingAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay); // Wait for the specified delay time
-
-        // Now start the Qubo jumping
-        //StartQuboJumping();
     }
 
     public void ShowGatePanel()
@@ -89,60 +142,4 @@ public class UIManager : MonoBehaviour
             };
         }
     }
-
-    //public void StartQuboJumping()
-    //{
-    //    // Check if UIManager GameObject is active and if quboObject is active
-    //    if (this.gameObject.activeInHierarchy && quboObject.activeInHierarchy)
-    //    {
-    //        StartCoroutine(QuboJumpingRoutine());
-    //    }
-    //    else
-    //    {
-    //        Debug.Log("Either UIManager GameObject or quboObject is not active!");
-    //    }
-    //}
-
-    //public void StopQuboJumping()
-    //{
-    //    continueJumping = false;
-    //}
-
-    //private IEnumerator QuboJumpingRoutine()
-    //{
-    //    // Initial height and target height
-    //    Vector3 initialPosition = quboObject.transform.position;
-    //    Vector3 targetPosition = initialPosition + new Vector3(0f, 1f, 0f);  // Change the 1f to however high you want the jump to be
-
-    //    while (continueJumping)
-    //    {
-    //        // First Jump
-    //        quboObject.transform.position = Vector3.Lerp(quboObject.transform.position, targetPosition, Time.deltaTime * 5);
-    //        yield return new WaitForSeconds(0.2f);
-
-    //        // Second Jump
-    //        quboObject.transform.position = Vector3.Lerp(quboObject.transform.position, targetPosition, Time.deltaTime * 5);
-    //        yield return new WaitForSeconds(0.2f);
-
-    //        // Return to Initial Position
-    //        quboObject.transform.position = Vector3.Lerp(quboObject.transform.position, initialPosition, Time.deltaTime * 5);
-    //        yield return new WaitForSeconds(0.5f);
-
-    //        // Third Jump
-    //        quboObject.transform.position = Vector3.Lerp(quboObject.transform.position, targetPosition, Time.deltaTime * 5);
-    //        yield return new WaitForSeconds(0.2f);
-
-    //        // Return to Initial Position again
-    //        quboObject.transform.position = Vector3.Lerp(quboObject.transform.position, initialPosition, Time.deltaTime * 5);
-    //        yield return new WaitForSeconds(0.2f);
-    //    }
-    //}
-
-
-    //// Optionally, if we want a "Back" button on the Bloch Sphere Panel
-    //public void ShowWelcomePanel()
-    //{
-    //    blochSpherePanel.SetActive(false);
-    //    welcomePanel.SetActive(true);
-    //}
 }

@@ -611,6 +611,11 @@ MonoBehaviour:
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 733432284}
   gateExplainerText: {fileID: 404348477}
+  quantumGateHandler: {fileID: 95231290}
+  welcomeNextButton: {fileID: 8221695402484945400}
+  blochSphereNextButton: {fileID: 216165419}
+  quboNextButton: {fileID: 585601595}
+  gateNextButton: {fileID: 1392799143}
 --- !u!222 &95231292
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -811,6 +816,11 @@ MonoBehaviour:
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 733432284}
   gateExplainerText: {fileID: 404348477}
+  quantumGateHandler: {fileID: 98191813}
+  welcomeNextButton: {fileID: 8221695402484945400}
+  blochSphereNextButton: {fileID: 216165419}
+  quboNextButton: {fileID: 585601595}
+  gateNextButton: {fileID: 1392799143}
 --- !u!1 &145924788
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,6 +972,11 @@ MonoBehaviour:
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 0}
   gateExplainerText: {fileID: 0}
+  quantumGateHandler: {fileID: 0}
+  welcomeNextButton: {fileID: 0}
+  blochSphereNextButton: {fileID: 0}
+  quboNextButton: {fileID: 0}
+  gateNextButton: {fileID: 0}
 --- !u!1 &163150929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,6 +1301,11 @@ MonoBehaviour:
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 733432284}
   gateExplainerText: {fileID: 404348477}
+  quantumGateHandler: {fileID: 0}
+  welcomeNextButton: {fileID: 8221695402484945400}
+  blochSphereNextButton: {fileID: 216165419}
+  quboNextButton: {fileID: 585601595}
+  gateNextButton: {fileID: 1392799143}
 --- !u!114 &216165417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2701,6 +2721,11 @@ MonoBehaviour:
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 733432284}
   gateExplainerText: {fileID: 404348477}
+  quantumGateHandler: {fileID: 555628282}
+  welcomeNextButton: {fileID: 8221695402484945400}
+  blochSphereNextButton: {fileID: 216165419}
+  quboNextButton: {fileID: 585601595}
+  gateNextButton: {fileID: 1392799143}
 --- !u!224 &555628284
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2735,6 +2760,7 @@ GameObject:
   - component: {fileID: 585601594}
   - component: {fileID: 585601593}
   - component: {fileID: 585601592}
+  - component: {fileID: 585601597}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2784,6 +2810,11 @@ MonoBehaviour:
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 733432284}
   gateExplainerText: {fileID: 404348477}
+  quantumGateHandler: {fileID: 585601597}
+  welcomeNextButton: {fileID: 8221695402484945400}
+  blochSphereNextButton: {fileID: 216165419}
+  quboNextButton: {fileID: 585601595}
+  gateNextButton: {fileID: 1392799143}
 --- !u!114 &585601593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2895,6 +2926,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585601590}
   m_CullTransparentMesh: 1
+--- !u!114 &585601597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585601590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e3c094bf79f4b22a9bb09ad017cbc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quboTransform: {fileID: 234671157}
+  blochSphere: {fileID: 2032736757}
+  serverConfig: {fileID: 11400000, guid: 5c642620c447d47fd83367b90edba3c0, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -8649,6 +8695,7 @@ GameObject:
   - component: {fileID: 1392799141}
   - component: {fileID: 1392799145}
   - component: {fileID: 1392799146}
+  - component: {fileID: 1392799147}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -8843,8 +8890,13 @@ MonoBehaviour:
   quboObject: {fileID: 234671153}
   gateButtons: {fileID: 1020405858}
   gatePanel: {fileID: 153485578}
-  gateExplainerPanel: {fileID: 0}
-  gateExplainerText: {fileID: 0}
+  gateExplainerPanel: {fileID: 733432284}
+  gateExplainerText: {fileID: 404348477}
+  quantumGateHandler: {fileID: 1392799147}
+  welcomeNextButton: {fileID: 8221695402484945400}
+  blochSphereNextButton: {fileID: 216165419}
+  quboNextButton: {fileID: 585601595}
+  gateNextButton: {fileID: 1392799143}
 --- !u!114 &1392799146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8864,6 +8916,21 @@ MonoBehaviour:
   sGateButton: {fileID: 1489423000}
   tGateButton: {fileID: 551946680}
   activateButtonsButton: {fileID: 1392799143}
+--- !u!114 &1392799147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392799138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e3c094bf79f4b22a9bb09ad017cbc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quboTransform: {fileID: 234671157}
+  blochSphere: {fileID: 2032736757}
+  serverConfig: {fileID: 11400000, guid: 5c642620c447d47fd83367b90edba3c0, type: 2}
 --- !u!1 &1416897832
 GameObject:
   m_ObjectHideFlags: 0
@@ -9261,6 +9328,11 @@ MonoBehaviour:
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 733432284}
   gateExplainerText: {fileID: 404348477}
+  quantumGateHandler: {fileID: 1497298394}
+  welcomeNextButton: {fileID: 8221695402484945400}
+  blochSphereNextButton: {fileID: 216165419}
+  quboNextButton: {fileID: 585601595}
+  gateNextButton: {fileID: 1392799143}
 --- !u!224 &1497298396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9831,6 +9903,11 @@ MonoBehaviour:
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 733432284}
   gateExplainerText: {fileID: 404348477}
+  quantumGateHandler: {fileID: 1776614370}
+  welcomeNextButton: {fileID: 8221695402484945400}
+  blochSphereNextButton: {fileID: 216165419}
+  quboNextButton: {fileID: 585601595}
+  gateNextButton: {fileID: 1392799143}
 --- !u!222 &1776614372
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15342,6 +15419,11 @@ MonoBehaviour:
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 733432284}
   gateExplainerText: {fileID: 404348477}
+  quantumGateHandler: {fileID: 2073930959}
+  welcomeNextButton: {fileID: 8221695402484945400}
+  blochSphereNextButton: {fileID: 216165419}
+  quboNextButton: {fileID: 585601595}
+  gateNextButton: {fileID: 1392799143}
 --- !u!224 &42145356897956368
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15976,6 +16058,7 @@ GameObject:
   - component: {fileID: 8221695402486716380}
   - component: {fileID: 5487298382074110044}
   - component: {fileID: 8221695402499153017}
+  - component: {fileID: 8221695402499153018}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -16252,6 +16335,26 @@ MonoBehaviour:
   gatePanel: {fileID: 153485578}
   gateExplainerPanel: {fileID: 733432284}
   gateExplainerText: {fileID: 404348477}
+  quantumGateHandler: {fileID: 8221695402499153018}
+  welcomeNextButton: {fileID: 8221695402484945400}
+  blochSphereNextButton: {fileID: 216165419}
+  quboNextButton: {fileID: 585601595}
+  gateNextButton: {fileID: 1392799143}
+--- !u!114 &8221695402499153018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8221695402479428632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e3c094bf79f4b22a9bb09ad017cbc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quboTransform: {fileID: 234671157}
+  blochSphere: {fileID: 2032736757}
+  serverConfig: {fileID: 11400000, guid: 5c642620c447d47fd83367b90edba3c0, type: 2}
 --- !u!222 &8221695402499153020
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16301,7 +16404,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "This is the Boch Sphere. The Bloch Sphere is a geometric representation
+  m_Text: "This is the Bloch Sphere. The Bloch Sphere is a geometric representation
     used in quantum mechanics to visualize the state of a single qubit, the fundamental
     unit of quantum information. On this sphere:\n\n- The north pole typically represents
     the state |0\u27E9\u27E9\u27E9\u27E9\u27E9>.\n\n- The south pole represents the

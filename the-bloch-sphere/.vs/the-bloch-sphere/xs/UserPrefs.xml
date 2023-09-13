@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{E6E6EE78-3A73-0C4F-952D-CD2C318088E4}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UIManager.cs">
+    <Files>
+      <File FileName="Assets/Scripts/UIManager.cs" Line="65" Column="14" />
+      <File FileName="Assets/Scripts/QuantumGateHandler.cs" Line="50" Column="6" />
+      <File FileName="Assets/Scripts/ActivateButtons.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="the-bloch-sphere" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="UIManager.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="073accbc-e453-4def-a773-bbff59ae3e4b" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

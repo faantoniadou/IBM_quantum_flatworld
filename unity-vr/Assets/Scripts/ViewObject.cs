@@ -14,10 +14,6 @@ public class ViewComponent : MonoBehaviour
     private void Start()
     {
         componentToFocusMap = new Dictionary<GameObject, Transform>();
-        // Populate the dictionary. We can also do this manually in the Inspector if we make the dictionary serializable.
-        // componentToFocusMap[component1] = cameraFocusPoint1;
-        // componentToFocusMap[component2] = cameraFocusPoint2;
-        // ... and so on for each component
     }
 
     public void OnViewButtonClick(GameObject component)
@@ -49,7 +45,6 @@ public class ViewComponent : MonoBehaviour
             child.gameObject.SetActive(true);
         }
         currentComponent = null;
-        // Optionally, move the camera back to its original position
     }
 
     private IEnumerator MoveToFocus(Transform focusPoint)
