@@ -108,7 +108,7 @@ const startFlaskServer = () => {
   });
 };
 
-// the following creates a proxy for the Flask server so that we can make requests to it from it
+// the following creates a proxy for the Flask server so that we can make requests to and from it
 app.use('/api', createProxyMiddleware({
   target: `http://localhost:${flaskPort}`,  // Flask server URL
   changeOrigin: true,
