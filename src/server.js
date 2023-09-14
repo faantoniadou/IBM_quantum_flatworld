@@ -7,7 +7,6 @@ import cors from 'cors';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import multer from 'multer';
 
-
 dotenv.config({ path: path.join(__dirname, '../', '..', '/.env') });
 
 const app = express();
@@ -15,13 +14,21 @@ const app = express();
 const gamePort = process.env.PORT || 8081;
 const flaskPort = process.env.FLASK_PORT || 3000;
 const flaskDir = path.join(__dirname, '..', 'qiskit_backend');
+const router = express.Router();
 
 const allowedOrigins = [
   `http://localhost:${gamePort}`,
   `${process.env.BASE_URL}`,
   `http://localhost:${flaskPort}`,
-  `http://localhost:8080`,
+  'http://localhost:8080',
 ];
+
+
+router.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // Course URLs for different courses
 const courseURLs = {
@@ -71,36 +78,44 @@ let flask;
 app.use(cors({
   origin: (origin, callback) => { 
     if (!origin) return callback(null, true);
-    if (allowedOrigins.indexOf(origin) === -1) {
-      const msg = `The CORS policy for this site does not allow access from the specified Origin.`;
-      return callback(new Error(msg), false);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      return callback(null, true);
     }
-    return callback(null, true);
+    const msg = `The CORS policy for this site does not allow access from the specified Origin.`;
+    return callback(new Error(msg), false);
   },
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-    optionsSuccessStatus: 204,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
 }));
+app.options('*', cors());
+
 
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '..')));
+
+let isServerRunning = true;
 
 const startFlaskServer = () => {
   const flaskEnv = { ...process.env, FLASK_APP: "server.py" };
   flask = spawn('flask', ['run', '--host=0.0.0.0', `--port=${flaskPort}`], { cwd: flaskDir, env: flaskEnv });
 
   flask.stdout.on('data', (data) => {
-    console.log(`Flask stdout: ${data}`);
+    if (isServerRunning) {
+      console.log(`Flask stdout: ${data}`);
+    }
   });
 
   flask.stderr.on('data', (data) => {
-    console.error(`Flask stderr: ${data}`);
+    if (isServerRunning) {
+      console.error(`Flask stderr: ${data}`);
+    }
   });
 
   flask.on('exit', (code) => {
     console.log(`Flask process exited with code ${code}`);
-    if (code !== 0) {
+    if (code !== 0 && isServerRunning) {
       console.log('Restarting Flask server...');
       startFlaskServer();
     }
@@ -208,14 +223,32 @@ try {
   console.error('Error starting server:', error);
 }
 
-// Stop server function
+let server;
+
+const startServer = () => {
+  try {
+    server = app.listen(gamePort, () => {
+      console.log(`Server listening on port ${gamePort}`);
+      startFlaskServer();
+    });
+  } catch (error) {
+    console.error('Error starting server:', error);
+  }
+};
+
 const stopServer = () => {
   if (server) {
     server.close(() => {
       console.log('Server stopped');
     });
   }
+  if (flask) {
+    flask.kill();
+  }
 };
 
 
-export { stopServer };
+
+
+export { startServer, stopServer };
+
