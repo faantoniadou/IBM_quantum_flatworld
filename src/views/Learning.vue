@@ -95,7 +95,7 @@ export default {
       // };
       if(title === "The Quantum Computer" || title === "The Bloch Sphere") {
         if (window.ipcRenderer) {
-            window.ipcRenderer.send('open-unity-window', title);
+            window.ipcRenderer.send('open-unity-window', title);   // sends message to preload.js to open unity window through ipcRenderer which is listening for this message using ipcMain 
             // console.log(`sent message to open unity window to open ${title}`)
         } else {
           console.log('ipcRenderer does not exist');

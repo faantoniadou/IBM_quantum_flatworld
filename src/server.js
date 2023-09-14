@@ -19,14 +19,14 @@ const flaskDir = path.join(__dirname, '..', 'qiskit_backend');
 const allowedOrigins = [
   `http://localhost:${gamePort}`,
   `${process.env.BASE_URL}`,
-  'http://localhost:${flaskPort}',
+  `http://localhost:${flaskPort}`,
+  `http://localhost:8080`,
 ];
 
 // Course URLs for different courses
 const courseURLs = {
   'The Quantum Computer': 'unity-vr',
   'The Bloch Sphere': 'the-bloch-sphere',
-  // ... other courses
 };
 
 // Set up Multer to save uploaded files to the 'public' directory
@@ -63,7 +63,6 @@ app.post('/upload', upload.array('demo[]'), (req, res) => {
     res.status(500).send('Server error: ' + error.message);
   }
 });
-
 
 
 let flask;
