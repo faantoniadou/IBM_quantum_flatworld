@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import { shallowMount } from '@vue/test-utils';
 import App from '@/App.vue';
 import MenubarComponent from '@/components/MenubarComponent.vue';
@@ -8,9 +7,11 @@ describe('App.vue', () => {
 
   beforeEach(() => {
     wrapper = shallowMount(App, {
-      stubs: {
-        RouterView: true,
-        MenubarComponent: true
+      global: {
+        stubs: {
+          RouterView: true,
+          MenubarComponent: true
+        }
       }
     });
   });
@@ -24,6 +25,6 @@ describe('App.vue', () => {
   });
 
   it('should render router-view', () => {
-    expect(wrapper.find('router-view-stub').exists()).toBe(true);
+    expect(wrapper.findComponent({ name: 'RouterView' }).exists()).toBe(true);
   });
 });
