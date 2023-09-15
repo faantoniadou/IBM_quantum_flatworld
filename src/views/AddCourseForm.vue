@@ -50,6 +50,7 @@ import BackButton from '../components/BackButton.vue';
 import { useToast } from "primevue/usetoast"; 
 
 axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL;
+axios.defaults.withCredentials = true;
 
 export default {
   name: 'AddCourseForm',

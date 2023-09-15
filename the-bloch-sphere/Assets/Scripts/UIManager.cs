@@ -20,37 +20,51 @@ public class UIManager : MonoBehaviour
     public Button             quboNextButton;
     public Button             gateNextButton;
 
+    private float lastInputTime = -1f;
+    private float inputCooldown = 0.5f;
 
 
     private void Update()
     {
+        if (Time.time - lastInputTime < inputCooldown)
+        {
+            return;
+        }
+
+
         if (Input.GetKeyDown(KeyCode.H))
         {
+            lastInputTime = Time.time;
             quantumGateHandler.OnGateClick("hadamard");
             OnGateHover("hadamard");
         }
         else if (Input.GetKeyDown(KeyCode.X))
         {
+            lastInputTime = Time.time;
             quantumGateHandler.OnGateClick("x");
             OnGateHover("x");
         }
         else if (Input.GetKeyDown(KeyCode.Y))
         {
+            lastInputTime = Time.time;
             quantumGateHandler.OnGateClick("y");
             OnGateHover("y");
         }
         else if (Input.GetKeyDown(KeyCode.Z))
         {
+            lastInputTime = Time.time;
             quantumGateHandler.OnGateClick("z");
             OnGateHover("z");
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
+            lastInputTime = Time.time;
             quantumGateHandler.OnGateClick("s");
             OnGateHover("s");
         }
         else if (Input.GetKeyDown(KeyCode.T))
         {
+            lastInputTime = Time.time;
             quantumGateHandler.OnGateClick("t");
             OnGateHover("t");
         }
@@ -101,11 +115,6 @@ public class UIManager : MonoBehaviour
         quboObject.SetActive(true);
     }
 
-    private IEnumerator StartQuboJumpingAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay); // Wait for the specified delay time
-    }
-
     public void ShowGatePanel()
     {
         quboPanel.SetActive(false);
@@ -126,20 +135,23 @@ public class UIManager : MonoBehaviour
 
     public void OnGateHover(string gateName)
     {
-        if (!gatePanel.activeInHierarchy)
+        if (!Application.isEditor)
         {
-            gateExplainerPanel.SetActive(true);
-
-            gateExplainerText.text = gateName switch
-            {
-                "hadamard" => "The Hadamard gate creates superposition and is a 180 degree rotation around the diagonal X+Z axis.",
-                "x" => "The X gate flips qubo along the X-axis.",
-                "y" => "The Y gate flips qubo along the Y-axis.",
-                "z" => "The Z gate flips qubo along the Z-axis.",
-                "s" => "The S gate rotates qubo by 90° along the Z-axis.",
-                "t" => "The T gate rotates qubo by 45° along the Z-axis.",
-                _ => "Unknown gate.",
-            };
+            if (!gatePanel.activeInHierarchy) return;
         }
+
+        gateExplainerPanel.SetActive(true);
+
+        gateExplainerText.text = gateName switch
+        {
+            "hadamard" => "The Hadamard gate creates superposition and is a 180 degree rotation around the diagonal X+Z axis.",
+            "x" => "The X gate flips qubo along the X-axis.",
+            "y" => "The Y gate flips qubo along the Y-axis.",
+            "z" => "The Z gate flips qubo along the Z-axis.",
+            "s" => "The S gate rotates qubo by 90° along the Z-axis.",
+            "t" => "The T gate rotates qubo by 45° along the Z-axis.",
+            _ => "Unknown gate.",
+        };
     }
+
 }

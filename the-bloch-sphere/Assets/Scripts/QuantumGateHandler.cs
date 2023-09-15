@@ -5,11 +5,11 @@ using System.Collections;
 
 public class QuantumGateHandler : MonoBehaviour
 {
-    public Transform  quboTransform;
+    public Transform quboTransform;
     public GameObject blochSphere; // Reference to the Bloch Sphere GameObject
     public ServerConfig serverConfig;
 
-    private float        blochSphereRadius;
+    private float blochSphereRadius;
 
 
     [System.Serializable]
@@ -58,7 +58,7 @@ public class QuantumGateHandler : MonoBehaviour
     private IEnumerator ApplyGate(string gateName)
     {
         string url = serverConfig.baseURL + "/apply_gate";
-        
+
         UnityWebRequest www = new(url, "POST");
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes("{\"gate_name\": \"" + gateName + "\"}");
         www.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
@@ -99,13 +99,13 @@ public class QuantumGateHandler : MonoBehaviour
 
     private void MoveQuboToPosition(Vector3 blochVector)
     {
-        Debug.Log("Attempting to move Qubo");
+        //Debug.Log("Attempting to move Qubo");
 
         blochVector.Normalize();
         Vector3 targetPosition = blochVector * blochSphereRadius;
         quboTransform.position = targetPosition;
 
-        Debug.Log("Target Position: " + targetPosition);
-        Debug.Log("Qubo's new position: " + quboTransform.position);
+        //Debug.Log("Target Position: " + targetPosition);
+        //Debug.Log("Qubo's new position: " + quboTransform.position);
     }
 }

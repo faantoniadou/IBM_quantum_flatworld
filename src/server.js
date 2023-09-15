@@ -20,15 +20,9 @@ const allowedOrigins = [
   `http://localhost:${gamePort}`,
   `${process.env.BASE_URL}`,
   `http://localhost:${flaskPort}`,
+  '*',
   'http://localhost:8080',
 ];
-
-
-router.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 // Course URLs for different courses
 const courseURLs = {
@@ -84,6 +78,7 @@ app.use(cors({
     const msg = `The CORS policy for this site does not allow access from the specified Origin.`;
     return callback(new Error(msg), false);
   },
+  allowedHeaders: ['Content-Type', 'Authorization'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
@@ -225,16 +220,16 @@ try {
 
 let server;
 
-const startServer = () => {
-  try {
-    server = app.listen(gamePort, () => {
-      console.log(`Server listening on port ${gamePort}`);
-      startFlaskServer();
-    });
-  } catch (error) {
-    console.error('Error starting server:', error);
-  }
-};
+// const startServer = () => {
+//   try {
+//     server = app.listen(gamePort, () => {
+//       console.log(`Server listening on port ${gamePort}`);
+//       startFlaskServer();
+//     });
+//   } catch (error) {
+//     console.error('Error starting server:', error);
+//   }
+// };
 
 const stopServer = () => {
   if (server) {
@@ -250,5 +245,6 @@ const stopServer = () => {
 
 
 
-export { startServer, stopServer };
+// export { startServer, stopServer };
+export { stopServer };
 

@@ -1,13 +1,15 @@
 import request from 'supertest';
-import { startServer, stopServer } from '../../server.js';
+// import { startServer, stopServer } from '../../server.js';
+import { stopServer } from '../../server.js';
 import fs from 'fs';
 import path from 'path';
 
 
 
+
 describe('Integration Tests', () => {
   beforeAll(async () => {
-    startServer();
+    // startServer();
   });
 
   afterAll(() => {

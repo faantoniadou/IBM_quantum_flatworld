@@ -4,9 +4,11 @@
       <div class="card" style="display: flex; justify-content: center; width: 750px; height: 100px;">
         <Card style="width: 14em; padding: 0px; font-size: 32px; margin-top: 10px;">
           <template #header>
-            Course Catalogue
+            <span class="course-catalogue-header">Course Catalogue</span>
           </template>
         </Card>
+
+
       </div>
     </div>
   </div>
@@ -41,18 +43,26 @@ import CourseCard from '../components/CourseCard.vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 
+
 axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL;
 
 export default {
   name: 'Learning',
+  props: {
+    initialCourses: {
+      type: Array,
+      default: () => []
+    }
+  },
+
   components: {
     BackButton,
     CourseCard,
   },
 
-  setup() {
-    
-    const courses = ref([]);
+  setup(props) {
+
+    const courses = ref(props.initialCourses);
 
     async function fetchCourses() {
       try {
