@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import { nextTick } from 'vue';
-import Learning from '../../../views/Learning.vue'; // Adjust the path to your file structure
+import Learning from '../../../views/Learning.vue';
 
 global.useRouter = jest.fn()
 
