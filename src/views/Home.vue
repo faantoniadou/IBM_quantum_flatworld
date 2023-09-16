@@ -19,7 +19,7 @@
         </router-link>
       </p>
       <p style="padding: 20px; text-align: center;">
-        <Button label="Demo" :loading="loading" @click="load" class="p-button-lg" style="font-size: 32px; width: 600px; height: 120px;" disabled outlined/>
+        <Button label="Demo" :loading="loading" @click="load" class="p-button-lg" style="font-size: 32px; width: 600px; height: 120px;" outlined/>
       </p>
     </div>
   </div>
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     load() {
-      this.loading = true;
+      window.location.href = "https://liveuclac-my.sharepoint.com/:v:/g/personal/ucabff2_ucl_ac_uk/EdgHanGHJWJJhS1B0DM4Ml0Ba0TSwy8PR_AJo7AfI5f2mg?e=TrxAA6&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19";
     },
   },
 }
