@@ -1,9 +1,0 @@
-librosa
-keras
-opencv-contrib-python
-numpy
-mss
-PySide2
-pytesseract
-screeninfo
-Nuitka
