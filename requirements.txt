@@ -1,0 +1,5 @@
+cv2
+mss
+numpy
+open3d
+screeninfo
