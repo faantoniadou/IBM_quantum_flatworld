@@ -21,7 +21,9 @@ Once running, the main menu is navigated with the options presented on screen:
 ![](/figures/User_interface.JPG)
 
 For first time setup, projector calibration (option 1) must be run with a connected webcam. Please note that this is currently only working with a maximum of two projectors. In your MS Windows Display settings, make sure that the option to extend your desktop is selected.
-The projector projecting the left hand image must be set to display 2, and the projector projecting the right hand image must be set to display 3. The window that you want to mirror to the projectors must be set as display 1.
+The projector projecting the left hand image must be set to display 2, and the projector projecting the right hand image must be set to display 3. The window that you want to mirror to the projectors must be set as display 1 forming a panorama from left to right with:
+
+Display_to_be_mirrored (1) --> Projector_showing_left_half (2) --> Projector_showing_right_half (3).
 
 Projector setup should resemble the diagram shown below:
 
@@ -33,7 +35,7 @@ Alternatively the projectors can be setup as shown below or into the vertices of
 
 Ensure that the camera is able to see the entire projection area before calbration is run and ensure that the projectors are overalapping by approximately 5%. Once the projection calibration is running, do not block the camera or projectors at any point.
 
-The gray code calibration sequence will run consecutively on each projector. The calibration process must run from left to right (as you are looking at the projection display). If this is not the case, please make sure the displays are being extended correctly as specified in the instructions given above.
+The gray code calibration sequence will run consecutively on each projector. The calibration process must run from the projector showing the left half of the image first (as you are looking at the projection display). If this is not the case, please make sure the displays are being extended correctly as specified in the instructions given above.
 
 After each gray code sequence you will be prompted to draw a box setting the 'display contour'. This corresponds to the final calibrated output area of each projector. Ensure the display contours for each projector overlap to produce a cohesive image. Unfortunely at present you are unable to view the other projector's display contour when this is being selected, potentially making calibration a bit tedious and may need to be repeated several times to get a good output, press enter once the contour has been selected:
 
